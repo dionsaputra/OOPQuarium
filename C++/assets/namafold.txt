@@ -1,0 +1,12 @@
+foodfish
+goldCoin
+guppyLv1
+guppyLv2
+guppyLv3
+hungryGuppyLv1
+hungryGuppyLv2
+hungryGuppyLv3
+piranha
+piranhaHungry
+silverCoin
+snail

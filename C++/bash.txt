@@ -1,0 +1,1 @@
+g++ -o tes Piranha.hpp Piranha.cpp Guppy.hpp Guppy.cpp Fish.hpp Aquarium.hpp Point.hpp Aquarium.cpp Point.cpp ObjekMati.hpp ObjekMati.cpp Pet.hpp Pet.cpp Fish.cpp Koin.cpp MakananIkan.cpp
