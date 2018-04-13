@@ -58,7 +58,8 @@ void Piranha::eat(Aquarium& aq){
 		setStarvationPeriod(MAX_STARVATION_PERIOD);
 		setStarving(MAX_STARVING);
 		//ilangin guppy
-		setLast(aq.getListIkan().get(idx)->getHarga()); //untuk makan
+		Guppy* temp = (Guppy *) aq.getListIkan().get(idx);
+		setLast(temp->getHarga()*(temp->getGrowthStep()+1)); //untuk makan
 		aq.RemoveObject(aq.getListIkan().get(idx));
 		produce(aq);
 	}
