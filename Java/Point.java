@@ -33,4 +33,8 @@ public class Point {
         int dy = this.ordinat - _point.ordinat;
         return sqrt(dx*dx + dy*dy);
     }
+
+    public void PrintInfo(){
+        System.out.println("(" + absis.toString() + "," + ordinat.toString() + ")");
+    }
 }

@@ -1,5 +1,5 @@
 public class ObjekMati{
-    public static int counter = 0;
+    private static int counter = 0;
     private final int id;
     private int kecepatan;
     private Point posisi;
