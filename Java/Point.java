@@ -1,4 +1,5 @@
-public class Point {
+import java.lang.Math;
+public class Point implements Comparable{
     private int absis;
     private int ordinat;
 
@@ -31,10 +32,27 @@ public class Point {
     public double hitungJarak(Point _point){
         int dx = this.absis - _point.absis;
         int dy = this.ordinat - _point.ordinat;
-        return sqrt(dx*dx + dy*dy);
+        return Math.sqrt(dx*dx + dy*dy);
     }
 
     public void PrintInfo(){
-        System.out.println("(" + absis.toString() + "," + ordinat.toString() + ")");
+        System.out.println("(" + absis + "," + ordinat + ")");
+    }
+    @Override
+    public int compareTo(Object P){
+        Point P1 = (Point) P;
+        if(absis == P1.absis && ordinat == P1.ordinat){
+            return 0;
+        }
+        else if(absis < P1.absis && ordinat < P1.ordinat){
+            return -1;
+        }
+        else{
+            return 1;
+        }
+    }
+    @Override
+    public String toString(){
+        return ("X = "+absis+" Y = "+ordinat);
     }
 }
