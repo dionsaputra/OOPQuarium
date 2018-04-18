@@ -44,7 +44,7 @@ public class ObjekMati{
         return this.getPosisi().getOrdinat() >= _aquarium.getLength();
     }
 
-    public void(Aquarium _aquarium){
+    public void turun(Aquarium _aquarium){
         if (!isDasar(_aquarium)) {
             Point point = this.getPosisi();
             point.setOrdinat(this.getPosisi().getOrdinat() + this.getKecepatan());
