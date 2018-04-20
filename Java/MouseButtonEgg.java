@@ -5,7 +5,6 @@ import javax.swing.*;
 
 public class MouseButtonEgg implements MouseListener {
 
-
   private MachineDriverAquarium aq;
 
 

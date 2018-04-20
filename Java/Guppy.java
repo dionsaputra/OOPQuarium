@@ -1,22 +1,22 @@
 public class Guppy {
 
-  private int growth_step;
-  private int food_capacity;
-  private int produce_time
-  private int growth_timer;
-  private int produce_timer;
+  private int growthStep;
+  private int foodCapacity;
+  private int produceTime
+  private int growthTImer;
+  private int produceTimer;
 
-  public void Guppy() {
+  public Guppy() {
     MAX_STARVING = 500;
     MAX_STARVATION_PERIOD = 200;
     MAX_MOVE_TIME = 50;
-    growth_timer = 6;
-    produce_timer = 100;
+    growthTImer = 6;
+    produceTimer = 100;
     id = counter++;
     speed = 1;
     harga = 50;
-    growth_step = 1;
-    food_capacity = 0;
+    growthStep = 1;
+    foodCapacity = 0;
     right_direct = false;
     degrees = 90;
     radius = 20;
@@ -29,44 +29,45 @@ public class Guppy {
 
   public void eat(Aquarium aquarium) {
     boolean existFood = false;
-    boolean eat_food = false;
-    double rad_min = 1e7; //untuk nyimpen jarak terdekat
-    int i = 0, idx;
-    Point idx_guppy = getPosisi();
-    Point point_kejar;
+    boolean eatFood = false;
+    double radMin = 1e7; //untuk nyimpen jarak terdekat
+    int i = 0;
+    int idx;
+    Point idxGuppy = getPosisi();
+    Point pointKejar;
     while (i < aq.getListObjekMati().totalElmt()) {
       if (aq.getListObjekMati().get(i).getJenis() == "Makanan Ikan") {
         existFood = true;
-        Point point_makanan = aq.getListObjekMati().get(i).getPosisi();
-        double jarak = idx_guppy.hitungJarak(point_makanan);
-        if (jarak < rad_min) {
-          rad_min = jarak;
+        Point pointMakanan = aq.getListObjekMati().get(i).getPosisi();
+        double jarak = idxGuppy.hitungJarak(pointMakanan);
+        if (jarak < radMin) {
+          radMin = jarak;
           idx = i;
-          point_kejar = point_makanan;
+          pointKejar = pointMakanan;
         }
       }
       i++;
     }
     // Cek mau dimakan atau dikejar
     if (existFood) {
-      if (rad_min <= getRadius()) {
-        eat_food = true;
+      if (radMin <= getRadius()) {
+        eatFood = true;
       } else {
-        swimto(point_kejar, getSpeed());
+        swimto(pointKejar, getSpeed());
         setStarving(getStarving() - 1);
       }
     }
 
     // Makan makanan
-    if (eat_food) {
+    if (eatFood) {
       //printf("makan\n");
 
-      food_capacity = food_capacity + 1;
+      foodCapacity = foodCapacity + 1;
       //If its a time to growth
-      if (food_capacity >= growth_timer) { //next growth
-        food_capacity = 0;
-        if (growth_step < 3) {
-          growth_step++;
+      if (foodCapacity >= growthTImer) { //next growth
+        foodCapacity = 0;
+        if (growthStep < 3) {
+          growthStep++;
           harga += harga;
         }
       }
@@ -82,42 +83,42 @@ public class Guppy {
   }
 
   public void produce(Aquarium aquarium) {
-    Koin koin = new Koin(50 * growth_step, getPosisi());
+    Koin koin = new Koin(50 * growthStep, getPosisi());
     aq.AddObject(koin);
   }
 
   //Growing
-  public void Next_Growth() {
-    growth_step = growth_step + 1;
+  public void nextGrowth() {
+    growthStep = growthStep + 1;
   }
 
   //Getter Setter
   public int getGrowthStep() {
-    return growth_step;
+    return growthStep;
   }
 
   public int getFoodCapaty() {
-    return food_capacity;
+    return foodCapacity;
   }
 
   public int getProduceTime() {
-    return produce_time;
+    return produceTime;
   }
 
-  public int getID() {
+  public int getId() {
     return id;
   }
 
   public getMaxProduceTime() {
-    return produce_timer;
+    return produceTimer;
   }
 
   public void setFoodCapacity(int x) {
-    food_capacity = x;
+    foodCapacity = x;
   }
 
   public void setProduceTime(int x) {
-    produce_time = x;
+    produceTime = x;
   }
 
 }

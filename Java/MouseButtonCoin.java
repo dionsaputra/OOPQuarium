@@ -5,10 +5,9 @@ import javax.swing.*;
 
 public class MouseButtonCoin implements MouseListener {
 
-
-  private MachineDriverAquarium aq;
   private int id;
   private JLabel objlabel;
+  private MachineDriverAquarium aq;
 
   public MouseButtonCoin(MachineDriverAquarium temp, JLabel templabel) {
     aq = temp;

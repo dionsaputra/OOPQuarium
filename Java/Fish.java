@@ -1,16 +1,16 @@
 public class Fish {
 
-  private final double PI = 3.14159265;
-  private final int MAX_STARVING;
-  private final int MAX_STARVATION_PERIOD;
-  private final int MAX_MOVE_TIME;
+  private final double pi = 3.14159265;
+  private final int maxStarving;
+  private final int maxStarvationPeriod;
+  private final int maxMoveTime;
   private static int counter = 0;
   private final int id;
-  private boolean right_direct;
-  private int starvation_period;
+  private boolean rightDirect;
+  private int starvationPeriod;
   private int speed;
   private int starving;
-  private int move_timer;
+  private int moveTimer;
   private int harga;
   private int degree;
   private Point posisi;
@@ -24,43 +24,43 @@ public class Fish {
 
   public abstract int getMaxProduceTime();
 
-  public abstract void setProduceTime(int _produce_time);
+  public abstract void setProduceTime(int produceTime);
 
-  public void swimto(Point _posisi, int _speed) {
+  public void swimto(Point posisi, int speed) {
     Point temp = this.getPosisi();
     double rad = atan2(x.getOrdinat() - temp.getOrdinat(),
         x.getAbsis() - temp.getAbsis());
-    int deg = (rad * 180) / PI;
+    int deg = (rad * 180) / pi;
     swim(deg, speed);
   }
 
-  public void swim(int _degree, int _speed) {
-    double rad = (double) degree * PI / 180.0;
+  public void swim(int degree, int speed) {
+    double rad = (double) degree * pi / 180.0;
     Point temp = getPosisi();
-    double absis_new =
-        temp.getAbsis() + (speed * cos(rad) * ((MAX_MOVE_TIME) - getMoveTime()) / 15);
-    double ordinat_new =
-        temp.getOrdinat() + (speed * sin(rad) * (MAX_MOVE_TIME - getMoveTime()) / 15);
-    if (absis_new < temp.getAbsis()) {
-      right_direct = false;
+    double absisNew =
+        temp.getAbsis() + (speed * cos(rad) * ((maxMoveTime) - getMoveTime()) / 15);
+    double ordinatNew =
+        temp.getOrdinat() + (speed * sin(rad) * (maxMoveTime - getMoveTime()) / 15);
+    if (absisNew < temp.getAbsis()) {
+      rightDirect = false;
     } else {
-      right_direct = true;
+      rightDirect = true;
     }
-    double absis = absis_new;
-    double ordinat = ordinat_new;
+    double absis = absisNew;
+    double ordinat = ordinatNew;
 
-      if (absis <= 30) {
-          absis = 30;
-      }
-      if (absis >= 870) {
-          absis = 870;
-      }
-      if (ordinat <= 50) {
-          ordinat = 50;
-      }
-      if (ordinat >= 600) {
-          ordinat = 600;
-      }
+    if (absis <= 30) {
+      absis = 30;
+    }
+    if (absis >= 870) {
+      absis = 870;
+    }
+    if (ordinat <= 50) {
+      ordinat = 50;
+    }
+    if (ordinat >= 600) {
+      ordinat = 600;
+    }
 
     temp.setAbsis(absis);
     temp.setOrdinat(ordinat);
@@ -70,25 +70,25 @@ public class Fish {
 
   //Change Direction
   public void change_direction() {
-    right_direct = !right_direct;
+    rightDirect = !rightDirect;
   }
 
   //Cek lapar
   public boolean isStarving() {
-    return starvation_period <= 0;
+    return starvationPeriod <= 0;
   }
 
   //Cek arah
   public boolean isFaceRight() {
-    return right_direct;
+    return rightDirect;
   }
 
   //Setter Getter
   public int getMoveTime() {
-    return move_timer;
+    return moveTimer;
   }
 
-  public int getID() {
+  public int getId() {
     return id;
   }
 
@@ -97,7 +97,7 @@ public class Fish {
   }
 
   public int getStarvationPeriod() {
-    return starvation_period;
+    return starvationPeriod;
   }
 
   public int getSpeed() {
@@ -116,48 +116,47 @@ public class Fish {
     return degrees;
   }
 
-  public int getMAXMOVE() {
-    return MAX_MOVE_TIME;
+  public int getMaxMove() {
+    return maxMoveTime;
   }
 
   public double getRadius() {
     return radius;
   }
 
-  public String getJenis()
-  {
+  public String getJenis() {
     return jenis;
   }
 
-  public void setDegree(int _degree) {
-    degree = _degree;
+  public void setDegree(int degree) {
+    degree = degree;
   }
 
-  public void setMoveTime(int _move_timer) {
-    move_timer = _move_timer;
+  public void setMoveTime(int moveTimer) {
+    this.moveTimer = moveTimer;
   }
 
-  public void setHarga(int _harga) {
-    harga = _harga;
+  public void setHarga(int harga) {
+    this.harga = harga;
   }
 
-  public void setRadius(double _radius) {
-    radius = _radius;
+  public void setRadius(double radius) {
+    this.radius = radius;
   }
 
-  public void setJenis(String _jenis) {
-    jenis = _jenis;
+  public void setJenis(String jenis) {
+    this.jenis = jenis;
   }
 
-  public void setPosisi(Point _posisi) {
-    posisi = _posisi;
+  public void setPosisi(Point posisi) {
+    this.posisi = posisi;
   }
 
-  public void setStarvationPeriod(int _starvation_period) {
-    starvation_period = _starvation_period
+  public void setStarvationPeriod(int starvationPeriod) {
+    this.starvationPeriod = starvationPeriod
   }
 
-  public void setStarving(int _starving) {
-    starving = _starving;
+  public void setStarving(int starving) {
+    this.starving = starving;
   }
 }

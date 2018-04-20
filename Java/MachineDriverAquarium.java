@@ -5,13 +5,13 @@
 
 
 import java.awt.*;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.util.Scanner;
 import java.util.*;
-import javax.swing.JLabel;
+import java.util.Scanner;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 //import java.util.*;
 public class MachineDriverAquarium extends JFrame implements ImportanceConstantFileAndSize,
@@ -51,18 +51,16 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   private int egg;
   private int money;
 
-
   /**
-   * change the value of gameStart with p
+   * change the value of gameStart with p.
    * @param p boolean
    */
   public void setGameStart(boolean p) {
     gameStart = p;
   }
 
-
   /**
-   * perform init for media or picture(and animated pictures)
+   * perform init for media or picture(and animated pictures).
    */
   public void initMediaAll() {
 
@@ -110,7 +108,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
 
 
   /**
-   * Calculate topleft x piranha coordinate from x center
+   * Calculate topleft x piranha coordinate from x center.
    * @param x xcenter
    * @return topleft x piranha
    */
@@ -119,7 +117,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft y piranha coordinate from y center
+   * Calculate topleft y piranha coordinate from y center.
    * @param y ycenter
    * @return toplefty piranha
    */
@@ -128,7 +126,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft x guppy coordinate from x center
+   * Calculate topleft x guppy coordinate from x center.
    * @param x xcenter
    * @return topleft x guppy
    */
@@ -138,7 +136,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
 
 
   /**
-   * Calculate topleft y guppy coordinate from y center
+   * Calculate topleft y guppy coordinate from y center.
    * @param y ycenter
    * @return topleft y guppy
    */
@@ -147,7 +145,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft x coin coordinate from x center
+   * Calculate topleft x coin coordinate from x center.
    * @param x xcenter
    * @return topleft x coin
    */
@@ -156,7 +154,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft y coin coordinate from y center
+   * Calculate topleft y coin coordinate from y center.
    * @param y ycenter
    * @return topleft y coin
    */
@@ -165,7 +163,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft x food coordinate from x center
+   * Calculate topleft x food coordinate from x center.
    * @param x xcenter
    * @return topleft x food
    */
@@ -174,7 +172,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft y food coordinate from y center
+   * Calculate topleft y food coordinate from y center.
    * @param y ycenter
    * @return topleft y food
    */
@@ -183,7 +181,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft x snail coordinate from x center
+   * Calculate topleft x snail coordinate from x center.
    * @param x xcenter
    * @return topleft x snail
    */
@@ -192,7 +190,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft y snail coordinate from y center
+   * Calculate topleft y snail coordinate from y center.
    * @param y ycenter
    * @return topleft y snail
    */
@@ -201,7 +199,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft x win coordinate from x center
+   * Calculate topleft x win coordinate from x center.
    * @param x xcenter
    * @return topleft x win
    */
@@ -211,7 +209,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
 
 
   /**
-   * Calculate topleft y winImage coordinate from y center
+   * Calculate topleft y winImage coordinate from y center.
    * @param y ycenter
    * @return topleft y winImage
    */
@@ -220,7 +218,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Calculate topleft x lose coordinate from x center
+   * Calculate topleft x lose coordinate from x center.
    * @param x xcenter
    * @return topleft x lose
    */
@@ -230,7 +228,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
 
 
   /**
-   * Calculate topleft y loseImage coordinate from y center
+   * Calculate topleft y loseImage coordinate from y center.
    * @param y ycenter
    * @return topleft y loseImage
    */
@@ -240,7 +238,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
 
 
   /**
-   * Constructor for MachineDriverAquarium
+   * Constructor for MachineDriverAquarium.
    */
   public MachineDriverAquarium() {
     gameStart = false;
@@ -258,40 +256,40 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     //Initialize button and background
 
     JLabel buttonPiranha = new JLabel();
-    JLabel buttonGuppy = new JLabel();
-    JLabel buttonFishFood = new JLabel();
-
-    JLabel labelPiranha = new JLabel();
-    JLabel labelGuppy = new JLabel();
-    JLabel labelFishFood = new JLabel();
-    JLabel labelEgg = new JLabel();
-
     buttonPiranha.setIcon(piranhaLeft);
-    buttonGuppy.setIcon(guppyLeft[2]);
-    buttonFishFood.setIcon(foodFish);
-    buttonEgg.setIcon(eggImage[egg - 1]);
 
+    JLabel buttonGuppy = new JLabel();
+    buttonGuppy.setIcon(guppyLeft[2]);
+
+    JLabel buttonFishFood = new JLabel();
+    buttonFishFood.setIcon(foodFish);
+
+    buttonEgg.setIcon(eggImage[egg - 1]);
     buttonPiranha.addMouseListener(new MouseButtonPiranha(this));
     buttonGuppy.addMouseListener(new MouseButtonGuppy(this));
     buttonEgg.addMouseListener(new MouseButtonEgg(this));
 
+    JLabel labelGuppy = new JLabel();
     labelGuppy.setFont(new Font("Serif", Font.PLAIN, 20));
     labelGuppy.setText(Integer.toString(guppyPrice));
     labelGuppy.setSize(300, 50);
     labelGuppy.setLocation(backgroundImage.getIconWidth() + guppyLeft[0].getIconWidth(), 0);
 
+    JLabel labelPiranha = new JLabel();
     labelPiranha.setFont(new Font("Serif", Font.PLAIN, 20));
     labelPiranha.setText(Integer.toString(piranhaPrice));
     labelPiranha.setSize(300, 50);
     labelPiranha.setLocation(backgroundImage.getIconWidth() + piranhaLeft.getIconWidth(),
         guppyLeft[0].getIconHeight());
 
+    JLabel labelFishFood = new JLabel();
     labelFishFood.setFont(new Font("Serif", Font.PLAIN, 20));
     labelFishFood.setText(Integer.toString(foodPrice));
     labelFishFood.setSize(300, labelFishFood.getPreferredSize().height);
     labelFishFood.setLocation(backgroundImage.getIconWidth() + foodFish.getIconWidth(),
         guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight());
 
+    JLabel labelEgg = new JLabel();
     labelEgg.setFont(new Font("Serif", Font.PLAIN, 20));
     labelEgg.setText(Integer.toString(eggPrice));
     labelEgg.setSize(300, labelEgg.getPreferredSize().height);
@@ -327,7 +325,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * set the this jframe setting to exit on close , set the width and the height,
+   * set the this jframe setting to exit on close , set the width and the height.
    * set the title, and make the windows at center.
    */
   public void initWindowSetting() {
@@ -339,7 +337,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
 
 
   /**
-   * make start menu
+   * make start menu.
    * @param panel to add and update
    */
   public void startMenu(JPanel panel) {
@@ -366,7 +364,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * add food at x,y coordinate
+   * add food at x,y coordinate.
    * @param x
    * @param y
    */
@@ -375,7 +373,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * add guppy at x,y coordinate
+   * add guppy at x,y coordinate.
    * @param x
    * @param y
    */
@@ -384,7 +382,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * add piranha at x,y coordinate
+   * add piranha at x,y coordinate.
    * @param x
    * @param y
    */
@@ -398,8 +396,8 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * delete coin with id from aquarium and obj from list component
-   * @param id
+   * delete coin with id from aquarium and obj from list component.
+   * @param id 
    * @param obj
    */
   public void deleteCoin(int id, Component obj) {
@@ -407,7 +405,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   }
 
   /**
-   * Execute all programm
+   * Execute all programm.
    */
   public void execute() {
     try {

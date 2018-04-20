@@ -8,13 +8,13 @@ public class Pet {
   private int totalMoney;
   private Point posisi;
 
-  public Pet(int _kecepatan, int _radius, Point _posisi) {
-    face = true;
-    id = counter++;
-    kecepatan = _kecepatan;
-    radius = _radius;
-    totalMoney = 0;
-    posisi = _posisi;
+  public Pet(int kecepatan, int radius, Point posisi) {
+    this.face = true;
+    this.id = counter++;
+    this.kecepatan = kecepatan;
+    this.radius = radius;
+    this.totalMoney = 0;
+    this.posisi = posisi;
   }
 
   public getId() {
@@ -25,36 +25,37 @@ public class Pet {
     return face;
   }
 
-  public void setFace(boolean _face) {
-    face = _face;
+  public void setFace(boolean face) {
+    this.face = face;
   }
 
   public int getRadius() {
     return radius;
   }
 
-  public void setRadius(_radius) {
-    radius = _radius;
+  public void setRadius(radius) {
+    this.radius = radius;
   }
 
   public int getTotalMoney() {
     return totalMoney;
   }
 
-  public void setTotalMoney(int _totalMoney) {
-    totalMoney = _totalMoney;
+  public void setTotalMoney(int totalMoney) {
+    this.totalMoney = totalMoney;
   }
 
   public Point getPosisi() {
     return posisi;
   }
 
-  public void setPosisi(_posisi) {
-    posisi = _posisi;
+  public void setPosisi(posisi) {
+    this.posisi = posisi;
   }
 
-  public void WalkTo(Point goal) {
+  public void walkTo(Point goal) {
     int dx = kecepatan;
+
     if (goal.getAbsis() < posisi.getAbsis()) {
       face = false;
       dx = -1 * dx;
@@ -63,6 +64,7 @@ public class Pet {
     } else {
       face = true;
     }
+
     Point point = this.getPosisi();
     point.setAbsis(point.getAbsis() + dx);
     this.setPosisi(point);
@@ -71,6 +73,7 @@ public class Pet {
   public void eat(Aquarium aquarium) {
     boolean existCoin = false;
     int i = 0;
+
     while (i < aquarium.getListObjekMati().totalElmt() && !existCoin) {
       if (aquarium.getListObjekMati().get(i).getJenis() == "Koin") {
         existCoin = true;
@@ -114,11 +117,12 @@ public class Pet {
         } else {
           Point goal = new Point(aquarium.getListObjekMati().get(idx).getPosisi().getAbsis(),
               aquarium.getLength());
-          WalkTo(goal);
+          walkTo(goal);
         }
       } else {
         double nearestVertically = aquarium.getLength() + 1000000;
         int idx;
+
         for (idx = 0; i < aquarium.getListObjekMati().totalElmt(); i++) {
           boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis() == "Koin";
           boolean isLower =
@@ -138,7 +142,7 @@ public class Pet {
         } else {
           Point goal = new Point(aquarium.getListObjekMati().get(idx).getPosisi().getAbsis(),
               aquarium.getLength());
-          WalkTo(goal);
+          walkTo(goal);
         }
       }
     }

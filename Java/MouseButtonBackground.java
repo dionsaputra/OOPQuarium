@@ -5,9 +5,7 @@ import javax.swing.*;
 
 public class MouseButtonBackground implements MouseListener {
 
-
   private MachineDriverAquarium aq;
-
 
   public MouseButtonBackground(MachineDriverAquarium temp) {
     aq = temp;

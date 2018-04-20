@@ -5,9 +5,7 @@ import javax.swing.*;
 
 public class MouseButtonPiranha implements MouseListener {
 
-
   private MachineDriverAquarium aq;
-
 
   public MouseButtonPiranha(MachineDriverAquarium temp) {
     aq = temp;

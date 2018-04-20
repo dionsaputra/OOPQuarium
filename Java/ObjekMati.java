@@ -6,11 +6,11 @@ public class ObjekMati {
   private Point posisi;
   private String jenis;
 
-  public ObjekMati(int _kecepatan) {
-    id = counter++;
-    kecepatan = _kecepatan;
-    posisi = new Point();
-    jenis = null;
+  public ObjekMati(int kecepatan) {
+    this.id = counter++;
+    this.jenis = null;
+    this.kecepatan = kecepatan;
+    this.posisi = new Point();
   }
 
   public int getId() {
@@ -21,38 +21,38 @@ public class ObjekMati {
     return kecepatan;
   }
 
-  public void setKecepatan(int _kecepatan) {
-    kecepatan = _kecepatan;
+  public void setKecepatan(int kecepatan) {
+    this.kecepatan = kecepatan;
   }
 
   public String getJenis() {
     return jenis;
   }
 
-  public void setJenis(String _jenis) {
-    jenis = _jenis;
+  public void setJenis(String jenis) {
+    this.jenis = jenis;
   }
 
   public Point getPosisi() {
     return posisi;
   }
 
-  public void setPosisi(Point _posisi) {
-    posisi = _posisi;
+  public void setPosisi(Point posisi) {
+    this.posisi = posisi;
   }
 
-  public boolean isDasar(Aquarium _aquarium) {
-    return this.getPosisi().getOrdinat() >= _aquarium.getLength();
+  public boolean isDasar(Aquarium aquarium) {
+    return this.getPosisi().getOrdinat() >= aquarium.getLength();
   }
 
-  public void turun(Aquarium _aquarium) {
-    if (!isDasar(_aquarium)) {
+  public void turun(Aquarium aquarium) {
+    if (!isDasar(aquarium)) {
       Point point = this.getPosisi();
       point.setOrdinat(this.getPosisi().getOrdinat() + this.getKecepatan());
       this.setPosisi(point);
     } else {
       if (this.getJenis() == "Makanan Ikan") {
-        _aquarium.RemoveObject(this);
+        aquarium.RemoveObject(this);
       }
     }
   }

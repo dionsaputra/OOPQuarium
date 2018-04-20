@@ -5,9 +5,7 @@ import javax.swing.*;
 
 public class MouseButtonGuppy implements MouseListener {
 
-
   private MachineDriverAquarium aq;
-
 
   public MouseButtonGuppy(MachineDriverAquarium temp) {
     aq = temp;

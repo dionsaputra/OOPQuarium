@@ -7,16 +7,15 @@ public class Piranha {
     MAX_STARVATION_PERIOD = 200;
     MAX_MOVE_TIME = 70;
 
-    speed = 2;
-    radius = 20;
     degrees = 30;
-    latestFood = 0;
     jenis = "Piranha";
+    latestFood = 0;
+    radius = 20;
     right_direct = false;
-    setStarving(MAX_STARVING);
     setMoveTime(MAX_MOVE_TIME);
+    setStarving(MAX_STARVING);
     setStarvationPeriod(MAX_STARVATION_PERIOD);
-
+    speed = 2;
   }
 
   public void eat(Aquarium aquarium) {
@@ -27,6 +26,8 @@ public class Piranha {
     int idx;
     Point idxPiranha = getPosisi();
     Point pointKejar;
+
+    // check food exist
     while (i < aq.getListIkan().totalElmt()) {
       if (aq.getListIkan().get(i).getJenis() == "Guppy") {
         existFood = true;
@@ -40,7 +41,8 @@ public class Piranha {
       }
       i++;
     }
-    // Cek mau dimakan atau dikejar
+
+    // check walk to food or eat it
     if (existFood) {
       if (radMin <= getRadius()) {
         eatFood = true;
@@ -50,7 +52,7 @@ public class Piranha {
       }
     }
 
-    // Makan guppy
+    // eat guppu
     if (eatFood) {
       //Update hungry time
       setStarvationPeriod(MAX_STARVATION_PERIOD);

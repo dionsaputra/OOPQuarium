@@ -5,9 +5,7 @@ import javax.swing.*;
 
 public class MouseButtonStart implements MouseListener {
 
-
   private MachineDriverAquarium aq;
-
 
   public MouseButtonStart(MachineDriverAquarium temp) {
     aq = temp;
