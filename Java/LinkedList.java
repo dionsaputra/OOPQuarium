@@ -1,3 +1,8 @@
+/**
+ * Generic LinkedList class
+ * @param <T> : class
+ * @return Nothing
+ */
 public class LinkedList<T extends Comparable>{
     private class ElmtList<T extends Comparable>{
         public ElmtList(T info){
@@ -6,18 +11,30 @@ public class LinkedList<T extends Comparable>{
         public T info;
         public ElmtList<T> next;
     }
+
     private ElmtList<T> First;
     private ElmtList<T> Last;
-    
-    public LinkedList(){
+
+    /**
+     * Construct the First and Last menjadi null
+     */
+    public LinkedList() {
         First = null;
         Last = null;
     }
-   
+
+    /**
+     *
+     * @return boolean if list is empty
+     */
     public Boolean isEmpty(){
         return First==null;
     }
 
+    /**
+     *
+     * @param elmt elemen yang infin dimasukkan
+     */
     public void add(T elmt){
         if(isEmpty()){
             First = new ElmtList<T>(elmt);
@@ -29,6 +46,10 @@ public class LinkedList<T extends Comparable>{
         }
     }
 
+    /**
+     *
+     * @param elmt elemen yang ingin diremove
+     */
     public void remove(T elmt){
         if(isEmpty()){
 
@@ -58,6 +79,11 @@ public class LinkedList<T extends Comparable>{
         }
     }
 
+    /**
+     *
+     * @param elmt elemen yang ingin dicari dalam list
+     * @return
+     */
     public int find(T elmt){
         if(isEmpty()){
             return -1;
@@ -78,6 +104,11 @@ public class LinkedList<T extends Comparable>{
         return -1;
     }
 
+    /**
+     *
+     * @param idx indeks elemen dalam list, dimulai dari 0
+     * @return objek pada indeks ke idx
+     */
     public T get(int idx){
         int x = 0;
         ElmtList<T> P = First;
@@ -88,6 +119,9 @@ public class LinkedList<T extends Comparable>{
         return P.info;
     }
 
+    /**
+     * Print semua elemen yang ada pada list
+     */
     public void PrintAllElement(){
         if(isEmpty()){
             System.out.println("List Empty !");
@@ -100,6 +134,11 @@ public class LinkedList<T extends Comparable>{
             }
         }
     }
+
+    /**
+     *
+     * @return total elemen di dalam list
+     */
     public int totalElmt(){
         int countElmt = 0;
         ElmtList<T> P = First;
