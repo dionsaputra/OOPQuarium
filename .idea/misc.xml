@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="CheckstyleConfigurable">
     <option name="suppFilterFilename" value="" />
     <option name="suppCommentFilter" value="false" />
@@ -25,5 +26,12 @@
   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="SuppressionsComponent">
     <option name="suppComments" value="[]" />
+=======
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="C:/" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+>>>>>>> ffd7373bd1c0368f1de7e687eb10830278feaf52
   </component>
 </project>

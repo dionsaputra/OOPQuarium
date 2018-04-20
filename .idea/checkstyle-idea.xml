@@ -9,8 +9,13 @@
         <entry key="location-0" value="BUNDLED:(bundled):Sun Checks" />
         <entry key="location-1" value="BUNDLED:(bundled):Google Checks" />
         <entry key="scan-before-checkin" value="false" />
+<<<<<<< HEAD
         <entry key="scanscope" value="Everything" />
         <entry key="suppress-errors" value="true" />
+=======
+        <entry key="scanscope" value="JavaOnly" />
+        <entry key="suppress-errors" value="false" />
+>>>>>>> ffd7373bd1c0368f1de7e687eb10830278feaf52
       </map>
     </option>
   </component>
