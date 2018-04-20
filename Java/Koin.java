@@ -1,19 +1,20 @@
-public class Koin extends ObjekMati{
-    private final int kecepatanKoin = 1;
-    private int nilaiKoin;
+public class Koin extends ObjekMati {
 
-    public Koin(int _nilaiKoin, Point _posisi){
-        super(kecepatanKoin);
-        nilaiKoin = _nilaiKoin;
-        jenis = "Koin";
-        posisi = _posisi;
-    }
+  private final int kecepatanKoin = 1;
+  private int nilaiKoin;
 
-    public int getNilaiKoin(){
-        return nilaiKoin;
-    }
+  public Koin(int _nilaiKoin, Point _posisi) {
+    super(kecepatanKoin);
+    nilaiKoin = _nilaiKoin;
+    jenis = "Koin";
+    posisi = _posisi;
+  }
 
-    public void setNilaiKoin(int _nilaiKoin){
-        nilaiKoin = _nilaiKoin;
-    }
+  public int getNilaiKoin() {
+    return nilaiKoin;
+  }
+
+  public void setNilaiKoin(int _nilaiKoin) {
+    nilaiKoin = _nilaiKoin;
+  }
 }

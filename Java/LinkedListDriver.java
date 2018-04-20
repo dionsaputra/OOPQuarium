@@ -1,6 +1,8 @@
 import java.util.*;
-public class LinkedListDriver{
-    public static void main(String[] args){
+
+public class LinkedListDriver {
+
+  public static void main(String[] args) {
 
         /*
         LinkedList<Integer> LLI = new LinkedList<Integer>();
@@ -26,25 +28,24 @@ public class LinkedListDriver{
         }
         System.out.println();
         */
-        
-        
-        LinkedList<Point> LLP = new LinkedList<Point>();
-        LLP.add(new Point(5,3));
-        LLP.add(new Point(3,4));
-        LLP.add(new Point(2,3));
-        LLP.PrintAllElement();
-        LLP.remove(new Point(2,3));
-        System.out.println("Setelah Dihapus");
-        LLP.PrintAllElement();
-        Point P3 = LLP.get(1);
-        P3.setAbsis(9);
-        System.out.println("Setelah Diganti Absisnya");
-        LLP.PrintAllElement();
-        LLP.add(new Point(8,9));
-        LLP.add(new Point(9,2));
-        System.out.println("Contoh untuk iterasi :");
-        for(int i=0;i<LLP.totalElmt();i++){
-            LLP.get(i).PrintInfo();
-        }
+
+    LinkedList<Point> LLP = new LinkedList<Point>();
+    LLP.add(new Point(5, 3));
+    LLP.add(new Point(3, 4));
+    LLP.add(new Point(2, 3));
+    LLP.PrintAllElement();
+    LLP.remove(new Point(2, 3));
+    System.out.println("Setelah Dihapus");
+    LLP.PrintAllElement();
+    Point P3 = LLP.get(1);
+    P3.setAbsis(9);
+    System.out.println("Setelah Diganti Absisnya");
+    LLP.PrintAllElement();
+    LLP.add(new Point(8, 9));
+    LLP.add(new Point(9, 2));
+    System.out.println("Contoh untuk iterasi :");
+    for (int i = 0; i < LLP.totalElmt(); i++) {
+      LLP.get(i).PrintInfo();
     }
+  }
 }
