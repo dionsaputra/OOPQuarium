@@ -12,7 +12,6 @@ public abstract class Fish implements Comparable {
   private int starvationPeriod;
   private int speed;
   private int starving;
-  private int moveTimer;
   private int harga;
   private int degree;
   private Point posisi;

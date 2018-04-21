@@ -1,4 +1,4 @@
-public class Pet {
+public class Pet implements Comparable{
 
   private static int counter = 0;
   private boolean face;
@@ -17,7 +17,7 @@ public class Pet {
     this.posisi = posisi;
   }
 
-  public getId() {
+  public int getId() {
     return id;
   }
 
@@ -33,7 +33,7 @@ public class Pet {
     return radius;
   }
 
-  public void setRadius(radius) {
+  public void setRadius(int radius) {
     this.radius = radius;
   }
 
@@ -49,7 +49,7 @@ public class Pet {
     return posisi;
   }
 
-  public void setPosisi(posisi) {
+  public void setPosisi(Point posisi) {
     this.posisi = posisi;
   }
 
@@ -83,15 +83,15 @@ public class Pet {
     }
 
     if (existCoin) {
-      int i = 0;
+      int j = 0;
       boolean existCoinOnGround = false;
-      while (i < aquarium.getListObjekMati().totalElmt() && !existCoinOnGround) {
-        boolean isKoin = aquarium.getListObjekMati().get(i).getJenis() == "Koin";
-        boolean isDasar = aquarium.getListObjekMati().get(i).isDasar(aquarium);
+      while (j < aquarium.getListObjekMati().totalElmt() && !existCoinOnGround) {
+        boolean isKoin = aquarium.getListObjekMati().get(j).getJenis() == "Koin";
+        boolean isDasar = aquarium.getListObjekMati().get(j).isDasar(aquarium);
         if (isKoin && isDasar) {
           existCoinOnGround = true;
         } else {
-          i++;
+          j++;
         }
       }
 
@@ -101,7 +101,7 @@ public class Pet {
         for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
           boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis() == "Koin";
           boolean isDasar = aquarium.getListObjekMati().get(idx).isDasar(aquarium);
-          boolean isLower = getPosisi().hitungJarak(aquarium.getListObjekMati.get(idx).getPosisi())
+          boolean isLower = getPosisi().hitungJarak(aquarium.getListObjekMati().get(idx).getPosisi())
               < nearestHorizontally;
           if (isKoin && isDasar && isLower) {
             nearestHorizontally = getPosisi()
@@ -113,7 +113,7 @@ public class Pet {
         if (radius >= nearestHorizontally) {
           Koin koin = (Koin) aquarium.getListObjekMati().get(idx);
           setTotalMoney(getTotalMoney() + koin.getNilaiKoin());
-          aquarium.RemoveObject(aquarium.getListObjekMati().get(idx));
+          aquarium.removeObject(aquarium.getListObjekMati().get(idx));
         } else {
           Point goal = new Point(aquarium.getListObjekMati().get(idx).getPosisi().getAbsis(),
               aquarium.getLength());
@@ -123,14 +123,14 @@ public class Pet {
         double nearestVertically = aquarium.getLength() + 1000000;
         int idx;
 
-        for (idx = 0; i < aquarium.getListObjekMati().totalElmt(); i++) {
+        for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
           boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis() == "Koin";
           boolean isLower =
-              aquarium.getLength() - aquarium.getListObjekMati.get(idx).getPosisi().getOrdinat()
+              aquarium.getLength() - aquarium.getListObjekMati().get(idx).getPosisi().getOrdinat()
                   < nearestVertically;
           if (isKoin && isLower) {
             nearestVertically =
-                aquarium.getLength() - aquarium.getListObjekMati.get(idx).getPosisi().getOrdinat();
+                aquarium.getLength() - aquarium.getListObjekMati().get(idx).getPosisi().getOrdinat();
             break;
           }
         }
@@ -138,13 +138,23 @@ public class Pet {
         if (radius >= nearestVertically) {
           Koin koin = (Koin) aquarium.getListObjekMati().get(idx);
           setTotalMoney(getTotalMoney() + koin.getNilaiKoin());
-          aquarium.RemoveObject(aquarium.getListObjekMati().get(idx));
+          aquarium.removeObject(aquarium.getListObjekMati().get(idx));
         } else {
           Point goal = new Point(aquarium.getListObjekMati().get(idx).getPosisi().getAbsis(),
               aquarium.getLength());
           walkTo(goal);
         }
       }
+    }
+  }
+
+  public int compareTo(Object pet) {
+    Pet p = (Pet) pet;
+    if(p.getId() == id){
+      return 0;
+    }
+    else{
+      return 1;
     }
   }
 }
