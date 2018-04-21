@@ -209,11 +209,11 @@ public class Aquarium {
     return listPet;
   }
 
-  public int getlength() {
+  public int getLength() {
     return length;
   }
 
-  public int getwidth() {
+  public int getWidth() {
     return width;
   }
 
