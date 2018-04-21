@@ -15,6 +15,7 @@ public abstract class Fish implements Comparable {
   private int harga;
   private int degree;
   private int radius;
+  private int moveTimer;
   private Point posisi;
   private String jenis;
 
@@ -30,9 +31,9 @@ public abstract class Fish implements Comparable {
 
   public void swimto(Point x, int speed) {
     Point temp = this.getPosisi();
-    double rad = atan2((double)(x.getOrdinat() - temp.getOrdinat()),
+    double rad = Math.atan2((double)(x.getOrdinat() - temp.getOrdinat()),
         (double)(x.getAbsis() - temp.getAbsis()));
-    int deg = (rad * 180) / pi;
+    int deg = (int) ((rad * 180) / pi);
     swim(deg, speed);
   }
 
@@ -40,9 +41,9 @@ public abstract class Fish implements Comparable {
     double rad = (double) degree * pi / 180.0;
     Point temp = getPosisi();
     int absisNew =
-        temp.getAbsis() + (speed * cos(rad) * ((maxMoveTime) - getMoveTime()) / 15);
+        temp.getAbsis() + (int)(speed * Math.cos(rad) * ((maxMoveTime) - getMoveTime()) / 15);
     int ordinatNew =
-        temp.getOrdinat() + (speed * sin(rad) * (maxMoveTime - getMoveTime()) / 15);
+        temp.getOrdinat() + (int)(speed * Math.sin(rad) * (maxMoveTime - getMoveTime()) / 15);
     if (absisNew < temp.getAbsis()) {
       rightDirect = false;
     } else {
@@ -127,7 +128,7 @@ public abstract class Fish implements Comparable {
   }
 
   public int getDegree() {
-    return degrees;
+    return degree;
   }
 
   public int getMaxMove() {
@@ -154,7 +155,7 @@ public abstract class Fish implements Comparable {
     this.harga = harga;
   }
 
-  public void setRadius(double radius) {
+  public void setRadius(int radius) {
     this.radius = radius;
   }
 
