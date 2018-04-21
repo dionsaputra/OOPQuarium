@@ -3,9 +3,9 @@ public class Piranha {
   private int latestFood;
 
   public Piranha() {
-    MAX_STARVING = 500;
-    MAX_STARVATION_PERIOD = 200;
-    MAX_MOVE_TIME = 70;
+    maxStarving = 500;
+    maxStarvationPeriod = 200;
+    maxMoveTime = 70;
 
     degrees = 30;
     jenis = "Piranha";
@@ -13,9 +13,9 @@ public class Piranha {
     radius = 20;
     id = counter++;
     right_direct = false;
-    setMoveTime(MAX_MOVE_TIME);
-    setStarving(MAX_STARVING);
-    setStarvationPeriod(MAX_STARVATION_PERIOD);
+    setStarvationPeriod(maxStarvationPeriod);
+    setStarving(maxStarving);
+    setMoveTime(maxMoveTime);
     speed = 2;
   }
 
