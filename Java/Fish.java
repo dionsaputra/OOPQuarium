@@ -1,11 +1,13 @@
-public abstract class Fish {
+import java.lang.Math;
+
+public abstract class Fish implements Comparable {
 
   private final double pi = 3.14159265;
-  private final int maxStarving;
-  private final int maxStarvationPeriod;
-  private final int maxMoveTime;
+  private int maxStarving;
+  private int maxStarvationPeriod;
+  private int maxMoveTime;
   private static int counter = 0;
-  private final int id;
+  private int id;
   private boolean rightDirect;
   private int starvationPeriod;
   private int speed;
@@ -25,10 +27,10 @@ public abstract class Fish {
 
   public abstract void setProduceTime(int produceTime);
 
-  public void swimto(Point posisi, int speed) {
+  public void swimto(Point x, int speed) {
     Point temp = this.getPosisi();
-    double rad = atan2(x.getOrdinat() - temp.getOrdinat(),
-        x.getAbsis() - temp.getAbsis());
+    double rad = atan2((double)(x.getOrdinat() - temp.getOrdinat()),
+        (double)(x.getAbsis() - temp.getAbsis()));
     int deg = (rad * 180) / pi;
     swim(deg, speed);
   }
@@ -36,17 +38,17 @@ public abstract class Fish {
   public void swim(int degree, int speed) {
     double rad = (double) degree * pi / 180.0;
     Point temp = getPosisi();
-    double absisNew =
+    int absisNew =
         temp.getAbsis() + (speed * cos(rad) * ((maxMoveTime) - getMoveTime()) / 15);
-    double ordinatNew =
+    int ordinatNew =
         temp.getOrdinat() + (speed * sin(rad) * (maxMoveTime - getMoveTime()) / 15);
     if (absisNew < temp.getAbsis()) {
       rightDirect = false;
     } else {
       rightDirect = true;
     }
-    double absis = absisNew;
-    double ordinat = ordinatNew;
+    int absis = absisNew;
+    int ordinat = ordinatNew;
 
     if (absis <= 30) {
       absis = 30;
@@ -70,6 +72,18 @@ public abstract class Fish {
   //Change Direction
   public void change_direction() {
     rightDirect = !rightDirect;
+  }
+
+  @Override
+  public int compareTo(Object object) {
+    Fish fish = (Fish) object;
+    if (fish.getId() == getId()) {
+      return 0;
+    } else if (fish.getId() < getId()) {
+      return -1;
+    } else {
+      return 1;
+    }
   }
 
   //Cek lapar
