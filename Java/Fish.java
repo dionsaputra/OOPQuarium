@@ -14,6 +14,7 @@ public abstract class Fish implements Comparable {
   private int starving;
   private int harga;
   private int degree;
+  private int radius;
   private Point posisi;
   private String jenis;
 
@@ -142,7 +143,7 @@ public abstract class Fish implements Comparable {
   }
 
   public void setDegree(int degree) {
-    degree = degree;
+    this.degree = degree;
   }
 
   public void setMoveTime(int moveTimer) {
