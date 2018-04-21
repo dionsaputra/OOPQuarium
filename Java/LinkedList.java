@@ -1,140 +1,152 @@
 /**
- * Generic LinkedList class
- * @param <T> : class
- * @return Nothing
+ * Kelas Generik LinkedList, untuk elemen yang merupakan turunan dari kelas Comparable.
+ * @param <T> Kelas yang diinginkan oleh elemen
  */
-public class LinkedList<T extends Comparable>{
-    private class ElmtList<T extends Comparable>{
-        public ElmtList(T info){
-            this.info = info;
-        }
-        public T info;
-        public ElmtList<T> next;
+
+public class LinkedList<T extends Comparable> {
+  private class ElmtList<T extends Comparable> {
+    public ElmtList(T info) {
+      this.info = info;
     }
 
-    private ElmtList<T> First;
-    private ElmtList<T> Last;
+    public T info;
 
-    /**
-     * Construct the First and Last menjadi null
-     */
-    public LinkedList() {
-        First = null;
-        Last = null;
-    }
+    public ElmtList<T> next;
+  }
 
-    /**
-     *
-     * @return boolean if list is empty
-     */
-    public Boolean isEmpty(){
-        return First==null;
-    }
+  private ElmtList<T> first;
 
-    /**
-     *
-     * @param elmt elemen yang infin dimasukkan
-     */
-    public void add(T elmt){
-        if(isEmpty()){
-            First = new ElmtList<T>(elmt);
-            Last = First;
-        }
-        else{
-            Last.next = new ElmtList<T>(elmt);
-            Last = Last.next;
-        }
-    }
+  private ElmtList<T> last;
 
+  /**
+   * Konstruktor dasar LinkedList
+   * mengassign nilai First dan Last menjadi null.
+   */
 
-    /**
-     *
-     * @param elmt elemen yang ingin diremove
-     */
-  public void remove(T elmt) {
+  public LinkedList() {
+    first = null;
+    last = null;
+  }
+
+  /**
+   * Mengecek apakah LinkedList kosong.
+   * @return True jika LinkedList kosong
+   */
+
+  public Boolean isEmpty() {
+    return first == null;
+  }
+
+  /**
+   * Memasukkan sebuah elemen ke dalam LinkedList.
+   * @param elmt elemen yang ingin dimasukkan ke dalam LinkedList
+   */
+
+  public void add(T elmt) {
     if (isEmpty()) {
-
+      first = new ElmtList<T>(elmt);
+      last = first;
     } else {
-      ElmtList<T> P = First;
-      ElmtList<T> Prev = null;
-      while (P.info.compareTo(elmt) != 0) {
-        Prev = P;
-        P = P.next;
+      last.next = new ElmtList<T>(elmt);
+      last = last.next;
+    }
+  }
+
+
+  /**
+   * Menghapus sebuah elemen dari LinkedList.
+   * @param elmt elemen yang ingin diremove
+   */
+
+  public void remove(T elmt) {
+    if (! isEmpty()) {
+      ElmtList<T> p = first;
+      ElmtList<T> prev = null;
+      while (p.info.compareTo(elmt) != 0) {
+        prev = p;
+        p = p.next;
       }
-      if (P == First) {
-        if (P == Last) {
-          First = Last = null;
+      if (p == first) {
+        if (p == last) {
+          first = last = null;
         } else {
-          First = P.next;
+          first = p.next;
         }
-      } else if (P == Last) {
-        Prev.next = null;
-        Last = Prev;
+      } else if (p == last) {
+        prev.next = null;
+        last = prev;
       } else {
-        Prev.next = P.next;
+        prev.next = p.next;
       }
     }
   }
 
-    /**
-     *
-     * @param elmt elemen yang ingin dicari dalam list
-     * @return
-     */
+  /**
+   * Mencari sebuah elemen di indeks ke berapa pada list.
+   * @param elmt elemen yang ingin dicari dalam list
+   * @return indeks pada list, -1 jika tidak ketemu
+   */
+
   public int find(T elmt) {
     if (isEmpty()) {
       return -1;
     } else {
-      ElmtList<T> P = First;
+      ElmtList<T> p = first;
       int idx = 0;
-      while (P != null) {
-        if (P.info.compareTo(elmt) == 0) {
+      while (p != null) {
+        if (p.info.compareTo(elmt) == 0) {
           return idx;
         } else {
           idx++;
-          P = P.next;
+          p = p.next;
         }
       }
     }
     return -1;
   }
 
-    /**
-     *
-     * @param idx indeks elemen dalam list, dimulai dari 0
-     * @return objek pada indeks ke idx
-     */
+  /**
+   * Mengambil sebuah objek dari indeks tertentu.
+   * @param idx indeks elemen dalam list, dimulai dari 0
+   * @return objek pada indeks ke idx
+   */
+
   public T get(int idx) {
     int x = 0;
-    ElmtList<T> P = First;
+    ElmtList<T> p = first;
     while (x < idx) {
-      P = P.next;
+      p = p.next;
       x++;
     }
-    return P.info;
+    return p.info;
   }
 
-    /**
-     * Print semua elemen yang ada pada list
-     */
-  public void PrintAllElement() {
+  /**
+   * Print semua elemen yang ada pada list.
+   */
+  public void printAllElement() {
     if (isEmpty()) {
       System.out.println("List Empty !");
     } else {
-      ElmtList<T> P = First;
-      while (P != null) {
-        System.out.println(P.info);
-        P = P.next;
+      ElmtList<T> p = first;
+      while (p != null) {
+        System.out.println(p.info);
+        p = p.next;
       }
     }
   }
 
+  /**
+   * Menghitung jumlah elemen dalam LinkedList.
+   * @return jumlah elemen
+   */
+
   public int totalElmt() {
     int countElmt = 0;
-    ElmtList<T> P = First;
-    while (P != null) {
+    ElmtList<T> p = first;
+    while (p != null) {
       countElmt++;
-      P = P.next;
+      p = p.next;
     }
     return countElmt;
   }

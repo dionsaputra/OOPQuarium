@@ -8,14 +8,14 @@ public class LinkedListDriver {
     llp.add(new Point(5, 3));
     llp.add(new Point(3, 4));
     llp.add(new Point(2, 3));
-    llp.PrintAllElement();
+    llp.printAllElement();
     llp.remove(new Point(2, 3));
     System.out.println("Setelah Dihapus");
-    llp.PrintAllElement();
+    llp.printAllElement();
     Point point = llp.get(1);
     point.setAbsis(9);
     System.out.println("Setelah Diganti Absisnya");
-    llp.PrintAllElement();
+    llp.printAllElement();
     llp.add(new Point(8, 9));
     llp.add(new Point(9, 2));
     System.out.println("Contoh untuk iterasi :");
