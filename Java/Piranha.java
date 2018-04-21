@@ -61,7 +61,7 @@ public class Piranha extends Fish {
       //ilangin guppy
       Guppy temp = (Guppy) aquarium.getListIkan().get(idx);
       setLast(temp.getHarga() * (temp.getGrowthStep() + 1)); //untuk makan
-      aquarium.RemoveObject(aquarium.getListIkan().get(idx));
+      aquarium.removeObject(aquarium.getListIkan().get(idx));
       produce(aquarium);
     } else {
       setStarving(getStarving() - 1);
@@ -70,7 +70,7 @@ public class Piranha extends Fish {
 
   public void produce(Aquarium aquarium) {
     Koin koin = new Koin(getLast(), getPosisi());
-    aquarium.AddObject(koin);
+    aquarium.addObject(koin);
   }
 
   public int getProduceTime() {

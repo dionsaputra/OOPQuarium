@@ -16,6 +16,7 @@ public class MakananIkan extends ObjekMati {
 
   public MakananIkan(Point _posisi) {
     super(1);//kecepatanMakananIkan
+    Random random = new Random();
     harga = random.nextInt(maxHargaMakananIkan - minHargaMakananIkan + 1) + minHargaMakananIkan;
     jenis = "Makanan Ikan";
     posisi = _posisi;
