@@ -3,14 +3,14 @@ public class Guppy {
   private int growthStep;
   private int foodCapacity;
   private int produceTime;
-  private int growthTImer;
+  private int growthTimer;
   private int produceTimer;
 
   public Guppy() {
     MAX_STARVING = 500;
     MAX_STARVATION_PERIOD = 200;
     MAX_MOVE_TIME = 50;
-    growthTImer = 6;
+    growthTimer = 6;
     produceTimer = 100;
     id = counter++;
     speed = 1;
@@ -109,7 +109,7 @@ public class Guppy {
     return id;
   }
 
-  public getMaxProduceTime() {
+  public int getMaxProduceTimer() {
     return produceTimer;
   }
 
