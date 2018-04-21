@@ -1,4 +1,4 @@
-public class Piranha {
+public class Piranha extends Fish {
 
   private int latestFood;
 
@@ -7,12 +7,12 @@ public class Piranha {
     maxStarvationPeriod = 200;
     maxMoveTime = 70;
 
-    degrees = 30;
+    degree = 30;
     jenis = "Piranha";
     latestFood = 0;
     radius = 20;
     id = counter++;
-    right_direct = false;
+    rightDirect = false;
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
     setMoveTime(maxMoveTime);
@@ -20,19 +20,19 @@ public class Piranha {
   }
 
   public void eat(Aquarium aquarium) {
-    bool existFood = false;
-    bool eatFood = false;
+    boolean existFood = false;
+    boolean eatFood = false;
     double radMin = 1e7;
     int i = 0;
-    int idx;
+    int idx = 0;
     Point idxPiranha = getPosisi();
-    Point pointKejar;
+    Point pointKejar = new Point();
 
     // check food exist
-    while (i < aq.getListIkan().totalElmt()) {
-      if (aq.getListIkan().get(i).getJenis() == "Guppy") {
+    while (i < aquarium.getListIkan().totalElmt()) {
+      if (aquarium.getListIkan().get(i).getJenis() == "Guppy") {
         existFood = true;
-        Point pointMakanan = aq.getListIkan().get(i).getPosisi();
+        Point pointMakanan = aquarium.getListIkan().get(i).getPosisi();
         double jarak = idxPiranha.hitungJarak(pointMakanan);
         if (jarak < radMin) {
           radMin = jarak;
@@ -56,13 +56,13 @@ public class Piranha {
     // eat guppu
     if (eatFood) {
       //Update hungry time
-      setStarvationPeriod(MAX_STARVATION_PERIOD);
-      setStarving(MAX_STARVING);
+      setStarvationPeriod(maxStarvationPeriod);
+      setStarving(maxStarving);
       //ilangin guppy
-      Guppy temp = aq.getListIkan().get(idx);
+      Guppy temp = (Guppy) aquarium.getListIkan().get(idx);
       setLast(temp.getHarga() * (temp.getGrowthStep() + 1)); //untuk makan
-      aq.RemoveObject(aq.getListIkan().get(idx));
-      produce(aq);
+      aquarium.RemoveObject(aquarium.getListIkan().get(idx));
+      produce(aquarium);
     } else {
       setStarving(getStarving() - 1);
     }
@@ -70,7 +70,7 @@ public class Piranha {
 
   public void produce(Aquarium aquarium) {
     Koin koin = new Koin(getLast(), getPosisi());
-    aq.AddObject(koin);
+    aquarium.AddObject(koin);
   }
 
   public int getProduceTime() {
