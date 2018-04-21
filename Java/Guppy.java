@@ -2,7 +2,7 @@ public class Guppy {
 
   private int growthStep;
   private int foodCapacity;
-  private int produceTime
+  private int produceTime;
   private int growthTImer;
   private int produceTimer;
 

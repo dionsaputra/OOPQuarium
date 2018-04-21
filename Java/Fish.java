@@ -1,4 +1,4 @@
-public class Fish {
+public abstract class Fish {
 
   private final double pi = 3.14159265;
   private final int maxStarving;
@@ -153,7 +153,7 @@ public class Fish {
   }
 
   public void setStarvationPeriod(int starvationPeriod) {
-    this.starvationPeriod = starvationPeriod
+    this.starvationPeriod = starvationPeriod;
   }
 
   public void setStarving(int starving) {
