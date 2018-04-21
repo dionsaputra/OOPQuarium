@@ -32,9 +32,9 @@ public class Guppy extends Fish {
     boolean eatFood = false;
     double radMin = 1e7; //untuk nyimpen jarak terdekat
     int i = 0;
-    int idx;
+    int idx = 0;
     Point idxGuppy = getPosisi();
-    Point pointKejar;
+    Point pointKejar = new Point();
     while (i < aquarium.getListObjekMati().totalElmt()) {
       if (aquarium.getListObjekMati().get(i).getJenis() == "Makanan Ikan") {
         existFood = true;
@@ -76,7 +76,7 @@ public class Guppy extends Fish {
       setStarvationPeriod(maxStarvationPeriod);
       setStarving(maxStarving);
       //ilangin makanan ikan
-      aquarium.RemoveObject(aquarium.getListObjekMati().get(idx));
+      aquarium.removeObject(aquarium.getListObjekMati().get(idx));
     } else {
       setStarving(getStarving() - 1);
     }
@@ -84,7 +84,7 @@ public class Guppy extends Fish {
 
   public void produce(Aquarium aquarium) {
     Koin koin = new Koin(50 * growthStep, getPosisi());
-    aquarium.AddObject(koin);
+    aquarium.addObject(koin);
   }
 
   //Growing
@@ -108,6 +108,7 @@ public class Guppy extends Fish {
   public int getId() {
     return id;
   }
+
 
   public int getMaxProduceTime() {
     return produceTimer;

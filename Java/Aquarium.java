@@ -1,3 +1,5 @@
+//CARA COMPILE
+//javac Aquarium.java Fish.java Guppy.java Piranha.java ObjekMati.java Koin.java MakananIkan.java Pet.java Point.java
 import java.lang.Math;
 import java.util.Random;
 public class Aquarium {
