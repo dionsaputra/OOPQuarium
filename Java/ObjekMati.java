@@ -1,10 +1,10 @@
-public class ObjekMati {
+public class ObjekMati implements Comparable{
 
-  private static int counter = 0;
-  private final int id;
-  private int kecepatan;
-  private Point posisi;
-  private String jenis;
+  protected static int counter = 0;
+  protected final int id;
+  protected int kecepatan;
+  protected Point posisi;
+  protected String jenis;
 
   public ObjekMati(int kecepatan) {
     this.id = counter++;
@@ -52,8 +52,18 @@ public class ObjekMati {
       this.setPosisi(point);
     } else {
       if (this.getJenis() == "Makanan Ikan") {
-        aquarium.RemoveObject(this);
+        aquarium.removeObject(this);
       }
+    }
+  }
+
+  public int compareTo(Object objekMati){
+    ObjekMati objek = (ObjekMati) objekMati;
+    if(objek.getId() == id){
+      return 0;
+    }
+    else{
+      return 1;
     }
   }
 }

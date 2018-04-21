@@ -1,5 +1,5 @@
 import java.lang.Math;
-
+import java.util.Random;
 public class Aquarium {
 
   private LinkedList<ObjekMati> listObjekMati;
@@ -100,9 +100,10 @@ public class Aquarium {
   public void action() {
     Random rand = new Random();
     for (int i = 0; i < listIkan.totalElmt(); i++) {
-      Fish temp = listIkan.get(i);
+      Fish tempoint = listIkan.get(i);
+
       if (tempoint.getStarving() <= 0) {
-        RemoveObject(listIkan.get(i));
+        removeObject(listIkan.get(i));
       } else {
         int count = 0; 
         int countguppy = 0;
@@ -127,9 +128,9 @@ public class Aquarium {
                 randoms *= -1;
               }
               tempoint.setDegree((tempoint.getDegree() + randoms) % 360);
-              tempoint.setMoveTime(tempoint.getMAXMOVE());
+              tempoint.setMoveTime(tempoint.getMaxMove());
             }
-            tempoint.swim(tempoint.setDegree(), tempoint.getSpeed());
+            tempoint.swim(tempoint.getDegree(), tempoint.getSpeed());
             tempoint.setStarving(tempoint.getStarving() - 1);
           } else {
             tempoint.eat(this);
@@ -146,7 +147,7 @@ public class Aquarium {
                 randoms *= -1;
               }
               tempoint.setDegree((tempoint.getDegree() + randoms) % 360);
-              tempoint.setMoveTime(tempoint.getMAXMOVE());
+              tempoint.setMoveTime(tempoint.getMaxMove());
             }
             tempoint.swim(tempoint.getDegree(), tempoint.getSpeed());
             tempoint.setStarving(tempoint.getStarving() - 1);
