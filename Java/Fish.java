@@ -1,4 +1,4 @@
-public class Fish{
+public abstract class Fish {
 
   private final double pi = 3.14159265;
   private final int maxStarving;
@@ -10,7 +10,6 @@ public class Fish{
   private int starvationPeriod;
   private int speed;
   private int starving;
-  private int moveTimer;
   private int harga;
   private int degree;
   private Point posisi;

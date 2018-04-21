@@ -11,6 +11,7 @@ public class Piranha {
     jenis = "Piranha";
     latestFood = 0;
     radius = 20;
+    id = counter++;
     right_direct = false;
     setMoveTime(MAX_MOVE_TIME);
     setStarving(MAX_STARVING);
