@@ -1,29 +1,29 @@
-public class Guppy {
+public class Guppy extends Fish {
 
   private int growthStep;
   private int foodCapacity;
   private int produceTime;
-  private int growthTImer;
+  private int growthTimer;
   private int produceTimer;
 
   public Guppy() {
-    MAX_STARVING = 500;
-    MAX_STARVATION_PERIOD = 200;
-    MAX_MOVE_TIME = 50;
-    growthTImer = 6;
+    maxStarving = 500;
+    maxStarvationPeriod = 200;
+    maxMoveTime = 50;
+    growthTimer = 6;
     produceTimer = 100;
     id = counter++;
     speed = 1;
     harga = 50;
     growthStep = 1;
     foodCapacity = 0;
-    right_direct = false;
-    degrees = 90;
+    rightDirect = false;
+    degree = 90;
     radius = 20;
     jenis = "Guppy";
-    setStarvationPeriod(MAX_STARVATION_PERIOD);
-    setStarving(MAX_STARVING);
-    setMoveTime(MAX_MOVE_TIME);
+    setStarvationPeriod(maxStarvationPeriod);
+    setStarving(maxStarving);
+    setMoveTime(maxMoveTime);
     setProduceTime(getMaxProduceTime());
   }
 
@@ -35,10 +35,10 @@ public class Guppy {
     int idx;
     Point idxGuppy = getPosisi();
     Point pointKejar;
-    while (i < aq.getListObjekMati().totalElmt()) {
-      if (aq.getListObjekMati().get(i).getJenis() == "Makanan Ikan") {
+    while (i < aquarium.getListObjekMati().totalElmt()) {
+      if (aquarium.getListObjekMati().get(i).getJenis() == "Makanan Ikan") {
         existFood = true;
-        Point pointMakanan = aq.getListObjekMati().get(i).getPosisi();
+        Point pointMakanan = aquarium.getListObjekMati().get(i).getPosisi();
         double jarak = idxGuppy.hitungJarak(pointMakanan);
         if (jarak < radMin) {
           radMin = jarak;
@@ -64,7 +64,7 @@ public class Guppy {
 
       foodCapacity = foodCapacity + 1;
       //If its a time to growth
-      if (foodCapacity >= growthTImer) { //next growth
+      if (foodCapacity >= growthTimer) { //next growth
         foodCapacity = 0;
         if (growthStep < 3) {
           growthStep++;
@@ -73,10 +73,10 @@ public class Guppy {
       }
       //Update hungry time
       //real_eat
-      setStarvationPeriod(MAX_STARVATION_PERIOD);
-      setStarving(MAX_STARVING);
+      setStarvationPeriod(maxStarvationPeriod);
+      setStarving(maxStarving);
       //ilangin makanan ikan
-      aq.RemoveObject(aq.getListObjekMati().get(idx));
+      aquarium.RemoveObject(aquarium.getListObjekMati().get(idx));
     } else {
       setStarving(getStarving() - 1);
     }
@@ -84,7 +84,7 @@ public class Guppy {
 
   public void produce(Aquarium aquarium) {
     Koin koin = new Koin(50 * growthStep, getPosisi());
-    aq.AddObject(koin);
+    aquarium.AddObject(koin);
   }
 
   //Growing
@@ -109,7 +109,7 @@ public class Guppy {
     return id;
   }
 
-  public getMaxProduceTime() {
+  public int getMaxProduceTime() {
     return produceTimer;
   }
 

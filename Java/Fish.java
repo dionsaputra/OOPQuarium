@@ -3,21 +3,21 @@ import java.lang.Math;
 public abstract class Fish implements Comparable {
 
   private final double pi = 3.14159265;
-  private int maxStarving;
-  private int maxStarvationPeriod;
-  private int maxMoveTime;
-  private static int counter = 0;
-  private int id;
-  private boolean rightDirect;
-  private int starvationPeriod;
-  private int speed;
-  private int starving;
-  private int harga;
-  private int degree;
-  private int radius;
-  private int moveTimer;
-  private Point posisi;
-  private String jenis;
+  protected int maxStarving;
+  protected int maxStarvationPeriod;
+  protected int maxMoveTime;
+  protected static int counter = 0;
+  protected int id;
+  protected boolean rightDirect;
+  protected int starvationPeriod;
+  protected int speed;
+  protected int starving;
+  protected int harga;
+  protected int degree;
+  protected int radius;
+  protected int moveTimer;
+  protected Point posisi;
+  protected String jenis;
 
   public abstract void eat(Aquarium aquarium);
 
