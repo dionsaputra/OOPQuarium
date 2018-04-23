@@ -12,11 +12,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 //import java.util.*;
 public class MachineDriverAquarium extends JFrame implements ImportanceConstantFileAndSize,
     PriceList {
-
   private JPanel contentPane;
   private JLabel headerLabel = new JLabel();
   private ImageIcon backgroundImage;
@@ -41,6 +39,12 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   private ImageIcon foodFish;
   private ImageIcon[] eggImage = new ImageIcon[3];
   private Scanner sc = new Scanner(System.in);
+
+  private String jenisGuppy = "Guppy";
+  private String jenisFood = "Makanan Ikan";
+  private String jenisKoin= "Koin";
+  private String jenisPiranha = "Piranha";
+  
   private boolean win;
   private HashMap<Integer, Component> fish = new HashMap<Integer, Component>();
   private HashMap<Integer, Component> deadMatter = new HashMap<Integer, Component>();
@@ -50,7 +54,8 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   private boolean gameStart;
   private int egg;
   private int money;
-
+  private Aquarium aquarium ;
+  private LinkedList<ObjekMati> listObjekMatiCheck = new LinkedList<ObjekMati> ();
   /**
    * change the value of gameStart with p.
    * @param p boolean
@@ -245,6 +250,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     money = 1000;
     egg = 1;
     initMediaAll();
+    aquarium =  new Aquarium(backgroundImage.getIconHeight(),backgroundImage.getIconWidth());
   }
 
 
@@ -264,7 +270,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     JLabel buttonFishFood = new JLabel();
     buttonFishFood.setIcon(foodFish);
 
-    buttonEgg.setIcon(eggImage[egg - 1]);
+    buttonEgg.setIcon(eggImage[egg-1]);
     buttonPiranha.addMouseListener(new MouseButtonPiranha(this));
     buttonGuppy.addMouseListener(new MouseButtonGuppy(this));
     buttonEgg.addMouseListener(new MouseButtonEgg(this));
@@ -348,7 +354,6 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
         buttonStart.getPreferredSize().height);
 
     panel.add(buttonStart);
-    System.out.println("kurenai");
 
     panel.repaint();
     while (!gameStart) {
@@ -368,8 +373,16 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
    * @param x
    * @param y
    */
-  public void addFood(int x, int y) {
-
+  public void addFood(int x, int y,JPanel jp) {
+    MakananIkan temp =  new MakananIkan();
+    Point p = new Point(x, y);
+    temp.setPosisi(p);
+    aquarium.addObject(temp);
+    DrawFishFood tempG = new DrawFishFood(jp,aquarium.getListObjekMati(), temp);
+    tempG.setIcon(foodFish);
+    tempG.setBounds(x, y, tempG.getPreferredSize().width,
+    tempG.getPreferredSize().height);
+    jp.add(tempG);
   }
 
   /**
@@ -377,8 +390,18 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
    * @param x
    * @param y
    */
-  public void addGuppy(int x, int y) {
-
+  public void addGuppy(int x, int y,JPanel jp) {
+    Fish temp =  new Guppy();
+    Point p = new Point(x, y);
+    temp.setPosisi(p);
+    
+    aquarium.addObject(temp);
+    
+    DrawFish tempG = new DrawFish(jp,aquarium.getListIkan(), temp,guppyLeft,guppyRight,hungryGuppyLeft,hungryGuppyRight);
+    tempG.setIcon(guppyLeft[0]);
+    tempG.setBounds(x, y, tempG.getPreferredSize().width,
+    tempG.getPreferredSize().height);
+    jp.add(tempG);
   }
 
   /**
@@ -386,10 +409,59 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
    * @param x
    * @param y
    */
-  public void addPiranha(int x, int y) {
-
+  public void addPiranha(int x, int y,JPanel jp) {
+    Piranha temp =  new Piranha();
+    Point p = new Point(x, y);
+    temp.setPosisi(p);
+    aquarium.addObject(temp);
+    DrawPiranha tempG = new DrawPiranha(jp,aquarium.getListIkan(), temp, piranhaLeft,piranhaRight,hungryPiranhaLeft,hungryPiranhaRight);
+    tempG.setIcon(piranhaLeft);
+    tempG.setBounds(x, y, tempG.getPreferredSize().width,
+    tempG.getPreferredSize().height);    
+    jp.add(tempG);
   }
 
+  public void addPet(int x, int y,JPanel jp) {
+    Point p = new Point(x, y);
+    Pet temp =  new Pet(5, 20, p);
+    temp.setPosisi(p);
+    aquarium.addObject(temp);
+    DrawPet tempG = new DrawPet(jp,aquarium.getListPet(), temp,snailLeft,snailRight);
+    tempG.setIcon(piranhaLeft);
+    tempG.setBounds(x, y, tempG.getPreferredSize().width,
+    tempG.getPreferredSize().height); 
+    jp.add(tempG);
+  }
+
+
+
+  public void checkingCoin(JPanel jp){
+    LinkedList<ObjekMati> listNowCoin = aquarium.getListObjekMati();
+    //Check Coin baru
+    for(int i =0;i<listNowCoin.totalElmt();i++ ){
+      ObjekMati tempObj = listNowCoin.get(i);
+      if(tempObj.getJenis().equals(jenisKoin)){
+        int hasilP = listObjekMatiCheck.find(tempObj);
+        if(hasilP==-1){
+          //Not found
+          DrawCoin tempG = new DrawCoin(jp,aquarium.getListObjekMati(), tempObj,goldCoin,silverCoin);
+          tempG.setIcon(goldCoin);
+          tempG.setBounds(tempObj.getPosisi().getAbsis(), tempObj.getPosisi().getOrdinat(),
+            tempG.getPreferredSize().width,tempG.getPreferredSize().height);
+          tempG.addMouseListener(new MouseButtonCoin(this, tempG));
+          jp.add(tempG);
+          listObjekMatiCheck.add(tempObj);
+        }
+      }
+    }
+    //Hapus koin lama yang sudah tidak ada
+    for(int i=0;i<listObjekMatiCheck.totalElmt();i++ ){
+      ObjekMati temp = listObjekMatiCheck.get(i);
+      if(listNowCoin.find(temp)==-1){
+        listObjekMatiCheck.remove(temp);
+      }
+    } 
+  }
 
   public void addEgg() {
     egg++;
@@ -413,6 +485,9 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
       //Initialize Jframe get panel
       initWindowSetting();
       JPanel panel = (JPanel) this.getContentPane();
+      //JPanel panel = new JPanel();
+      //this.add(panel);
+      panel.setLayout(null);
       panel.setLayout(null);
       this.setVisible(true);
 
@@ -425,24 +500,35 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
       imageBg.addMouseListener(new MouseButtonBackground(this));
       initButtonLabel(panel);
 
+      // EntitasGambar contoh = new EntitasGambar();
+
+      // contoh.setIcon(piranhaLeft);
+      // contoh.setBounds(backgroundImage.getIconWidth()/2, backgroundImage.getIconHeight()/2, contoh.getPreferredSize().width,
+      // contoh.getPreferredSize().height);
+
+      // panel.add(contoh);
+      this.addGuppy(backgroundImage.getIconWidth()/2, backgroundImage.getIconHeight()/2, panel);
+      this.addPiranha(backgroundImage.getIconWidth()/2, backgroundImage.getIconHeight()/2, panel);
+      this.addPet(300,600,panel);
       panel.repaint();
-      panel.setComponentZOrder(imageBg, panel.getComponentCount() - 1);
+      //panel.setComponentZOrder(imageBg, panel.getComponentCount() - 1);
       while (true) {
         if (gameStart) {
-          panel.setComponentZOrder(imageBg, panel.getComponentCount() - 1);
-          Thread.sleep(20);
+          //checkingCoin(panel);
+          Thread.sleep(40);
           panel.repaint();
-          buttonEgg.setIcon(eggImage[egg - 1]);
+          panel.setComponentZOrder(imageBg, panel.getComponentCount() - 1);
+          panel.repaint();
+          
           labelMoney.setText("Your money : " + Integer.toString(money));
-          // System.out.println("masukan kondisi : ");
-          // String masukan = sc.next();
-          // if(masukan.equals("win")){
-          //     gameStart=false;
-          //     win=true;
-          // } else{
-          //     gameStart=false;
-          //     win=false;
-          // }
+          aquarium.action();
+          checkingCoin(panel);
+          if(egg==4){
+            gameStart=false;
+            win=true;
+          } else{
+            buttonEgg.setIcon(eggImage[egg - 1]);
+          }
         } else {
           break;
         }
@@ -494,6 +580,31 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     }
   }
 
+  public int getWidthBackground(){
+    return backgroundImage.getIconWidth();
+  }
+
+  public int getHeightBackground(){
+    return backgroundImage.getIconHeight();
+  }
+  
+
+
+  public int getMoney(){
+    return money;
+  }
+
+
+  public Aquarium getAquarium(){
+    return aquarium;
+  }
+
+  public void addMoney(int amount){
+    money+=amount;
+    if(money<0){
+      money=0;
+    }
+  }
   public static void main(String[] args) {
     MachineDriverAquarium temp = new MachineDriverAquarium();
     temp.execute();

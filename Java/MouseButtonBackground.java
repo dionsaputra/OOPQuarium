@@ -2,8 +2,8 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-public class MouseButtonBackground implements MouseListener {
+import java.util.Random;
+public class MouseButtonBackground implements MouseListener,PriceList {
 
   private MachineDriverAquarium aq;
 
@@ -13,6 +13,13 @@ public class MouseButtonBackground implements MouseListener {
 
   public void mouseClicked(MouseEvent e) {
     System.out.println("Mouse Background Clicked: (" + e.getX() + ", " + e.getY() + ")");
+    if(aq.getMoney()>=foodPrice){
+      Random r = new Random(System.currentTimeMillis());
+      int randomX = r.nextInt(800)+66;
+      aq.addFood(aq.getLeftTopFoodX(e.getX()) ,aq.getLeftTopFoodY(e.getY()) ,(JPanel) aq.getContentPane());
+      aq.addMoney(-foodPrice);
+    }
+    
   }
 
   public void mousePressed(MouseEvent e) {

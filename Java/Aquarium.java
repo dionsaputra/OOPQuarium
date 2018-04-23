@@ -4,9 +4,9 @@ import java.lang.Math;
 import java.util.Random;
 public class Aquarium {
 
-  private LinkedList<ObjekMati> listObjekMati;
-  private LinkedList<Fish> listIkan;
-  private LinkedList<Pet> listPet;
+  private LinkedList<ObjekMati> listObjekMati = new LinkedList<ObjekMati> ();
+  private LinkedList<Fish> listIkan = new LinkedList<Fish>();
+  private LinkedList<Pet> listPet = new LinkedList<Pet>();
   private int time;
   private final int length; //ATAS - BAWAH
   private final int width; //KIRI-KANAN
@@ -53,6 +53,8 @@ public class Aquarium {
    */
 
   public void addObject(Fish fish) {
+    System.out.println(fish.getPosisi().getAbsis());
+    System.out.println("hehe");
     listIkan.add(fish);
   }
   /**

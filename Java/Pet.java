@@ -1,7 +1,7 @@
 public class Pet implements Comparable{
 
   private static int counter = 0;
-  private boolean face;
+  private boolean faceRight;
   private int id;
   private int kecepatan;
   private int radius;
@@ -9,7 +9,7 @@ public class Pet implements Comparable{
   private Point posisi;
 
   public Pet(int kecepatan, int radius, Point posisi) {
-    this.face = true;
+    this.faceRight = true;
     this.id = counter++;
     this.kecepatan = kecepatan;
     this.radius = radius;
@@ -21,12 +21,12 @@ public class Pet implements Comparable{
     return id;
   }
 
-  public boolean getFace() {
-    return face;
+  public boolean getFaceRight() {
+    return faceRight;
   }
 
-  public void setFace(boolean face) {
-    this.face = face;
+  public void setFaceRight(boolean faceRight) {
+    this.faceRight = faceRight;
   }
 
   public int getRadius() {
@@ -57,12 +57,12 @@ public class Pet implements Comparable{
     int dx = kecepatan;
 
     if (goal.getAbsis() < posisi.getAbsis()) {
-      face = false;
+      faceRight = false;
       dx = -1 * dx;
     } else if (goal.getAbsis() == posisi.getAbsis()) {
       dx = 0;
     } else {
-      face = true;
+      faceRight = true;
     }
 
     Point point = this.getPosisi();
