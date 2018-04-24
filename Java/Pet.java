@@ -98,12 +98,14 @@ public class Pet implements Comparable{
     double dist = 1000000;
     int idx = 0;
     for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++){
+      boolean isKoin = aq.getListObjekMati().get(i).getJenis().equals("Koin");
       int ordinatObjMati = aq.getListObjekMati().get(idx).getPosisi().getOrdinat();
       int absisObjMati = aq.getListObjekMati().get(idx).getPosisi().getAbsis();
-      if (ordinatObjMati == this.getPosisi().getOrdinat()){
+      if (ordinatObjMati == this.getPosisi().getOrdinat() && isKoin){
         if (Math.abs(absisObjMati - this.getPosisi().getAbsis()) < dist){
           dist = Math.abs(absisObjMati - this.getPosisi().getAbsis());
           idx = i;
+          break;
         }
       }
     }
@@ -114,10 +116,12 @@ public class Pet implements Comparable{
     double dist = 1000000;
     int idx = 0;
     for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++){
+      boolean isKoin = aq.getListObjekMati().get(i).getJenis().equals("Koin");
       int ordinatObjMati = aq.getListObjekMati().get(idx).getPosisi().getOrdinat();
-      if (Math.abs(ordinatObjMati = this.getPosisi().getOrdinat()) < dist){
+      if (Math.abs(ordinatObjMati = this.getPosisi().getOrdinat()) < dist && isKoin){
         dist = Math.abs(ordinatObjMati = this.getPosisi().getOrdinat());
         idx = i;
+        break;
       }
     }
     return idx;
@@ -142,6 +146,7 @@ public class Pet implements Comparable{
   public void life(Aquarium aq){
     if (existCoin(aq)){
       if (existCoinOnGround(aq)){
+        System.out.println(" HERE \n");
         int idx = nearestHorizontalFood(aq);
         if (isInRadius(aq,idx)){
           eat(aq,idx);

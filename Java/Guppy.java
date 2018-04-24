@@ -39,7 +39,7 @@ public class Guppy extends Fish {
     }
   }
 
-  public void biteFood(Aquarium aquarium){
+  public void biteFood(Aquarium aquarium,int idx){
     foodCapacity = foodCapacity + 1;
     if (foodCapacity >= growthTimer) { //next growth
       foodCapacity = 0;
@@ -81,7 +81,7 @@ public class Guppy extends Fish {
     }
 
     if (eatFood) {
-      biteFood(aquarium);
+      biteFood(aquarium,idx);
     } else {
       setStarving(getStarving() - 1);
     }
