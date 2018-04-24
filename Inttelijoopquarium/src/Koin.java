@@ -4,7 +4,7 @@ public class Koin extends ObjekMati {
   private int nilaiKoin;
 
   public Koin(int nilaiKoin, Point posisi) {
-    super(1); //nilai kecepatan koin
+    super(1);
     this.nilaiKoin = nilaiKoin;
     this.jenis = "Koin";
     this.posisi = posisi;

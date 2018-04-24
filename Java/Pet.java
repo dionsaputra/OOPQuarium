@@ -98,9 +98,55 @@ public class Pet implements Comparable{
   public void eat(Aquarium aquarium) {
     if (existCoin(aquarium)){
       if (existCoinOnGround(aquarium)){
+      if (existCoinOnGround) {
+        double nearestHorizontally = aquarium.getWidth() + 1000000;
+        int idx;
+        for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
+          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis().equals("Koin");
+          boolean isDasar = aquarium.getListObjekMati().get(idx).isDasar(aquarium);
+          boolean isLower = getPosisi().hitungJarak(aquarium.getListObjekMati().get(idx).getPosisi())
+              < nearestHorizontally;
+          if (isKoin && isDasar && isLower) {
+            nearestHorizontally = getPosisi()
+                .hitungJarak(aquarium.getListObjekMati().get(idx).getPosisi());
+            break;
+          }
+        }
 
+        if (radius >= nearestHorizontally) {
+          Koin koin = (Koin) aquarium.getListObjekMati().get(idx);
+          setTotalMoney(getTotalMoney() + koin.getNilaiKoin());
+          aquarium.removeObject(aquarium.getListObjekMati().get(idx));
+        } else {
+          Point goal = new Point(aquarium.getListObjekMati().get(idx).getPosisi().getAbsis(),
+              aquarium.getLength());
+          walkTo(goal);
+        }
       } else {
+        double nearestVertically = aquarium.getLength() + 1000000;
+        int idx;
 
+        for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
+          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis().equals("Koin");
+          boolean isLower =
+              aquarium.getLength() - aquarium.getListObjekMati().get(idx).getPosisi().getOrdinat()
+                  < nearestVertically;
+          if (isKoin && isLower) {
+            nearestVertically =
+                aquarium.getLength() - aquarium.getListObjekMati().get(idx).getPosisi().getOrdinat();
+            break;
+          }
+        }
+
+        if (radius >= nearestVertically) {
+          Koin koin = (Koin) aquarium.getListObjekMati().get(idx);
+          setTotalMoney(getTotalMoney() + koin.getNilaiKoin());
+          aquarium.removeObject(aquarium.getListObjekMati().get(idx));
+        } else {
+          Point goal = new Point(aquarium.getListObjekMati().get(idx).getPosisi().getAbsis(),
+              aquarium.getLength());
+          walkTo(goal);
+        }
       }
     }
   }

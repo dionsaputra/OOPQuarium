@@ -103,6 +103,9 @@ public class Aquarium {
 
   public void action() {
     Random rand = new Random();
+    int randomNumber = Math.abs(rand.nextInt()%360);
+    // System.out.println(" Random ==>>>>>> " + randomNumber + "\n");
+    // System.out.println(" Random ==>>>>>>2 " + randomNumber + "\n");
     for (int i = 0; i < listIkan.totalElmt(); i++) {
       Fish tempoint = listIkan.get(i);
 
@@ -112,26 +115,26 @@ public class Aquarium {
         int count = 0; 
         int countguppy = 0;
         for (int j = 0; j < listObjekMati.totalElmt(); j++) {
-          if (listObjekMati.get(j).getJenis() == "Makanan Ikan") {
+          if (listObjekMati.get(j).getJenis().equals("Makanan Ikan")) {
             count++;
           }
         }
         for (int j = 0; j < listIkan.totalElmt(); j++) {
-          if (listIkan.get(j).getJenis() == "Guppy") {
+          if (listIkan.get(j).getJenis().equals("Guppy")) {
             countguppy++;
           }
         }
-        if (tempoint.getJenis() == "Guppy") {
+        if (tempoint.getJenis().equals("Guppy")) {
           if (tempoint.getStarvationPeriod() > 0 || count == 0) {
             tempoint.setStarvationPeriod(tempoint.getStarvationPeriod() - 1);
             if (tempoint.getMoveTime() <= 0) {
               //srand(time(NULL));
-              int randoms = (rand.nextInt(40) % 40);
-              int directions = (rand.nextInt(4) % 2);
+              int randoms = (randomNumber % 40);
+              int directions = (randomNumber % 2);
               if (directions >= 1) {
                 randoms *= -1;
               }
-              tempoint.setDegree((tempoint.getDegree() + randoms) % 360);
+              tempoint.setDegree((tempoint.getDegree() + randoms*randomNumber) % 360);
               tempoint.setMoveTime(tempoint.getMaxMove());
             }
             tempoint.swim(tempoint.getDegree(), tempoint.getSpeed());
@@ -144,9 +147,9 @@ public class Aquarium {
             tempoint.setStarvationPeriod(tempoint.getStarvationPeriod() - 1);
             if (tempoint.getMoveTime() <= 0) {
               //srand(time(NULL));
-              int randoms = (rand.nextInt(360) % 360);
+              int randoms = (randomNumber % 360);
 
-              int directions = (rand.nextInt(4) % 2);
+              int directions = (randomNumber % 2);
               if (directions != 0) {
                 randoms *= -1;
               }
