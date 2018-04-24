@@ -30,16 +30,36 @@ public class Guppy extends Fish {
     setProduceTime(getMaxProduceTime());
   }
 
+  public void chaseFood(boolean eatFood,double radMin,Point pointKejar){
+    if (radMin <= getRadius()) {
+      eatFood = true;
+    } else {
+      swimto(pointKejar, getSpeed());
+      setStarving(getStarving() - 1);
+    }
+  }
+
+  public void biteFood(Aquarium aquarium){
+    foodCapacity = foodCapacity + 1;
+    if (foodCapacity >= growthTimer) { //next growth
+      foodCapacity = 0;
+      if (growthStep < 3) {
+        growthStep++;
+        this.harga += harga;
+      }
+    }
+    setStarvationPeriod(maxStarvationPeriod);
+    setStarving(maxStarving);
+    aquarium.removeObject(aquarium.getListObjekMati().get(idx));
+}
   /**
    * Makan.
    * @param aquarium Aquarium ikan
    */
   public void eat(Aquarium aquarium) {
-    boolean existFood = false;
-    boolean eatFood = false;
+    boolean existFood = false, eatFood = false;
     double radMin = 1e7; //untuk nyimpen jarak terdekat
-    int i = 0;
-    int idx = 0;
+    int i = 0, idx = 0;
     Point idxGuppy = getPosisi();
     Point pointKejar = new Point();
     while (i < aquarium.getListObjekMati().totalElmt()) {
@@ -55,35 +75,13 @@ public class Guppy extends Fish {
       }
       i++;
     }
-    // Cek mau dimakan atau dikejar
+
     if (existFood) {
-      if (radMin <= getRadius()) {
-        eatFood = true;
-      } else {
-        swimto(pointKejar, getSpeed());
-        setStarving(getStarving() - 1);
-      }
+      chaseFood(eatFood,radMin,pointKejar);
     }
 
-    // Makan makanan
     if (eatFood) {
-      //printf("makan\n");
-
-      foodCapacity = foodCapacity + 1;
-      //If its a time to growth
-      if (foodCapacity >= growthTimer) { //next growth
-        foodCapacity = 0;
-        if (growthStep < 3) {
-          growthStep++;
-          this.harga += harga;
-        }
-      }
-      //Update hungry time
-      //real_eat
-      setStarvationPeriod(maxStarvationPeriod);
-      setStarving(maxStarving);
-      //ilangin makanan ikan
-      aquarium.removeObject(aquarium.getListObjekMati().get(idx));
+      biteFood(aquarium);
     } else {
       setStarving(getStarving() - 1);
     }

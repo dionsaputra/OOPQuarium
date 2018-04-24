@@ -57,7 +57,6 @@ public abstract class Fish implements Comparable, Entitas{
     }
     int absis = absisNew;
     int ordinat = ordinatNew;
-
     if (absis <= 30) {
       absis = 30;
     }
@@ -70,10 +69,8 @@ public abstract class Fish implements Comparable, Entitas{
     if (ordinat >= 600) {
       ordinat = 600;
     }
-
     temp.setAbsis(absis);
     temp.setOrdinat(ordinat);
-
     setPosisi(temp);
   }
 
