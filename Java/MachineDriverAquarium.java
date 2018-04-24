@@ -523,6 +523,9 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
           labelMoney.setText("Your money : " + Integer.toString(money));
           aquarium.action();
           checkingCoin(panel);
+          Pet tempPet  = aquarium.getListPet().get(0);
+          addMoney(tempPet.getTotalMoney());
+          tempPet.setTotalMoney(0);
           if(egg==4){
             gameStart=false;
             win=true;
