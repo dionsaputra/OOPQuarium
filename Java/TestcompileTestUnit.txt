@@ -1,0 +1,2 @@
+javac TestMessageUtil.java TestJunit.java TestRunner.java -cp "junit-4.10.jar"
+java -classpath .:junit-4.10.jar TestRunner

@@ -358,9 +358,9 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     panel.repaint();
     while (!gameStart) {
       if (gameStart) {
-        System.out.println("mulai");
+        //System.out.println("mulai");
       } else {
-        System.out.println("belum mulai ");
+        //System.out.println("belum mulai ");
 
       }
     }
@@ -608,10 +608,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
       money=0;
     }
   }
-  public static void main(String[] args) {
-    MachineDriverAquarium temp = new MachineDriverAquarium();
-    temp.execute();
-  }
+
 
 }
   
