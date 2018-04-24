@@ -30,7 +30,7 @@ public class Piranha extends Fish {
 
     // check food exist
     while (i < aquarium.getListIkan().totalElmt()) {
-      if (aquarium.getListIkan().get(i).getJenis() == "Guppy") {
+      if (aquarium.getListIkan().get(i).getJenis().equals("Guppy")) {
         existFood = true;
         Point pointMakanan = aquarium.getListIkan().get(i).getPosisi();
         double jarak = idxPiranha.hitungJarak(pointMakanan);

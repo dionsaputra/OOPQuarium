@@ -43,7 +43,7 @@ public class Guppy extends Fish {
     Point idxGuppy = getPosisi();
     Point pointKejar = new Point();
     while (i < aquarium.getListObjekMati().totalElmt()) {
-      if (aquarium.getListObjekMati().get(i).getJenis() == "Makanan Ikan") {
+      if (aquarium.getListObjekMati().get(i).getJenis().equals("Makanan Ikan")) {
         existFood = true;
         Point pointMakanan = aquarium.getListObjekMati().get(i).getPosisi();
         double jarak = idxGuppy.hitungJarak(pointMakanan);
