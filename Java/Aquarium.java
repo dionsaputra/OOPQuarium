@@ -54,7 +54,6 @@ public class Aquarium {
 
   public void addObject(Fish fish) {
     System.out.println(fish.getPosisi().getAbsis());
-    System.out.println("hehe");
     listIkan.add(fish);
   }
   /**

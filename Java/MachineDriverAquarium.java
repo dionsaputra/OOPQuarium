@@ -421,7 +421,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     jp.add(tempG);
   }
 
-  public void addPet(int x, int y,JPanel jp) {
+  public void addPet(int x, int y, JPanel jp) {
     Point p = new Point(x, y);
     Pet temp =  new Pet(5, 20, p);
     temp.setPosisi(p);
