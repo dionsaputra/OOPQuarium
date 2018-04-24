@@ -14,15 +14,15 @@ public class Guppy extends Fish {
     maxStarvationPeriod = 200;
     maxMoveTime = 70;
     growthTimer = 6;
-    produceTimer = 100;
+    produceTimer = 60;
     id = counter++;
-    speed = 2;
+    speed = 1;
     harga = 50;
     growthStep = 1;
     foodCapacity = 0;
     rightDirect = false;
     degree = 180;
-    radius = 20;
+    radius = 15;
     jenis = "Guppy";
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
