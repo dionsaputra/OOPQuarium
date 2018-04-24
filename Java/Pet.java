@@ -70,36 +70,39 @@ public class Pet implements Comparable{
     this.setPosisi(point);
   }
 
-  public void eat(Aquarium aquarium) {
+  private boolean existCoin(Aquarium aq){
     boolean existCoin = false;
-    int i = 0;
-
-    while (i < aquarium.getListObjekMati().totalElmt() && !existCoin) {
-      if (aquarium.getListObjekMati().get(i).getJenis() == "Koin") {
-        existCoin = true;
-      } else {
-        i++;
+    for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++){
+      if (aq.getListObjekMati().get(i).getJenis().equals("Koin")){
+        existCoin = true; 
+        break;
       }
     }
+    return existCoin;
+  }
 
-    if (existCoin) {
-      int j = 0;
-      boolean existCoinOnGround = false;
-      while (j < aquarium.getListObjekMati().totalElmt() && !existCoinOnGround) {
-        boolean isKoin = aquarium.getListObjekMati().get(j).getJenis() == "Koin";
-        boolean isDasar = aquarium.getListObjekMati().get(j).isDasar(aquarium);
-        if (isKoin && isDasar) {
-          existCoinOnGround = true;
-        } else {
-          j++;
-        }
+  private boolean existCoinOnGround(Aquarium aq){
+    boolean existCoinOnGround = false;
+    for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++){
+      boolean isKoin = aq.getListObjekMati().get(i).getJenis().equals("Koin");
+      boolean isDasar = aq.getListObjekMati().get(i).isDasar(aq);
+      if (isKoin && isDasar){
+        existCoinOnGround = true;
+        break;
       }
+    }
+    return existCoinOnGround;
+  }
 
+  private getIdNearest
+  public void eat(Aquarium aquarium) {
+    if (existCoin(aquarium)){
+      if (existCoinOnGround(aquarium)){
       if (existCoinOnGround) {
         double nearestHorizontally = aquarium.getWidth() + 1000000;
         int idx;
         for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
-          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis() == "Koin";
+          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis().equals("Koin");
           boolean isDasar = aquarium.getListObjekMati().get(idx).isDasar(aquarium);
           boolean isLower = getPosisi().hitungJarak(aquarium.getListObjekMati().get(idx).getPosisi())
               < nearestHorizontally;
@@ -124,7 +127,7 @@ public class Pet implements Comparable{
         int idx;
 
         for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
-          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis() == "Koin";
+          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis().equals("Koin");
           boolean isLower =
               aquarium.getLength() - aquarium.getListObjekMati().get(idx).getPosisi().getOrdinat()
                   < nearestVertically;
@@ -146,6 +149,74 @@ public class Pet implements Comparable{
         }
       }
     }
+  }
+
+    // if (existCoin) {
+    //   System.out.println("#################  EXIST COIN ##################");
+    //   int j = 0;
+    //   boolean existCoinOnGround = false;
+    //   while (j < aquarium.getListObjekMati().totalElmt() && !existCoinOnGround) {
+    //     boolean isKoin = aquarium.getListObjekMati().get(j).getJenis().equals("Koin");
+    //     boolean isDasar = aquarium.getListObjekMati().get(j).isDasar(aquarium);
+    //     if (isKoin && isDasar) {
+    //       existCoinOnGround = true;
+    //     } else {
+    //       j++;
+    //     }
+    //   }
+
+    //   if (existCoinOnGround) {
+    //     System.out.println("#################  EXIST COIN ON GROUND ##################");
+    //     double nearestHorizontally = aquarium.getWidth() + 1000000;
+    //     int idx;
+    //     for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
+    //       boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis().equals("Koin");
+    //       boolean isDasar = aquarium.getListObjekMati().get(idx).isDasar(aquarium);
+    //       boolean isLower = getPosisi().hitungJarak(aquarium.getListObjekMati().get(idx).getPosisi())
+    //           < nearestHorizontally;
+    //       if (isKoin && isDasar && isLower) {
+    //         nearestHorizontally = getPosisi()
+    //             .hitungJarak(aquarium.getListObjekMati().get(idx).getPosisi());
+    //         break;
+    //       }
+    //     }
+    //     System.out.println("############ KEJAR KOIN ###########" + idx);
+    //     if (radius >= nearestHorizontally) {
+    //       Koin koin = (Koin) aquarium.getListObjekMati().get(idx);
+    //       setTotalMoney(getTotalMoney() + koin.getNilaiKoin());
+    //       aquarium.removeObject(aquarium.getListObjekMati().get(idx));
+    //     } else {
+    //       Point goal = new Point(aquarium.getListObjekMati().get(idx).getPosisi().getAbsis(),
+    //           aquarium.getLength());
+    //       walkTo(goal);
+    //     }
+    //   } else {
+    //     double nearestVertically = aquarium.getLength() + 1000000;
+    //     int idx;
+
+    //     for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
+    //       boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis().equals("Koin");
+    //       boolean isLower =
+    //           aquarium.getLength() - aquarium.getListObjekMati().get(idx).getPosisi().getOrdinat()
+    //               < nearestVertically;
+    //       if (isKoin && isLower) {
+    //         nearestVertically =
+    //             aquarium.getLength() - aquarium.getListObjekMati().get(idx).getPosisi().getOrdinat();
+    //         break;
+    //       }
+    //     }
+
+    //     if (radius >= nearestVertically) {
+    //       Koin koin = (Koin) aquarium.getListObjekMati().get(idx);
+    //       setTotalMoney(getTotalMoney() + koin.getNilaiKoin());
+    //       aquarium.removeObject(aquarium.getListObjekMati().get(idx));
+    //     } else {
+    //       Point goal = new Point(aquarium.getListObjekMati().get(idx).getPosisi().getAbsis(),
+    //           aquarium.getLength());
+    //       walkTo(goal);
+    //     }
+    //   }
+    // }
   }
 
   public int compareTo(Object pet) {
