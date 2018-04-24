@@ -11,10 +11,15 @@ class GuppyTest {
 
   @Test
   void produce() {
+
   }
 
   @Test
   void nextGrowth() {
+    Guppy g = new Guppy();
+    int prev = g.getGrowthStep();
+    g.nextGrowth();
+    assertTrue(prev < g.getGrowthStep());
   }
 
   @Test

@@ -7,7 +7,7 @@ public class Piranha extends Fish {
     maxStarvationPeriod = 200;
     maxMoveTime = 70;
 
-    degree = 30;
+    degree = 0;
     jenis = "Piranha";
     latestFood = 0;
     radius = 20;
@@ -16,7 +16,7 @@ public class Piranha extends Fish {
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
     setMoveTime(maxMoveTime);
-    speed = 2;
+    speed = 3;
   }
 
   public void eat(Aquarium aquarium) {
@@ -30,7 +30,7 @@ public class Piranha extends Fish {
 
     // check food exist
     while (i < aquarium.getListIkan().totalElmt()) {
-      if (aquarium.getListIkan().get(i).getJenis() == "Guppy") {
+      if (aquarium.getListIkan().get(i).getJenis().equals("Guppy")) {
         existFood = true;
         Point pointMakanan = aquarium.getListIkan().get(i).getPosisi();
         double jarak = idxPiranha.hitungJarak(pointMakanan);
@@ -87,6 +87,10 @@ public class Piranha extends Fish {
 
   public int getLast() {
     return latestFood;
+  }
+
+  public int getId() {
+    return id;
   }
 
   public void setLast(int latestFood) {

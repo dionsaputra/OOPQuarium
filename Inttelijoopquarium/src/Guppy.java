@@ -6,19 +6,22 @@ public class Guppy extends Fish {
   private int growthTimer;
   private int produceTimer;
 
+  /**
+   * Konstruktor default guppy.
+   */
   public Guppy() {
     maxStarving = 500;
     maxStarvationPeriod = 200;
-    maxMoveTime = 50;
+    maxMoveTime = 70;
     growthTimer = 6;
     produceTimer = 100;
     id = counter++;
-    speed = 1;
+    speed = 2;
     harga = 50;
     growthStep = 1;
     foodCapacity = 0;
     rightDirect = false;
-    degree = 90;
+    degree = 180;
     radius = 20;
     jenis = "Guppy";
     setStarvationPeriod(maxStarvationPeriod);
@@ -27,6 +30,10 @@ public class Guppy extends Fish {
     setProduceTime(getMaxProduceTime());
   }
 
+  /**
+   * Makan.
+   * @param aquarium Aquarium ikan
+   */
   public void eat(Aquarium aquarium) {
     boolean existFood = false;
     boolean eatFood = false;
@@ -36,7 +43,7 @@ public class Guppy extends Fish {
     Point idxGuppy = getPosisi();
     Point pointKejar = new Point();
     while (i < aquarium.getListObjekMati().totalElmt()) {
-      if (aquarium.getListObjekMati().get(i).getJenis() == "Makanan Ikan") {
+      if (aquarium.getListObjekMati().get(i).getJenis().equals("Makanan Ikan")) {
         existFood = true;
         Point pointMakanan = aquarium.getListObjekMati().get(i).getPosisi();
         double jarak = idxGuppy.hitungJarak(pointMakanan);
@@ -68,7 +75,7 @@ public class Guppy extends Fish {
         foodCapacity = 0;
         if (growthStep < 3) {
           growthStep++;
-          harga += harga;
+          this.harga += harga;
         }
       }
       //Update hungry time
@@ -83,7 +90,8 @@ public class Guppy extends Fish {
   }
 
   public void produce(Aquarium aquarium) {
-    Koin koin = new Koin(50 * growthStep, getPosisi());
+    Point posisiKoin = new Point(getPosisi().getAbsis(), getPosisi().getOrdinat());
+    Koin koin = new Koin(50 * growthStep, posisiKoin);
     aquarium.addObject(koin);
   }
 
