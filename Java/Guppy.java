@@ -90,7 +90,8 @@ public class Guppy extends Fish {
   }
 
   public void produce(Aquarium aquarium) {
-    Koin koin = new Koin(50 * growthStep, getPosisi());
+    Point posisiKoin = new Point(getPosisi().getAbsis(), getPosisi().getOrdinat());
+    Koin koin = new Koin(50 * growthStep, posisiKoin);
     aquarium.addObject(koin);
   }
 
