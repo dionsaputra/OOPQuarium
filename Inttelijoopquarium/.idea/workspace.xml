@@ -19,42 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinkedListDriver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LinkedListDriver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Point.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-389">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LinkedList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-525">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LinkedListTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LinkedListTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,11 +46,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KoinTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KoinTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KoinTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="70">
               <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MakananIkan.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MakananIkan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="17" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MakananIkanTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MakananIkanTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-99">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PetTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PetTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Point.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -112,15 +121,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MachineDriverAquarium.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MachineDriverAquarium.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1674">
-              <caret line="364" column="7" lean-forward="true" selection-start-line="364" selection-start-column="7" selection-end-line="364" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -133,6 +133,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>belum m</find>
+      <find>walkto</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -143,12 +144,13 @@
         <option value="$PROJECT_DIR$/src/MachineDriverAquarium.java" />
         <option value="$PROJECT_DIR$/src/LinkedListTest.java" />
         <option value="$PROJECT_DIR$/src/KoinTest.java" />
+        <option value="$PROJECT_DIR$/src/MakananIkanTest.java" />
+        <option value="$PROJECT_DIR$/src/PetTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="793" />
-    <option name="y" value="182" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="518" />
     <option name="width" value="640" />
     <option name="height" value="690" />
   </component>
@@ -206,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.KoinTest">
+  <component name="RunManager" selected="JUnit.PetTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Inttelijoopquarium" />
@@ -248,6 +250,40 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="MakananIkanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Inttelijoopquarium" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MakananIkanTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="PetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Inttelijoopquarium" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PetTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -267,9 +303,13 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.LinkedListTest" />
       <item itemvalue="JUnit.KoinTest" />
+      <item itemvalue="JUnit.MakananIkanTest" />
+      <item itemvalue="JUnit.PetTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PetTest" />
+        <item itemvalue="JUnit.MakananIkanTest" />
         <item itemvalue="JUnit.KoinTest" />
         <item itemvalue="JUnit.LinkedListTest" />
         <item itemvalue="Application.Main" />
@@ -290,35 +330,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LinkedListTest - 2018.04.24 at 22h 05m 23s.xml">
-      <configuration name="LinkedListTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 11m 47s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LinkedListTest - 2018.04.24 at 22h 17m 33s.xml">
-      <configuration name="LinkedListTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 17m 24s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LinkedListTest - 2018.04.24 at 22h 18m 29s.xml">
-      <configuration name="LinkedListTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 17m 45s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LinkedListTest - 2018.04.24 at 22h 19m 04s.xml">
-      <configuration name="LinkedListTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 19m 17s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LinkedListTest - 2018.04.24 at 22h 21m 31s.xml">
-      <configuration name="LinkedListTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 20m 44s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LinkedListTest - 2018.04.24 at 22h 22m 04s.xml">
-      <configuration name="LinkedListTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 22m 13s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LinkedListTest - 2018.04.24 at 22h 26m 48s.xml">
-      <configuration name="LinkedListTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 23m 29s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LinkedListTest - 2018.04.24 at 22h 27m 10s.xml">
-      <configuration name="LinkedListTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 23m 53s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KoinTest - 2018.04.24 at 22h 32m 28s.xml">
-      <configuration name="KoinTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 24m 52s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KoinTest - 2018.04.24 at 22h 32m 30s.xml">
-      <configuration name="KoinTest" configurationId="JUnit" />
+    <history-entry file="PetTest - 2018.04.24 at 23h 31m 41s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -353,6 +393,35 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="bottom" id="CheckStyle" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.32838285" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24962178" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32838285" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -383,13 +452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1674">
           <caret line="364" column="7" lean-forward="true" selection-start-line="364" selection-start-column="7" selection-end-line="364" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-389">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -442,8 +504,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/KoinTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="70">
           <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MakananIkan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MakananIkanTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
         </state>
       </provider>
     </entry>
