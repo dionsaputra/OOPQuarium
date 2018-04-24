@@ -51,7 +51,7 @@ public class ObjekMati implements Comparable{
       point.setOrdinat(this.getPosisi().getOrdinat() + this.getKecepatan());
       this.setPosisi(point);
     } else {
-      if (this.getJenis() == "Makanan Ikan") {
+      if (this.getJenis().equals("Makanan Ikan")) {
         aquarium.removeObject(this);
       }
     }

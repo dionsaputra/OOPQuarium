@@ -105,7 +105,7 @@ public class Guppy extends Fish {
     return growthStep;
   }
 
-  public int getFoodCapaty() {
+  public int getFoodCapacity() {
     return foodCapacity;
   }
 

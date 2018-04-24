@@ -75,7 +75,7 @@ public class Pet implements Comparable{
     int i = 0;
 
     while (i < aquarium.getListObjekMati().totalElmt() && !existCoin) {
-      if (aquarium.getListObjekMati().get(i).getJenis() == "Koin") {
+      if (aquarium.getListObjekMati().get(i).getJenis().equals("Koin")) {
         existCoin = true;
       } else {
         i++;
@@ -86,7 +86,7 @@ public class Pet implements Comparable{
       int j = 0;
       boolean existCoinOnGround = false;
       while (j < aquarium.getListObjekMati().totalElmt() && !existCoinOnGround) {
-        boolean isKoin = aquarium.getListObjekMati().get(j).getJenis() == "Koin";
+        boolean isKoin = aquarium.getListObjekMati().get(j).getJenis().equals("Koin");
         boolean isDasar = aquarium.getListObjekMati().get(j).isDasar(aquarium);
         if (isKoin && isDasar) {
           existCoinOnGround = true;
@@ -99,7 +99,7 @@ public class Pet implements Comparable{
         double nearestHorizontally = aquarium.getWidth() + 1000000;
         int idx;
         for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
-          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis() == "Koin";
+          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis().equals("Koin");
           boolean isDasar = aquarium.getListObjekMati().get(idx).isDasar(aquarium);
           boolean isLower = getPosisi().hitungJarak(aquarium.getListObjekMati().get(idx).getPosisi())
               < nearestHorizontally;
@@ -124,7 +124,7 @@ public class Pet implements Comparable{
         int idx;
 
         for (idx = 0; idx < aquarium.getListObjekMati().totalElmt(); idx++) {
-          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis() == "Koin";
+          boolean isKoin = aquarium.getListObjekMati().get(idx).getJenis().equals("Koin");
           boolean isLower =
               aquarium.getLength() - aquarium.getListObjekMati().get(idx).getPosisi().getOrdinat()
                   < nearestVertically;

@@ -115,16 +115,16 @@ public class Aquarium {
         int count = 0; 
         int countguppy = 0;
         for (int j = 0; j < listObjekMati.totalElmt(); j++) {
-          if (listObjekMati.get(j).getJenis() == "Makanan Ikan") {
+          if (listObjekMati.get(j).getJenis().equals("Makanan Ikan")) {
             count++;
           }
         }
         for (int j = 0; j < listIkan.totalElmt(); j++) {
-          if (listIkan.get(j).getJenis() == "Guppy") {
+          if (listIkan.get(j).getJenis().equals("Guppy")) {
             countguppy++;
           }
         }
-        if (tempoint.getJenis() == "Guppy") {
+        if (tempoint.getJenis().equals("Guppy")) {
           if (tempoint.getStarvationPeriod() > 0 || count == 0) {
             tempoint.setStarvationPeriod(tempoint.getStarvationPeriod() - 1);
             if (tempoint.getMoveTime() <= 0) {
