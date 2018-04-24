@@ -155,7 +155,7 @@ public class Aquarium {
    */
   public void controlPet(){
     for (int i = 0; i < listPet.totalElmt(); i++) {
-      listPet.get(i).eat(this);
+      listPet.get(i).life(this);
     }
   }
 

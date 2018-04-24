@@ -96,27 +96,27 @@ public class Pet implements Comparable{
 
   private int nearestHorizontalFood(Aquarium aq){
     double dist = 1000000;
-    int idx;
-    for (int i = 0; i < aq.getListObjekMati().get(idx).totalElmt(); i++){
+    int idx = 0;
+    for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++){
       int ordinatObjMati = aq.getListObjekMati().get(idx).getPosisi().getOrdinat();
       int absisObjMati = aq.getListObjekMati().get(idx).getPosisi().getAbsis();
       if (ordinatObjMati == this.getPosisi().getOrdinat()){
-        if (abs(absisObjMati - this.getPosisi().getAbsis()) < dist){
-          dist = abs(absisObjMati - this.getPosisi().getAbsis());
+        if (Math.abs(absisObjMati - this.getPosisi().getAbsis()) < dist){
+          dist = Math.abs(absisObjMati - this.getPosisi().getAbsis());
           idx = i;
         }
       }
     }
-    return i;
+    return idx;
   }
 
   private int nearestVerticalFood(Aquarium aq){
     double dist = 1000000;
-    int idx;
-    for (int i = 0; i < aq.getListObjekMati().get(idx).totalElmt(); i++){
+    int idx = 0;
+    for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++){
       int ordinatObjMati = aq.getListObjekMati().get(idx).getPosisi().getOrdinat();
-      if (abs(ordinatObjMati = this.getPosisi().getOrdinat()) < dist){
-        dist = abs(ordinatObjMati = this.getPosisi().getOrdinat());
+      if (Math.abs(ordinatObjMati = this.getPosisi().getOrdinat()) < dist){
+        dist = Math.abs(ordinatObjMati = this.getPosisi().getOrdinat());
         idx = i;
       }
     }
@@ -124,12 +124,12 @@ public class Pet implements Comparable{
   }
 
   private boolean isInRadius(Aquarium aq, int idx){
-    Point posisiObjMati = aq.getListObjekMati(idx).getPosisi();
+    Point posisiObjMati = aq.getListObjekMati().get(idx).getPosisi();
     return this.getPosisi().hitungJarak(posisiObjMati) <= radius;
   }
 
   private boolean isInAbsis(Aquarium aq, int idx){
-    Point absisObjMati = aq.getListObjekMati(idx).getPosisi().getAbsis();
+    int absisObjMati = aq.getListObjekMati().get(idx).getPosisi().getAbsis();
     return this.getPosisi().getAbsis() == absisObjMati;
   }
 
