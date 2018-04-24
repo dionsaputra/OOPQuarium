@@ -6,19 +6,22 @@ public class Guppy extends Fish {
   private int growthTimer;
   private int produceTimer;
 
+  /**
+   * Konstruktor default guppy.
+   */
   public Guppy() {
     maxStarving = 500;
     maxStarvationPeriod = 200;
-    maxMoveTime = 50;
+    maxMoveTime = 70;
     growthTimer = 6;
     produceTimer = 100;
     id = counter++;
-    speed = 1;
+    speed = 2;
     harga = 50;
     growthStep = 1;
     foodCapacity = 0;
     rightDirect = false;
-    degree = 90;
+    degree = 180;
     radius = 20;
     jenis = "Guppy";
     setStarvationPeriod(maxStarvationPeriod);
@@ -27,6 +30,10 @@ public class Guppy extends Fish {
     setProduceTime(getMaxProduceTime());
   }
 
+  /**
+   * Makan.
+   * @param aquarium Aquarium ikan
+   */
   public void eat(Aquarium aquarium) {
     boolean existFood = false;
     boolean eatFood = false;
@@ -68,7 +75,7 @@ public class Guppy extends Fish {
         foodCapacity = 0;
         if (growthStep < 3) {
           growthStep++;
-          harga += harga;
+          this.harga += harga;
         }
       }
       //Update hungry time
