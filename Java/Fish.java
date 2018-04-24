@@ -1,6 +1,7 @@
 import java.lang.Math;
+import java.util.Random;
 
-public abstract class Fish implements Comparable {
+public abstract class Fish implements Comparable, Entitas{
 
   private final double pi = 3.14159265;
   protected int maxStarving;
@@ -76,7 +77,32 @@ public abstract class Fish implements Comparable {
     setPosisi(temp);
   }
 
-  public void change_direction() {
+  public void trySwim(){
+    Random rand = new Random();
+    int randomNumber = Math.abs(rand.nextInt()%360);
+    this.setStarvationPeriod(this.getStarvationPeriod() - 1);
+    if (this.getMoveTime() <= 0) {
+      int randoms = (randomNumber % 40);
+      int directions = (randomNumber % 2);
+      if (directions >= 1) {
+        randoms *= -1;
+      }
+      this.setDegree((this.getDegree() + randoms*randomNumber) % 360);
+      this.setMoveTime(this.getMaxMove());
+    }
+    this.swim(this.getDegree(), this.getSpeed());
+    this.setStarving(this.getStarving() - 1);
+  }
+
+  public void tryProduce(Aquarium aquarium){
+    if (this.getProduceTime() < 0) {
+      this.produce(aquarium);
+      this.setProduceTime(this.getMaxProduceTime());
+    }
+    this.setProduceTime(this.getProduceTime() - 1);
+  }
+
+  public void changeDirection() {
     rightDirect = !rightDirect;
   }
 
@@ -177,4 +203,5 @@ public abstract class Fish implements Comparable {
   public void setStarving(int starving) {
     this.starving = starving;
   }
+
 }

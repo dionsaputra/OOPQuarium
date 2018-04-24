@@ -7,16 +7,16 @@ public class Piranha extends Fish {
     maxStarvationPeriod = 200;
     maxMoveTime = 70;
 
-    degree = 0;
+    degree = 30;
     jenis = "Piranha";
     latestFood = 0;
-    radius = 20;
+    radius = 15;
     id = counter++;
     rightDirect = false;
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
     setMoveTime(maxMoveTime);
-    speed = 3;
+    speed = 2;
   }
 
   public void eat(Aquarium aquarium) {
@@ -62,14 +62,15 @@ public class Piranha extends Fish {
       Guppy temp = (Guppy) aquarium.getListIkan().get(idx);
       setLast(temp.getHarga() * (temp.getGrowthStep() + 1)); //untuk makan
       aquarium.removeObject(aquarium.getListIkan().get(idx));
-      produce(aquarium);
+      this.produce(aquarium);
     } else {
       setStarving(getStarving() - 1);
     }
   }
 
   public void produce(Aquarium aquarium) {
-    Koin koin = new Koin(getLast(), getPosisi());
+    Point posisiKoin = new Point(getPosisi().getAbsis(), getPosisi().getOrdinat());
+    Koin koin = new Koin(getLast(), posisiKoin);
     aquarium.addObject(koin);
   }
 
@@ -94,6 +95,6 @@ public class Piranha extends Fish {
   }
 
   public void setLast(int latestFood) {
-    latestFood = latestFood;
+    this.latestFood = latestFood;
   }
 }
