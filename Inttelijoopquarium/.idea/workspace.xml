@@ -85,8 +85,8 @@
       <file leaf-file-name="PetTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+            <state relative-caret-position="145">
+              <caret line="64" column="44" lean-forward="true" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -208,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PetTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Inttelijoopquarium" />
@@ -308,11 +308,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PetTest" />
         <item itemvalue="JUnit.MakananIkanTest" />
         <item itemvalue="JUnit.KoinTest" />
         <item itemvalue="JUnit.LinkedListTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -330,9 +330,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PetTest - 2018.04.24 at 23h 11m 47s.xml">
-      <configuration name="PetTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PetTest - 2018.04.24 at 23h 17m 24s.xml">
       <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
@@ -358,6 +355,9 @@
       <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PetTest - 2018.04.24 at 23h 31m 41s.xml">
+      <configuration name="PetTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PetTest - 2018.04.24 at 23h 33m 40s.xml">
       <configuration name="PetTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -539,8 +539,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+        <state relative-caret-position="145">
+          <caret line="64" column="44" lean-forward="true" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
         </state>
       </provider>
     </entry>

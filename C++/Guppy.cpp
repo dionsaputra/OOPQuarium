@@ -46,7 +46,7 @@ void Guppy :: eat(Aquarium &aq){
   		}
   		else{
   			swimto(point_kejar, getSpeed());
-			setStarving(getStarving()-1);
+				setStarving(getStarving()-1);
   		}
   	}
 

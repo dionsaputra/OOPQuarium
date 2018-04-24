@@ -29,6 +29,11 @@ public abstract class Fish implements Comparable {
 
   public abstract void setProduceTime(int produceTime);
 
+  /**
+   *
+   * @param x
+   * @param speed
+   */
   public void swimto(Point x, int speed) {
     Point temp = this.getPosisi();
     double rad = Math.atan2((double)(x.getOrdinat() - temp.getOrdinat()),
@@ -71,7 +76,6 @@ public abstract class Fish implements Comparable {
     setPosisi(temp);
   }
 
-  //Change Direction
   public void change_direction() {
     rightDirect = !rightDirect;
   }
@@ -88,7 +92,6 @@ public abstract class Fish implements Comparable {
     }
   }
 
-  //Cek lapar
   public boolean isStarving() {
     return starvationPeriod <= 0;
   }
