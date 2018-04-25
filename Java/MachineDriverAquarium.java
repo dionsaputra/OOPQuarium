@@ -528,7 +528,13 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
             win = true;
           } else {
             buttonEgg.setIcon(eggImage[egg - 1]);
+            if(aquarium.getListIkan().totalElmt()==0 && money<guppyPrice){
+              gameStart=false;
+              win=false;
+            }
           }
+
+
         } else {
           break;
         }
@@ -541,8 +547,9 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
         JLabel imageWin = new JLabel();
         imageWin.setIcon(winImage);
 
-        imageWin.setBounds(widthScreen / 2, heightScreen / 2, imageWin.getPreferredSize().width,
-                imageWin.getPreferredSize().height);
+        imageWin.setBounds(widthScreen / 2 - imageWin.getPreferredSize().width / 2,
+                heightScreen / 2 - imageWin.getPreferredSize().height / 2,
+                imageWin.getPreferredSize().width,imageWin.getPreferredSize().height);
         panel.add(imageWin);
 
         panel.setComponentZOrder(imageWin, 0);
@@ -559,8 +566,9 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
         JLabel imageLose = new JLabel();
         imageLose.setIcon(loseImage);
 
-        imageLose.setBounds(widthScreen / 2, heightScreen / 2, imageLose.getPreferredSize().width,
-                imageLose.getPreferredSize().height);
+        imageLose.setBounds(widthScreen / 2 - imageLose.getPreferredSize().width / 2,
+                heightScreen / 2 - imageLose.getPreferredSize().height / 2,
+                imageLose.getPreferredSize().width,imageLose.getPreferredSize().height);
 
         panel.add(imageLose);
         panel.setComponentZOrder(imageLose, 0);
