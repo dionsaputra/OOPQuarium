@@ -2,31 +2,50 @@ import java.util.Random;
 
 public class MakananIkan extends ObjekMati {
 
-  private final int kecepatanMakananIkan =1;
-  private final int minHargaMakananIkan =20;
-  private final int maxHargaMakananIkan =50;
+  private final int kecepatanMakananIkan = 1;
+  private final int constHarga = 10;
   private int harga;
 
+  /**
+   * konstruktor default makanan ikan.
+   */
   public MakananIkan() {
-    super(1);//kecepatanMakananIkan
-    Random random = new Random();
-    harga = random.nextInt(maxHargaMakananIkan - minHargaMakananIkan + 1) + minHargaMakananIkan;
+    super(1);
+    harga = constHarga;
     jenis = "Makanan Ikan";
   }
 
-  public MakananIkan(Point _posisi) {
+  /**
+   * konstruktor user-defined makanan ikan.
+   * @param posisi posisi makananIkan saat diciptakan
+   */
+  public MakananIkan(Point posisi) {
     super(1);//kecepatanMakananIkan
-    Random random = new Random();
-    harga = random.nextInt(maxHargaMakananIkan - minHargaMakananIkan + 1) + minHargaMakananIkan;
-    jenis = "Makanan Ikan";
-    posisi = _posisi;
+    this.harga = constHarga;
+    this.jenis = "Makanan Ikan";
+    this.posisi = posisi;
   }
 
+  /**
+   * getter atribut harga makananIkan.
+   * @return harga makananIkan int
+   */
   public int getHarga() {
-    return harga;
+    return this.harga;
   }
 
-  public void setHarga(int _harga) {
-    harga = _harga;
+  /**
+   * setter atribut harga makananIkan
+   * @param harga nilai harga baru
+   */
+  public void setHarga(int harga) {
+    this.harga = harga;
+  }
+
+  public void turun(Aquarium aq){
+    super.turun(aq);
+    if (this.isDasar(aq)){
+      aq.removeObject(this);
+    }
   }
 }

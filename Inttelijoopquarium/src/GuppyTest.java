@@ -11,7 +11,7 @@ class GuppyTest {
     g.setPosisi(new Point(2,3));
     aq.addObject(new MakananIkan(new Point(5,4)));
     int jumlahAwal = aq.getListObjekMati().totalElmt();
-    g.eat(aq);
+    g.hunt(aq);
     assertEquals(jumlahAwal-1, aq.getListObjekMati().totalElmt());
     System.out.println("eat success");
   }

@@ -20,7 +20,7 @@ public class LinkedListDriver {
     llp.add(new Point(9, 2));
     System.out.println("Contoh untuk iterasi :");
     for (int i = 0; i < llp.totalElmt(); i++) {
-      System.out.println(llp.get(i));
+      llp.get(i).toString();
     }
   }
 }

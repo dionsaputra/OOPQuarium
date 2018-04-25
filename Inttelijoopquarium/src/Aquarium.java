@@ -1,29 +1,29 @@
 //CARA COMPILE
 //javac Aquarium.java Fish.java Guppy.java Piranha.java ObjekMati.java Koin.java MakananIkan.java Pet.java Point.java
 import java.lang.Math;
-import java.util.Random;
 public class Aquarium {
 
   private LinkedList<ObjekMati> listObjekMati = new LinkedList<ObjekMati> ();
   private LinkedList<Fish> listIkan = new LinkedList<Fish>();
   private LinkedList<Pet> listPet = new LinkedList<Pet>();
   private int time;
-  private final int length; //ATAS - BAWAH
-  private final int width; //KIRI-KANAN
+  private int dasar;
+  private final int length;
+  private final int width;
+
   /**
    * Constructor Aquarium, mengassign nilai length dan width menjadi 100.
    */
-
   public Aquarium() {
     length = 100;
     width = 100;
   }
+
   /**
    * Constructor Aquarium, mengassign nilai length dan width sesuai masukan.
    * @param length ukuran length (ATAS-BAWAH) akuarium
    * @param width ukuran width (KIRI-KANAN) akuarium
    */
-
   public Aquarium(int length, int width) {
     this.length = length;
     this.width = width;
@@ -51,138 +51,132 @@ public class Aquarium {
    * Menambahkan sebuah objek bertipe Fish ke dalam listIkan.
    * @param fish ikan yang ingin dimasukkan ke dalam list ikan
    */
-
   public void addObject(Fish fish) {
     System.out.println(fish.getPosisi().getAbsis());
-    System.out.println("hehe");
     listIkan.add(fish);
   }
+
   /**
    * Menambahkan sebuah objek bertipe objekMati ke dalam listObjekMati.
    * @param objekMati objek mati yang ingin dimasukkan ke dalam list  objek mati
    */
-
   public void addObject(ObjekMati objekMati) {
     listObjekMati.add(objekMati);
   }
+
   /**
    * Menambahkan sebuah objek bertipe Pet ke dalam listPet.
    * @param pet pet yang ingin dimasukkan ke dalam list pet
    */
-
   public void addObject(Pet pet) {
     listPet.add(pet);
   }
+
   /**
    * Menghapus suatu ikan pada list ikan.
    * @param fish ikan yang ingin dihapus dari list ikan
    */
-
   public void removeObject(Fish fish) {
     listIkan.remove(fish);
   }
+
   /**
    * Menghapus suatu objekMati pada liatObjekMati.
    * @param objekMati objek mati yang ingin dihapus list objek mati.
    */
-
   public void removeObject(ObjekMati objekMati) {
     listObjekMati.remove(objekMati);
   }
+
   /**
    * Menghapus suatu pet dari listPet.
    * @param pet pet yang ingin dihapus dari list pet
    */
-
   public void removeObject(Pet pet) {
     listPet.remove(pet);
   }
-  /**
-   * Mengendalikan kehidupan dalam akuarium.
-   */
 
-  public void action() {
-    Random rand = new Random();
-    int randomNumber = Math.abs(rand.nextInt()%360);
-    // System.out.println(" Random ==>>>>>> " + randomNumber + "\n");
-    // System.out.println(" Random ==>>>>>>2 " + randomNumber + "\n");
+  /**
+   * Menghitung Banyaknya Guppy.
+   */
+  public int countGuppy(){
+    int countguppy = 0;
+    for (int j = 0; j < listIkan.totalElmt(); j++) {
+      if (listIkan.get(j).getJenis().equals("Guppy")) {
+        countguppy++;
+      }
+    }
+    return countguppy;
+  }
+
+  /**
+   * Menghitung Banyaknya Makanan ikan.
+   */
+  public int countFood(){
+    int countfood = 0; 
+    for (int j = 0; j < listObjekMati.totalElmt(); j++) {
+      if (listObjekMati.get(j).getJenis().equals("Makanan Ikan")) {
+        countfood++;
+      }
+    }
+    return countfood;
+  }
+
+  /**
+   * Mengendalikan kehidupan ikan.
+   */
+  public void controlFish(){
     for (int i = 0; i < listIkan.totalElmt(); i++) {
       Fish tempoint = listIkan.get(i);
-
       if (tempoint.getStarving() <= 0) {
         removeObject(listIkan.get(i));
       } else {
-        int count = 0; 
-        int countguppy = 0;
-        for (int j = 0; j < listObjekMati.totalElmt(); j++) {
-          if (listObjekMati.get(j).getJenis().equals("Makanan Ikan")) {
-            count++;
-          }
-        }
-        for (int j = 0; j < listIkan.totalElmt(); j++) {
-          if (listIkan.get(j).getJenis().equals("Guppy")) {
-            countguppy++;
-          }
-        }
         if (tempoint.getJenis().equals("Guppy")) {
-          if (tempoint.getStarvationPeriod() > 0 || count == 0) {
-            tempoint.setStarvationPeriod(tempoint.getStarvationPeriod() - 1);
-            if (tempoint.getMoveTime() <= 0) {
-              //srand(time(NULL));
-              int randoms = (randomNumber % 40);
-              int directions = (randomNumber % 2);
-              if (directions >= 1) {
-                randoms *= -1;
-              }
-              tempoint.setDegree((tempoint.getDegree() + randoms*randomNumber) % 360);
-              tempoint.setMoveTime(tempoint.getMaxMove());
-            }
-            tempoint.swim(tempoint.getDegree(), tempoint.getSpeed());
-            tempoint.setStarving(tempoint.getStarving() - 1);
+          if (tempoint.getStarvationPeriod() > 0 || countFood()==0 ) {
+            tempoint.trySwim();
           } else {
-            tempoint.eat(this);
+            tempoint.hunt(this);
           }
-        } else {
-          if (tempoint.getStarvationPeriod() > 0 || countguppy == 0) {
-            tempoint.setStarvationPeriod(tempoint.getStarvationPeriod() - 1);
-            if (tempoint.getMoveTime() <= 0) {
-              //srand(time(NULL));
-              int randoms = (randomNumber % 360);
-
-              int directions = (randomNumber % 2);
-              if (directions != 0) {
-                randoms *= -1;
-              }
-              tempoint.setDegree((tempoint.getDegree() + randoms) % 360);
-              tempoint.setMoveTime(tempoint.getMaxMove());
-            }
-            tempoint.swim(tempoint.getDegree(), tempoint.getSpeed());
-            tempoint.setStarving(tempoint.getStarving() - 1);
+          tempoint.tryProduce(this);
+        } else {  //Piranha
+          if (tempoint.getStarvationPeriod() > 0 || countGuppy()==0) {
+            tempoint.trySwim();
           } else {
-            tempoint.eat(this);
+            tempoint.hunt(this);
           }
         }
         tempoint.setMoveTime(tempoint.getMoveTime() - 1);
-
-        //produce
-        if (tempoint.getJenis() == "Guppy") {
-          if (tempoint.getProduceTime() < 0) {
-            tempoint.produce(this);
-            tempoint.setProduceTime(tempoint.getMaxProduceTime());
-          }
-          //cout<<temp->getProduceTime()<<" ampun\n";
-          tempoint.setProduceTime(tempoint.getProduceTime() - 1);
-        }
       }
     }
+  }
+
+  /**
+   * Mengendalikan kehidupan pet.
+   */
+  public void controlPet(){
     for (int i = 0; i < listPet.totalElmt(); i++) {
-      listPet.get(i).eat(this);
-      //cout<<"EAT TELAH DIJALANKAN\n";
+      listPet.get(i).life(this);
     }
+  }
+
+  /**
+   * Mengendalikan kehidupan benda mati.
+   */
+  public void controlDeadObject(){
     for (int i = 0; i < listObjekMati.totalElmt(); i++) {
       listObjekMati.get(i).turun(this);
     }
   }
+
+  /**
+   * Mengendalikan kehidupan dalam akuarium.
+   */
+  public void action() {
+    controlFish();
+    controlPet();
+    controlDeadObject();
+  }
+
   /**
    * Mengecek apakah suatu titik merupakan ujung dari akuarium
    * dalam radius tertentu.
@@ -190,7 +184,6 @@ public class Aquarium {
    * @param radius jarak ketelitian P terhadap edge
    * @return 0 BUKAN UJUNG 1 ATAS 2 KANAN 3 BAWAH 4 KIRI
    */
-
   public int isEdge(Point point, double radius) {
     if (Math.abs(point.getOrdinat() - width) < radius) {
       return 2;
@@ -229,4 +222,7 @@ public class Aquarium {
     return time;
   }
 
+  public int getDasar(){
+    return 6 * (length / 7);
+  }
 }
