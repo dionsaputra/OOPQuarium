@@ -1,17 +1,26 @@
+import java.awt.event.MouseEvent;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.event.MouseListener;
+import java.util.Random;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class MouseButtonEgg implements MouseListener {
 
   private MachineDriverAquarium aq;
 
-
+  /**
+   * Constructor.
+   * @param temp machinenya
+   */
   public MouseButtonEgg(MachineDriverAquarium temp) {
     aq = temp;
   }
 
+  /**
+   * kalo ke klik.
+   * @param e mouseevent
+   */
   public void mouseClicked(MouseEvent e) {
     aq.addEgg();
     System.out.println("Mouse Egg Clicked: (" + e.getX() + ", " + e.getY() + ")");
