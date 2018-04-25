@@ -5,7 +5,7 @@ import java.util.Random;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MouseButtonEgg implements MouseListener {
+public class MouseButtonEgg implements MouseListener,PriceList {
 
   private MachineDriverAquarium aq;
 
@@ -22,7 +22,12 @@ public class MouseButtonEgg implements MouseListener {
    * @param e mouseevent
    */
   public void mouseClicked(MouseEvent e) {
-    aq.addEgg();
+    if (aq.getMoney() >= eggPrice) {
+
+      aq.addEgg();
+      aq.addMoney(-eggPrice);
+    }
+
     System.out.println("Mouse Egg Clicked: (" + e.getX() + ", " + e.getY() + ")");
   }
 
