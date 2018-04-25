@@ -7,22 +7,23 @@ public class Aquarium {
   private LinkedList<Fish> listIkan = new LinkedList<Fish>();
   private LinkedList<Pet> listPet = new LinkedList<Pet>();
   private int time;
-  private final int length; //ATAS - BAWAH
-  private final int width; //KIRI-KANAN
+  private int dasar;
+  private final int length;
+  private final int width;
+
   /**
    * Constructor Aquarium, mengassign nilai length dan width menjadi 100.
    */
-
   public Aquarium() {
     length = 100;
     width = 100;
   }
+
   /**
    * Constructor Aquarium, mengassign nilai length dan width sesuai masukan.
    * @param length ukuran length (ATAS-BAWAH) akuarium
    * @param width ukuran width (KIRI-KANAN) akuarium
    */
-
   public Aquarium(int length, int width) {
     this.length = length;
     this.width = width;
@@ -50,35 +51,35 @@ public class Aquarium {
    * Menambahkan sebuah objek bertipe Fish ke dalam listIkan.
    * @param fish ikan yang ingin dimasukkan ke dalam list ikan
    */
-
   public void addObject(Fish fish) {
     System.out.println(fish.getPosisi().getAbsis());
     listIkan.add(fish);
   }
+
   /**
    * Menambahkan sebuah objek bertipe objekMati ke dalam listObjekMati.
    * @param objekMati objek mati yang ingin dimasukkan ke dalam list  objek mati
    */
-
   public void addObject(ObjekMati objekMati) {
     listObjekMati.add(objekMati);
   }
+
   /**
    * Menambahkan sebuah objek bertipe Pet ke dalam listPet.
    * @param pet pet yang ingin dimasukkan ke dalam list pet
    */
-
   public void addObject(Pet pet) {
     listPet.add(pet);
   }
+
   /**
    * Menghapus suatu ikan pada list ikan.
    * @param fish ikan yang ingin dihapus dari list ikan
    */
-
   public void removeObject(Fish fish) {
     listIkan.remove(fish);
   }
+
   /**
    * Menghapus suatu objekMati pada liatObjekMati.
    * @param objekMati objek mati yang ingin dihapus list objek mati.
@@ -121,7 +122,6 @@ public class Aquarium {
     return countfood;
   }
 
-
   /**
    * Mengendalikan kehidupan ikan.
    */
@@ -135,14 +135,14 @@ public class Aquarium {
           if (tempoint.getStarvationPeriod() > 0 || countFood()==0 ) {
             tempoint.trySwim();
           } else {
-            tempoint.eat(this);
+            tempoint.hunt(this);
           }
           tempoint.tryProduce(this);
         } else {  //Piranha
           if (tempoint.getStarvationPeriod() > 0 || countGuppy()==0) {
             tempoint.trySwim();
           } else {
-            tempoint.eat(this);
+            tempoint.hunt(this);
           }
         }
         tempoint.setMoveTime(tempoint.getMoveTime() - 1);
@@ -184,8 +184,6 @@ public class Aquarium {
    * @param radius jarak ketelitian P terhadap edge
    * @return 0 BUKAN UJUNG 1 ATAS 2 KANAN 3 BAWAH 4 KIRI
    */
-
-
   public int isEdge(Point point, double radius) {
     if (Math.abs(point.getOrdinat() - width) < radius) {
       return 2;
@@ -224,4 +222,7 @@ public class Aquarium {
     return time;
   }
 
+  public int getDasar(){
+    return 6 * (length / 7);
+  }
 }

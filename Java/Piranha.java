@@ -1,4 +1,4 @@
-public class Piranha extends Fish {
+public class Piranha extends Fish implements Consumer{
 
   private int latestFood;
 
@@ -43,7 +43,7 @@ public class Piranha extends Fish {
    * @param aquarium ubah isi aquarium
    * @param idx indeks guppy di list
    */
-  public void biteFish(Aquarium aquarium,int idx){
+  public void eat(Aquarium aquarium, int idx){
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
 
@@ -57,7 +57,7 @@ public class Piranha extends Fish {
    * Makan makanan ikan.
    * @param aquarium Aquarium ikan
    */
-  public void eat(Aquarium aquarium) {
+  public void hunt(Aquarium aquarium) {
     boolean existFood = false;
     boolean eatFood = false;
     double radMin = 1e7;
@@ -89,7 +89,7 @@ public class Piranha extends Fish {
     // eat guppy
     if (eatFood) {
       System.out.println("SEE ME");
-      biteFish(aquarium, idx);
+      eat(aquarium, idx);
     } else {
       setStarving(getStarving() - 1);
     }

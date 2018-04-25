@@ -41,4 +41,11 @@ public class MakananIkan extends ObjekMati {
   public void setHarga(int harga) {
     this.harga = harga;
   }
+
+  public void turun(Aquarium aq){
+    super.turun(aq);
+    if (this.isDasar(aq)){
+      aq.removeObject(this);
+    }
+  }
 }

@@ -20,7 +20,7 @@ public abstract class Fish implements Comparable, Entitas{
   protected Point posisi;
   protected String jenis;
 
-  public abstract void eat(Aquarium aquarium);
+  public abstract void hunt(Aquarium aquarium);
 
   public abstract void produce(Aquarium aquarium);
 

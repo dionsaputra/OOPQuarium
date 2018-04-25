@@ -506,7 +506,8 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
               backgroundImage.getIconHeight() / 2, panel);
       this.addPiranha(backgroundImage.getIconWidth() / 2,
               backgroundImage.getIconHeight() / 2, panel);
-      this.addPet(300,600,panel);
+      int ordinatDasarAquarium = aquarium.getDasar();
+      this.addPet(300,ordinatDasarAquarium,panel);
       panel.repaint();
       //panel.setComponentZOrder(imageBg, panel.getComponentCount() - 1);
       while (true) {

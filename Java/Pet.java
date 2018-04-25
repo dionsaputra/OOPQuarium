@@ -1,4 +1,4 @@
-public class Pet implements Comparable{
+public class Pet implements Comparable, Consumer{
 
   private static int counter = 0; // banyak objek Pet yang telah diciptakan
   private boolean faceRight;      // true saat arah muka dari pPet adalah kanan
@@ -223,7 +223,7 @@ public class Pet implements Comparable{
    * @param aq aquarium yang ditempati pet saat ini
    * @param idx indeks dari koin idx pada linkedlist
    */
-  private void eat(Aquarium aq, int idx){
+  public void eat(Aquarium aq, int idx){
     Koin koin = (Koin) aq.getListObjekMati().get(idx);
     setTotalMoney(getTotalMoney() + koin.getNilaiKoin());
     aq.removeObject(aq.getListObjekMati().get(idx));

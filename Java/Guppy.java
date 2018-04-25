@@ -1,4 +1,4 @@
-public class Guppy extends Fish {
+public class Guppy extends Fish implements Consumer{
 
   private int growthStep;
   private int foodCapacity;
@@ -51,7 +51,7 @@ public class Guppy extends Fish {
    * @param aquarium ubah isi aquarium
    * @param idx indeks makanan ikan di list
    */
-  public void biteFood(Aquarium aquarium,int idx){
+  public void eat(Aquarium aquarium,int idx){
     foodCapacity = foodCapacity + 1;
     if (foodCapacity >= growthTimer) { //next growth
       foodCapacity = 0;
@@ -64,11 +64,12 @@ public class Guppy extends Fish {
     setStarving(maxStarving);
     aquarium.removeObject(aquarium.getListObjekMati().get(idx));
   }
+
   /**
    * Makan makanan ikan.
    * @param aquarium Aquarium ikan
    */
-  public void eat(Aquarium aquarium) {
+  public void hunt(Aquarium aquarium) {
     boolean existFood = false, eatFood = false;
     double radMin = 1e7; //untuk nyimpen jarak terdekat
     int i = 0, idx = 0;
@@ -94,7 +95,7 @@ public class Guppy extends Fish {
 
     if (eatFood) {
       System.out.println("I'M HUNGRY :(");
-      biteFood(aquarium,idx);
+      eat(aquarium,idx);
     } else {
       setStarving(getStarving() - 1);
     }
