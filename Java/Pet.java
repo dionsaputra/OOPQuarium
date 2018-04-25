@@ -94,34 +94,44 @@ public class Pet implements Comparable{
     return existCoinOnGround;
   }
 
-  private int nearestHorizontalFood(Aquarium aq){
+  private int nearestHorizontalKoin(Aquarium aq){
     double dist = 1000000;
     int idx = 0;
     for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++){
-      boolean isKoin = aq.getListObjekMati().get(i).getJenis().equals("Koin");
-      int ordinatObjMati = aq.getListObjekMati().get(idx).getPosisi().getOrdinat();
-      int absisObjMati = aq.getListObjekMati().get(idx).getPosisi().getAbsis();
-      if (ordinatObjMati == this.getPosisi().getOrdinat() && isKoin){
-        if (Math.abs(absisObjMati - this.getPosisi().getAbsis()) < dist){
-          dist = Math.abs(absisObjMati - this.getPosisi().getAbsis());
-          idx = i;
-          break;
+      if (aq.getListObjekMati().get(i).getJenis().equals("Koin")){
+        int ordinatObjMati = aq.getListObjekMati().get(i).getPosisi().getOrdinat();
+        int absisObjMati = aq.getListObjekMati().get(i).getPosisi().getAbsis();
+        if (ordinatObjMati == this.getPosisi().getOrdinat()){
+          if (Math.abs(absisObjMati - this.getPosisi().getAbsis()) < dist){
+            dist = Math.abs(absisObjMati - this.getPosisi().getAbsis());
+            idx = i;
+          }
         }
       }
     }
     return idx;
   }
 
-  private int nearestVerticalFood(Aquarium aq){
+  private void display(Aquarium aq){
+    for (int i=0; i<aq.getListObjekMati().totalElmt(); i++){
+      int idx = aq.getListObjekMati().get(i).getId();
+      boolean dasar = aq.getListObjekMati().get(i).isDasar(aq);
+      double jarak = aq.getListObjekMati().get(i).getPosisi().hitungJarak(this.getPosisi());
+      String jenis = aq.getListObjekMati().get(i).getJenis();
+      int kecepatan = aq.getListObjekMati().get(i).getKecepatan();
+      System.out.println("[" + idx  + "," + dasar + "," + kecepatan + "," + jenis + "] ");
+    }
+  }
+  private int nearestVerticalKoin(Aquarium aq){
     double dist = 1000000;
     int idx = 0;
     for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++){
-      boolean isKoin = aq.getListObjekMati().get(i).getJenis().equals("Koin");
-      int ordinatObjMati = aq.getListObjekMati().get(idx).getPosisi().getOrdinat();
-      if (Math.abs(ordinatObjMati = this.getPosisi().getOrdinat()) < dist && isKoin){
-        dist = Math.abs(ordinatObjMati = this.getPosisi().getOrdinat());
-        idx = i;
-        break;
+      if (aq.getListObjekMati().get(i).getJenis().equals("Koin")){
+        int ordinatObjMati = aq.getListObjekMati().get(i).getPosisi().getOrdinat();
+        if (Math.abs(ordinatObjMati - this.getPosisi().getOrdinat()) < dist){
+          dist = Math.abs(ordinatObjMati - this.getPosisi().getOrdinat());
+          idx = i;
+        }  
       }
     }
     return idx;
@@ -132,9 +142,9 @@ public class Pet implements Comparable{
     return this.getPosisi().hitungJarak(posisiObjMati) <= radius;
   }
 
-  private boolean isInAbsis(Aquarium aq, int idx){
+  private boolean isAbsisInRadius(Aquarium aq, int idx){
     int absisObjMati = aq.getListObjekMati().get(idx).getPosisi().getAbsis();
-    return this.getPosisi().getAbsis() == absisObjMati;
+    return Math.abs(this.getPosisi().getAbsis() - absisObjMati) <= radius/2;
   }
 
   private void eat(Aquarium aq, int idx){
@@ -144,24 +154,26 @@ public class Pet implements Comparable{
   }
 
   public void life(Aquarium aq){
+    display(aq);
     if (existCoin(aq)){
       if (existCoinOnGround(aq)){
-        System.out.println(" HERE \n");
-        int idx = nearestHorizontalFood(aq);
+        int idx = nearestHorizontalKoin(aq);
         if (isInRadius(aq,idx)){
           eat(aq,idx);
         } else {
           walkTo(aq.getListObjekMati().get(idx).getPosisi());
         }
+        System.out.println("index kejar = " + idx);
       } else {
-        int idx = nearestVerticalFood(aq);
+        int idx = nearestVerticalKoin(aq);
         if (isInRadius(aq,idx)){
           eat(aq,idx);
         } else {
-          if (!isInAbsis(aq,idx)){
+          if (!isAbsisInRadius(aq,idx)){
             walkTo(aq.getListObjekMati().get(idx).getPosisi());
           }
         }
+        System.out.println("index kejar = " + idx);
       }
     } 
   }
