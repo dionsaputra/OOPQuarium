@@ -1,7 +1,7 @@
 import java.lang.Math;
 import java.util.Random;
 
-public abstract class Fish implements Comparable, Entitas{
+public abstract class Fish implements Comparable, Entitas {
 
   private final double pi = 3.14159265;
   protected int maxStarving;
@@ -82,9 +82,9 @@ public abstract class Fish implements Comparable, Entitas{
   /**
    * Mencoba Berenang.
    */
-  public void trySwim(){
+  public void trySwim() {
     Random rand = new Random();
-    int randomNumber = Math.abs(rand.nextInt()%360);
+    int randomNumber = Math.abs(rand.nextInt() % 360);
     this.setStarvationPeriod(this.getStarvationPeriod() - 1);
     if (this.getMoveTime() <= 0) {
       int randoms = (randomNumber % 40);
@@ -92,7 +92,7 @@ public abstract class Fish implements Comparable, Entitas{
       if (directions >= 1) {
         randoms *= -1;
       }
-      this.setDegree((this.getDegree() + randoms*randomNumber) % 360);
+      this.setDegree((this.getDegree() + randoms * randomNumber) % 360);
       this.setMoveTime(this.getMaxMove());
     }
     this.swim(this.getDegree(), this.getSpeed());
@@ -103,7 +103,7 @@ public abstract class Fish implements Comparable, Entitas{
    * Mencoba memproduksi koin.
    * @param aquarium aquarium
    */
-  public void tryProduce(Aquarium aquarium){
+  public void tryProduce(Aquarium aquarium) {
     if (this.getProduceTime() < 0) {
       this.produce(aquarium);
       this.setProduceTime(this.getMaxProduceTime());
@@ -297,7 +297,7 @@ public abstract class Fish implements Comparable, Entitas{
 
   /**
    * setter starving waktu mati ikan.
-   * @param starving
+   * @param starving atribut starving ikan
    */
   public void setStarving(int starving) {
     this.starving = starving;

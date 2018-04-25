@@ -66,12 +66,10 @@ public class Point implements Comparable {
   }
 
   /**
-   * membandingkan point this dengan point object.
-   * @param object point yang ingin dijadikan objek uji terhadap point this
-   * @return 0 jika point this berimpit dengan point object,
-   * -1 jika point this berada di kiri bawah point object,
-   * 1 jika tidak berimpit dan tidak berada di kiri bawah point object
-   */
+    * membandingkan point this dengan point object.
+    * @param object point yang ingin dijadikan objek uji terhadap point this
+    * @return 0 jika point this berimpit dengan point object
+  */
   @Override
   public int compareTo(Object object) {
     Point point = (Point) object;
@@ -85,7 +83,7 @@ public class Point implements Comparable {
   }
 
   /**
-   * print point dalam format 'X = absis Y = ordiant "
+   * print point dalam format 'X = absis Y = ordiant ".
    * @return
    */
   @Override

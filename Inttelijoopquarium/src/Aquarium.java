@@ -1,9 +1,11 @@
 //CARA COMPILE
-//javac Aquarium.java Fish.java Guppy.java Piranha.java ObjekMati.java Koin.java MakananIkan.java Pet.java Point.java
+//javac Aquarium.java Fish.java Guppy.java Piranha.java
+// ObjekMati.java Koin.java MakananIkan.java Pet.java Point.java
 import java.lang.Math;
+
 public class Aquarium {
 
-  private LinkedList<ObjekMati> listObjekMati = new LinkedList<ObjekMati> ();
+  private LinkedList<ObjekMati> listObjekMati = new LinkedList<ObjekMati>();
   private LinkedList<Fish> listIkan = new LinkedList<Fish>();
   private LinkedList<Pet> listPet = new LinkedList<Pet>();
   private int time;
@@ -99,7 +101,7 @@ public class Aquarium {
   /**
    * Menghitung Banyaknya Guppy.
    */
-  public int countGuppy(){
+  public int countGuppy() {
     int countguppy = 0;
     for (int j = 0; j < listIkan.totalElmt(); j++) {
       if (listIkan.get(j).getJenis().equals("Guppy")) {
@@ -112,7 +114,7 @@ public class Aquarium {
   /**
    * Menghitung Banyaknya Makanan ikan.
    */
-  public int countFood(){
+  public int countFood() {
     int countfood = 0; 
     for (int j = 0; j < listObjekMati.totalElmt(); j++) {
       if (listObjekMati.get(j).getJenis().equals("Makanan Ikan")) {
@@ -125,21 +127,21 @@ public class Aquarium {
   /**
    * Mengendalikan kehidupan ikan.
    */
-  public void controlFish(){
+  public void controlFish() {
     for (int i = 0; i < listIkan.totalElmt(); i++) {
       Fish tempoint = listIkan.get(i);
       if (tempoint.getStarving() <= 0) {
         removeObject(listIkan.get(i));
       } else {
         if (tempoint.getJenis().equals("Guppy")) {
-          if (tempoint.getStarvationPeriod() > 0 || countFood()==0 ) {
+          if (tempoint.getStarvationPeriod() > 0 || countFood() == 0) {
             tempoint.trySwim();
           } else {
             tempoint.hunt(this);
           }
           tempoint.tryProduce(this);
         } else {  //Piranha
-          if (tempoint.getStarvationPeriod() > 0 || countGuppy()==0) {
+          if (tempoint.getStarvationPeriod() > 0 || countGuppy() == 0) {
             tempoint.trySwim();
           } else {
             tempoint.hunt(this);
@@ -153,7 +155,7 @@ public class Aquarium {
   /**
    * Mengendalikan kehidupan pet.
    */
-  public void controlPet(){
+  public void controlPet() {
     for (int i = 0; i < listPet.totalElmt(); i++) {
       listPet.get(i).life(this);
     }
@@ -162,7 +164,7 @@ public class Aquarium {
   /**
    * Mengendalikan kehidupan benda mati.
    */
-  public void controlDeadObject(){
+  public void controlDeadObject() {
     for (int i = 0; i < listObjekMati.totalElmt(); i++) {
       listObjekMati.get(i).turun(this);
     }
@@ -222,7 +224,7 @@ public class Aquarium {
     return time;
   }
 
-  public int getDasar(){
+  public int getDasar() {
     return 6 * (length / 7);
   }
 }

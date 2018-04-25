@@ -1,4 +1,4 @@
-public class Guppy extends Fish implements Consumer{
+public class Guppy extends Fish implements Consumer {
 
   private int growthStep;
   private int foodCapacity;
@@ -36,7 +36,7 @@ public class Guppy extends Fish implements Consumer{
    * @param pointKejar posisi target
    * @return True if makanan udah bisa dimakan
    */
-  public boolean chaseFood(double radMin,Point pointKejar){
+  public boolean chaseFood(double radMin,Point pointKejar) {
     if (radMin <= getRadius()) {
       return true;
     } else {
@@ -51,7 +51,7 @@ public class Guppy extends Fish implements Consumer{
    * @param aquarium ubah isi aquarium
    * @param idx indeks makanan ikan di list
    */
-  public void eat(Aquarium aquarium,int idx){
+  public void eat(Aquarium aquarium,int idx) {
     foodCapacity = foodCapacity + 1;
     if (foodCapacity >= growthTimer) { //next growth
       foodCapacity = 0;
@@ -70,9 +70,11 @@ public class Guppy extends Fish implements Consumer{
    * @param aquarium Aquarium ikan
    */
   public void hunt(Aquarium aquarium) {
-    boolean existFood = false, eatFood = false;
+    boolean existFood = false;
+    boolean eatFood = false;
     double radMin = 1e7; //untuk nyimpen jarak terdekat
-    int i = 0, idx = 0;
+    int i = 0;
+    int idx = 0;
     Point idxGuppy = getPosisi();
     Point pointKejar = new Point();
     while (i < aquarium.getListObjekMati().totalElmt()) {
@@ -126,10 +128,10 @@ public class Guppy extends Fish implements Consumer{
     return growthStep;
   }
 
-   /**
-   * getter kapasitas makanan ikan untuk tumbuh.
-   * @return foodCapacity kapasitas makan
-   */
+  /**
+  * getter kapasitas makanan ikan untuk tumbuh.
+  * @return foodCapacity kapasitas makan
+  */
   public int getFoodCapacity() {
     return foodCapacity;
   }

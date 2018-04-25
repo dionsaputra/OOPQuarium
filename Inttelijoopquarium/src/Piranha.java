@@ -1,4 +1,4 @@
-public class Piranha extends Fish implements Consumer{
+public class Piranha extends Fish implements Consumer {
 
   private int latestFood;
 
@@ -28,7 +28,7 @@ public class Piranha extends Fish implements Consumer{
    * @param pointKejar posisi target
    * @return True if makanan udah bisa dimakan
    */
-  public boolean chaseFood(double radMin,Point pointKejar){
+  public boolean chaseFood(double radMin,Point pointKejar) {
     if (radMin <= getRadius()) {
       return true;
     } else {
@@ -43,7 +43,7 @@ public class Piranha extends Fish implements Consumer{
    * @param aquarium ubah isi aquarium
    * @param idx indeks guppy di list
    */
-  public void eat(Aquarium aquarium, int idx){
+  public void eat(Aquarium aquarium, int idx) {
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
 
@@ -123,7 +123,7 @@ public class Piranha extends Fish implements Consumer{
 
   /**
    * setter waktu produksi koin dari ikan.
-   * @param x producetime
+   * @param produceTime waktu produce
    */
   public void setProduceTime(int produceTime) {
     // do nothing
@@ -146,7 +146,7 @@ public class Piranha extends Fish implements Consumer{
   }
 
   /**
-   * setter latestfood dari piranha
+   * setter latestfood dari piranha.
    * @param latestFood ikan terakhir yang dimakan
    */
   public void setLast(int latestFood) {
