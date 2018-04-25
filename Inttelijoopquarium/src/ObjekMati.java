@@ -1,4 +1,4 @@
-public class ObjekMati implements Comparable{
+public class ObjekMati implements Comparable {
 
   protected static int counter = 0;   // counter banyak objekMati yang telah diciptakan
   protected final int id;             // id objekMati, unik untuk setiap objekMati
@@ -18,7 +18,7 @@ public class ObjekMati implements Comparable{
   }
 
   /**
-   * getter atribut Id
+   * getter atribut Id.
    * @return id objekMati, int
    */
   public int getId() {
@@ -83,8 +83,8 @@ public class ObjekMati implements Comparable{
   }
 
   /**
-   *
-   * @param aquarium
+   * untuk turun.
+   * @param aquarium aquariumnya
    */
   public void turun(Aquarium aquarium) {
     if (!isDasar(aquarium)) {
@@ -99,12 +99,11 @@ public class ObjekMati implements Comparable{
    * @param objekMati objekMati yang menjadi objek pembanding
    * @return 0 jika objekMati parameter merupakan this objekMati, sebaliknya 0
    */
-  public int compareTo(Object objekMati){
+  public int compareTo(Object objekMati) {
     ObjekMati objek = (ObjekMati) objekMati;
-    if(objek.getId() == id){
+    if (objek.getId() == id) {
       return 0;
-    }
-    else{
+    } else {
       return 1;
     }
   }

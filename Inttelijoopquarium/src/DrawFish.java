@@ -66,7 +66,7 @@ public class DrawFish extends JLabel {
         }
 
       }
-    } else{
+    } else {
       System.out.println("ikan mati");
       fish = null;
       listIkan = null;
