@@ -529,9 +529,9 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
             win = true;
           } else {
             buttonEgg.setIcon(eggImage[egg - 1]);
-            if(aquarium.getListIkan().totalElmt()==0 && money<guppyPrice){
-              gameStart=false;
-              win=false;
+            if (aquarium.getListIkan().totalElmt() == 0 && money < guppyPrice) {
+              gameStart = false;
+              win = false;
             }
           }
 
