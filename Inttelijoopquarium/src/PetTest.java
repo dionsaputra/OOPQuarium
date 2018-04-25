@@ -78,11 +78,20 @@ class PetTest {
     Pet p = new Pet(5,2,new Point(3,2));
     Point pLama = new Point(p.getPosisi().getAbsis(),p.getPosisi().getOrdinat());
     p.walkTo(new Point(6,3));
-    /*System.out.println(p.getPosisi().getAbsis());
-    System.out.println(p.getPosisi().getOrdinat());
-    System.out.println(p.getPosisi().compareTo(pLama));*/
     assertTrue(p.getPosisi().compareTo(pLama) != 0);
     System.out.println("walkTo success");
+  }
+
+  @Test
+  void existCoin(){
+    Aquarium aq1 = new Aquarium();
+    Point point = new Point(50,50);
+    Koin koin = new Koin(10,point);
+    aq1.addObject(koin);
+    System.out.println("cek existCoin");
+    assertEquals(true,);
+
+
   }
 
   @Test
