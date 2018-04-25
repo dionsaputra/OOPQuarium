@@ -35,16 +35,20 @@ public class MakananIkan extends ObjekMati {
   }
 
   /**
-   * setter atribut harga makananIkan
+   * setter atribut harga makananIkan.
    * @param harga nilai harga baru
    */
   public void setHarga(int harga) {
     this.harga = harga;
   }
 
-  public void turun(Aquarium aq){
+  /**
+   * Membuat posisi MakananIkan pada Aquarium turun.
+   * @param aq tempat MakananIkan berada
+   */
+  public void turun(Aquarium aq) {
     super.turun(aq);
-    if (this.isDasar(aq)){
+    if (this.isDasar(aq)) {
       aq.removeObject(this);
     }
   }
