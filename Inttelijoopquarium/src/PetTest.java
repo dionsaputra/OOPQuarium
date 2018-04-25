@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,7 +8,7 @@ class PetTest {
   @Test
   void getId() {
     Pet p = new Pet(5,2,new Point(3,2));
-    assertEquals(7,p.getId());
+    assertEquals(13,p.getId());
     System.out.println("getId success");
   }
 
@@ -84,19 +85,128 @@ class PetTest {
 
   @Test
   void existCoin(){
-    Aquarium aq1 = new Aquarium();
-    Point point = new Point(50,50);
-    Koin koin = new Koin(10,point);
-    aq1.addObject(koin);
+    Point posisiPet = new Point(100,100);
+    Pet pet = new Pet(1,1,posisiPet);
+    Aquarium aq = new Aquarium();
     System.out.println("cek existCoin");
-    assertEquals(true,);
+    assertEquals(false,pet.existCoin(aq));
+    System.out.println("cek existCoin valid");
 
+    Point pointKoin = new Point(50,50);
+    Koin koin = new Koin(10,pointKoin);
+    aq.addObject(koin);
 
+    System.out.println("cek existCoin");
+    assertEquals(true,pet.existCoin(aq));
+    System.out.println("cek existCoin valid");
+  }
+
+  @Test
+  void existCoinOnGround(){
+    Aquarium aq = new Aquarium(100,700);
+    Point posisiKoin1 = new Point(0,0);
+    Koin koin1 = new Koin(100,posisiKoin1);
+    aq.addObject(koin1);
+
+    Point posisiPet = new Point(100,100);
+    Pet pet = new Pet(1,1,posisiPet);
+
+    System.out.println("cek existCoinOnGround");
+    assertEquals(false,pet.existCoinOnGround(aq));
+    System.out.println("cek existCoinOnGround valid");
+
+    Point posisiKoin2 = new Point(0,aq.getDasar());
+    Koin koin2 = new Koin(100,posisiKoin2);
+    aq.addObject(koin2);
+    System.out.println("cek existCoinOnGround");
+    assertEquals(true,pet.existCoinOnGround(aq));
+    System.out.println("cek existCoinOnGround valid");
+  }
+
+  @Test
+  void nearestHorizontalKoin(){
+    Aquarium aq = new Aquarium(100,100);
+    Point p1 = new Point(0,50);
+    Point p2 = new Point(100,50);
+    Koin k1 = new Koin(10,p1);
+    Koin k2 = new Koin(10,p2);
+    aq.addObject(k1);
+    aq.addObject(k2);
+
+    Point p3 = new Point(60,50);
+    Pet pet = new Pet(1,1,p3);
+
+    int idx = pet.nearestHorizontalKoin(aq);
+    assertEquals(1,idx);
+  }
+
+  @Test
+  void nearestVerticalKoin(){
+    Aquarium aq = new Aquarium(100,100);
+    Point p1 = new Point(0,50);
+    Point p2 = new Point(100,60);
+    Koin k1 = new Koin(10,p1);
+    Koin k2 = new Koin(10,p2);
+    aq.addObject(k1);
+    aq.addObject(k2);
+
+    Point p3 = new Point(100,100);
+    Pet pet = new Pet(1,1,p3);
+
+    int idx = pet.nearestVerticalKoin(aq);
+    assertEquals(1,idx);
+  }
+
+  @Test
+  void isInRadius() {
+    Aquarium aq = new Aquarium(100,100);
+    Point p1 = new Point(1,1);
+    Point p2 = new Point(100,100);
+    Koin k1 = new Koin(10,p1);
+    Koin k2 = new Koin(10,p2);
+    aq.addObject(k1);
+    aq.addObject(k2);
+
+    Point p3 = new Point(0,0);
+    Pet pet = new Pet(1,20,p3);
+
+    assertEquals(true,pet.isInRadius(aq,0));
+    assertEquals(false,pet.isInRadius(aq,1));
+  }
+
+  @Test
+  void isAbsisInRadius() {
+    Aquarium aq = new Aquarium(100,100);
+    Point p1 = new Point(50,50);
+    Point p2 = new Point(100,100);
+    Koin k1 = new Koin(10,p1);
+    Koin k2 = new Koin(10,p2);
+    aq.addObject(k1);
+    aq.addObject(k2);
+
+    Point p3 = new Point(40,0);
+    Pet pet = new Pet(1,20,p3);
+
+    assertEquals(true,pet.isAbsisInRadius(aq,0));
+    assertEquals(false,pet.isAbsisInRadius(aq,1));
   }
 
   @Test
   void eat() {
+    Aquarium aq = new Aquarium(100,100);
+    Point p1 = new Point(50,50);
+    Point p2 = new Point(100,100);
+    Koin k1 = new Koin(10,p1);
+    Koin k2 = new Koin(20,p2);
+    aq.addObject(k1);
+    aq.addObject(k2);
 
+    Point p3 = new Point(40,0);
+    Pet pet = new Pet(1,20,p3);
+
+    pet.eat(aq,0);
+    assertEquals(10,pet.getTotalMoney());
+    assertEquals(1,aq.getListObjekMati().totalElmt());
   }
 
   @Test

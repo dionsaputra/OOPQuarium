@@ -121,7 +121,7 @@ public class Pet implements Comparable, Consumer {
    * @param aq aquarium yang ditempati pet saat ini
    * @return true jika ada koin pada aquarium, sebaliknya false
    */
-  private boolean existCoin(Aquarium aq) {
+  public boolean existCoin(Aquarium aq) {
     boolean existCoin = false;
     for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++) {
       if (aq.getListObjekMati().get(i).getJenis().equals("Koin")) {
@@ -138,7 +138,7 @@ public class Pet implements Comparable, Consumer {
    * @param aq aquarium yang ditempati pet saat ini
    * @return true jika ada koin pada bagian dasar aquarium, sebaliknya false
    */
-  private boolean existCoinOnGround(Aquarium aq) {
+  public boolean existCoinOnGround(Aquarium aq) {
     boolean existCoinOnGround = false;
     for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++) {
       boolean isKoin = aq.getListObjekMati().get(i).getJenis().equals("Koin");
@@ -157,7 +157,7 @@ public class Pet implements Comparable, Consumer {
    * @param aq aquarium yang ditempati pet saaat ini
    * @return indeks linkedlist dari koin terdekat secara horizontal, int
    */
-  private int nearestHorizontalKoin(Aquarium aq) {
+  public int nearestHorizontalKoin(Aquarium aq) {
     double dist = 1000000;
     int idx = 0;
     for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++) {
@@ -181,7 +181,7 @@ public class Pet implements Comparable, Consumer {
    * @param aq aquarium yang ditempati pet saat ini
    * @return indeks linkedlist dari koin terdekat secara vertikal
    */
-  private int nearestVerticalKoin(Aquarium aq) {
+  public int nearestVerticalKoin(Aquarium aq) {
     double dist = 1000000;
     int idx = 0;
     for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++) {
@@ -202,7 +202,7 @@ public class Pet implements Comparable, Consumer {
    * @param idx indeks dari koin idx pada linkedlist
    * @return true jika koin idx berada dalam radius Pet
    */
-  private boolean isInRadius(Aquarium aq, int idx) {
+  public boolean isInRadius(Aquarium aq, int idx) {
     Point posisiObjMati = aq.getListObjekMati().get(idx).getPosisi();
     return this.getPosisi().hitungJarak(posisiObjMati) <= radius;
   }
@@ -213,7 +213,7 @@ public class Pet implements Comparable, Consumer {
    * @param idx indeks dari koin idx pada linkedlist
    * @return true jika absi koin idx berada dalam radius pet
    */
-  private boolean isAbsisInRadius(Aquarium aq, int idx) {
+  public boolean isAbsisInRadius(Aquarium aq, int idx) {
     int absisObjMati = aq.getListObjekMati().get(idx).getPosisi().getAbsis();
     return Math.abs(this.getPosisi().getAbsis() - absisObjMati) <= radius / 2;
   }
