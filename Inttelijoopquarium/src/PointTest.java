@@ -74,9 +74,6 @@ class PointTest {
     assertEquals(p1.compareTo(p2),0);
     System.out.println("compareTo point berhimpit valid");
 
-<<<<<<< HEAD
-
-=======
     Point p3 = new Point(-1,-1);
     System.out.println("cek compareTo point kiri bawah");
     assertEquals(p3.compareTo(p1),-1);
@@ -97,5 +94,4 @@ class PointTest {
     assertEquals(p6.compareTo(p1),1);
     System.out.println("compareTo point kanan bawah valid");
   }
->>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
 }
