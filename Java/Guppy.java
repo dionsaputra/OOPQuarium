@@ -14,7 +14,7 @@ public class Guppy extends Fish {
     maxStarvationPeriod = 200;
     maxMoveTime = 70;
     growthTimer = 6;
-    produceTimer = 60;
+    produceTimer = 260;
     id = counter++;
     speed = 1;
     harga = 50;
@@ -32,7 +32,6 @@ public class Guppy extends Fish {
 
   public boolean chaseFood(double radMin,Point pointKejar){
     if (radMin <= getRadius()) {
-      System.out.println("REALLY HUNGRY :((");
       return true;
     } else {
       swimto(pointKejar, getSpeed());
