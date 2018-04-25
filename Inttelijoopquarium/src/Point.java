@@ -81,13 +81,4 @@ public class Point implements Comparable {
       return 1;
     }
   }
-
-  /**
-   * print point dalam format 'X = absis Y = ordiant ".
-   * @return
-   */
-  @Override
-  public String toString() {
-    return ("(" + absis + ',' + ordinat + ')');
-  }
 }

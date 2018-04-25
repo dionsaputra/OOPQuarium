@@ -22,8 +22,18 @@
       <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="17">
               <caret line="53" selection-start-line="53" selection-end-line="53" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="357">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+=======
+            <state relative-caret-position="190">
+              <caret line="299" column="42" selection-start-line="299" selection-start-column="42" selection-end-line="299" selection-end-column="42" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
@@ -31,8 +41,18 @@
       <file leaf-file-name="MakananIkan.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MakananIkan.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="156">
               <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="1190">
+              <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+=======
+            <state relative-caret-position="199">
+              <caret line="124" column="28" lean-forward="true" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
@@ -40,8 +60,18 @@
       <file leaf-file-name="MakananIkanTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MakananIkanTest.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="238">
               <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="391">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+=======
+            <state relative-caret-position="180">
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
@@ -49,17 +79,52 @@
       <file leaf-file-name="Pet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pet.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="156">
               <caret line="266" column="12" selection-start-line="266" selection-start-column="12" selection-end-line="266" selection-end-column="12" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="219">
+              <caret line="84" column="3" selection-start-line="84" selection-start-column="3" selection-end-line="84" selection-end-column="3" />
+=======
+            <state relative-caret-position="17">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Piranha.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Piranha.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="111">
               <caret line="127" column="22" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="22" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="PointTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PointTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Object.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_141/src.zip!/java/lang/Object.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3553">
+              <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+=======
+      <file leaf-file-name="MakananIkan.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MakananIkan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
@@ -67,17 +132,46 @@
       <file leaf-file-name="PiranhaTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PiranhaTest.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="68">
               <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="136">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+=======
+            <state relative-caret-position="238">
+              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="PointTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PointTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Guppy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Guppy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+=======
+      <file leaf-file-name="Pet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="266" column="12" lean-forward="true" selection-start-line="266" selection-start-column="12" selection-end-line="266" selection-end-column="12" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
@@ -94,8 +188,17 @@
       <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Point.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="2125">
+              <caret line="128" column="16" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
+=======
             <state relative-caret-position="479">
+<<<<<<< HEAD
               <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+=======
+              <caret line="71" column="4" lean-forward="true" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
@@ -103,8 +206,17 @@
       <file leaf-file-name="PriceList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PriceList.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="2312">
+              <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
+=======
             <state relative-caret-position="170">
+<<<<<<< HEAD
               <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+=======
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
             </state>
           </provider>
         </entry>
@@ -151,6 +263,11 @@
         <option value="$PROJECT_DIR$/src/DrawFishTest.java" />
         <option value="$PROJECT_DIR$/src/GuppyTest.java" />
         <option value="$PROJECT_DIR$/src/LinkedListDriver.java" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/Point.java" />
+        <option value="$PROJECT_DIR$/src/PointTest.java" />
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
         <option value="$PROJECT_DIR$/src/Aquarium.java" />
         <option value="$PROJECT_DIR$/src/Fish.java" />
         <option value="$PROJECT_DIR$/src/Guppy.java" />
@@ -163,9 +280,24 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
+=======
+<<<<<<< HEAD
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="518" />
+=======
+  <component name="ProjectFrameBounds" extendedState="7">
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
     <option name="x" value="725" />
     <option name="y" value="64" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
     <option name="width" value="640" />
     <option name="height" value="788" />
   </component>
@@ -174,6 +306,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scope" />
+=======
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,7 +326,10 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
       <pane id="Scope" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -203,7 +342,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
+=======
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -225,7 +368,11 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="JUnit.PiranhaTest">
+=======
+  <component name="RunManager" selected="JUnit.PointTest">
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Inttelijoopquarium" />
@@ -233,12 +380,12 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
     </configuration>
-    <configuration name="DrawCoinTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Inttelijoopquarium" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DrawCoinTest" />
+      <option name="MAIN_CLASS_NAME" value="PetTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -250,12 +397,12 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="DrawFishTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PointTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Inttelijoopquarium" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DrawFishTest" />
+      <option name="MAIN_CLASS_NAME" value="PointTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -267,14 +414,14 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="GuppyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PointTest.compareTo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Inttelijoopquarium" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GuppyTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="PointTest" />
+      <option name="METHOD_NAME" value="compareTo" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -284,14 +431,24 @@
       </option>
       <patterns />
     </configuration>
+<<<<<<< HEAD
     <configuration name="PiranhaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="PointTest.toString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
       <module name="Inttelijoopquarium" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
+<<<<<<< HEAD
       <option name="MAIN_CLASS_NAME" value="PiranhaTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+=======
+      <option name="MAIN_CLASS_NAME" value="PointTest" />
+      <option name="METHOD_NAME" value="toString" />
+      <option name="TEST_OBJECT" value="method" />
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -318,6 +475,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+<<<<<<< HEAD
       <item itemvalue="JUnit.GuppyTest" />
       <item itemvalue="JUnit.DrawCoinTest" />
       <item itemvalue="JUnit.DrawFishTest" />
@@ -330,6 +488,20 @@
         <item itemvalue="JUnit.DrawFishTest" />
         <item itemvalue="JUnit.DrawCoinTest" />
         <item itemvalue="JUnit.GuppyTest" />
+=======
+      <item itemvalue="JUnit.PointTest" />
+      <item itemvalue="JUnit.PointTest.toString" />
+      <item itemvalue="JUnit.PetTest" />
+      <item itemvalue="JUnit.PointTest.compareTo" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PointTest" />
+        <item itemvalue="JUnit.PointTest.compareTo" />
+        <item itemvalue="JUnit.PetTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PointTest.toString" />
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
       </list>
     </recent_temporary>
   </component>
@@ -347,9 +519,12 @@
     <servers />
   </component>
   <component name="TestHistory">
+<<<<<<< HEAD
     <history-entry file="GuppyTest - 2018.04.25 at 00h 46m 45s.xml">
       <configuration name="GuppyTest" configurationId="JUnit" />
     </history-entry>
+=======
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
     <history-entry file="GuppyTest - 2018.04.25 at 00h 51m 35s.xml">
       <configuration name="GuppyTest" configurationId="JUnit" />
     </history-entry>
@@ -368,6 +543,7 @@
     <history-entry file="DrawFishTest - 2018.04.25 at 18h 46m 54s.xml">
       <configuration name="DrawFishTest" configurationId="JUnit" />
     </history-entry>
+<<<<<<< HEAD
     <history-entry file="PiranhaTest - 2018.04.25 at 21h 12m 04s.xml">
       <configuration name="PiranhaTest" configurationId="JUnit" />
     </history-entry>
@@ -386,6 +562,20 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+=======
+    <history-entry file="PointTest - 2018.04.25 at 20h 05m 55s.xml">
+      <configuration name="PointTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PointTest_compareTo - 2018.04.25 at 20h 07m 23s.xml">
+      <configuration name="PointTest.compareTo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PointTest - 2018.04.25 at 20h 08m 27s.xml">
+      <configuration name="PointTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PointTest - 2018.04.25 at 20h 08m 47s.xml">
+      <configuration name="PointTest" configurationId="JUnit" />
+    </history-entry>
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -399,8 +589,9 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32980332" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3630363" />
       <window_info anchor="bottom" id="CheckStyle" order="7" weight="0.35478547" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32838285" />
@@ -408,16 +599,38 @@
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2655068" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294893" />
+=======
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3630363" />
+      <window_info anchor="bottom" id="CheckStyle" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11875945" />
+      <window_info anchor="bottom" id="Analysis" order="8" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36408567" />
+      <window_info active="true" anchor="bottom" id="CheckStyle" order="7" visible="true" weight="0.35478547" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2655068" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+<<<<<<< HEAD
+      <window_info anchor="right" id="PlantUML" order="3" />
+=======
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="PlantUML" order="3" />
       <window_info anchor="bottom" id="CheckStyle" order="7" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -425,6 +638,8 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1172466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+<<<<<<< HEAD
+=======
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3630363" />
@@ -435,6 +650,7 @@
       <window_info anchor="bottom" id="Analysis" order="8" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -481,6 +697,47 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Guppy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="128" column="16" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aquarium.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2499">
+          <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/KoinTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
     <entry file="file://$PROJECT_DIR$/src/DrawFish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -732,34 +989,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Guppy.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="357">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+=======
         <state relative-caret-position="199">
+<<<<<<< HEAD
           <caret line="124" column="28" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
+=======
+          <caret line="124" column="28" lean-forward="true" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Koin.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2125">
+          <caret line="128" column="16" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
+=======
         <state relative-caret-position="180">
           <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2312">
+          <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
+=======
         <state relative-caret-position="17">
+<<<<<<< HEAD
           <caret line="53" selection-start-line="53" selection-end-line="53" />
+=======
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MakananIkan.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1190">
+          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+=======
         <state relative-caret-position="156">
+<<<<<<< HEAD
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+=======
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MakananIkanTest.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="391">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Guppy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_141/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3553">
+          <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+=======
         <state relative-caret-position="238">
           <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
         </state>
@@ -768,19 +1075,48 @@
     <entry file="file://$PROJECT_DIR$/src/Pet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
+<<<<<<< HEAD
           <caret line="266" column="12" selection-start-line="266" selection-start-column="12" selection-end-line="266" selection-end-column="12" />
+=======
+          <caret line="266" column="12" lean-forward="true" selection-start-line="266" selection-start-column="12" selection-end-line="266" selection-end-column="12" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PriceList.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="170">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="136">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="156">
+          <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Point.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="219">
+          <caret line="84" column="3" selection-start-line="84" selection-start-column="3" selection-end-line="84" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PointTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+=======
         <state relative-caret-position="479">
           <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
         </state>
@@ -788,6 +1124,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PointTest.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="255">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
@@ -811,6 +1148,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+=======
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+>>>>>>> 155acd0638502cc6a30fe8c7a24fc4b3b60877a8
+>>>>>>> 68ebb7b1241e3f887323e656dc6f4359e5645e90
         </state>
       </provider>
     </entry>
