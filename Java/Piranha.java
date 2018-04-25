@@ -2,6 +2,9 @@ public class Piranha extends Fish {
 
   private int latestFood;
 
+  /**
+   * Konstruktor default piranha.
+   */
   public Piranha() {
     maxStarving = 500;
     maxStarvationPeriod = 200;
@@ -19,6 +22,12 @@ public class Piranha extends Fish {
     speed = 2;
   }
 
+  /**
+   * Kejar makanan ikan.
+   * @param radMin radius makanan terdekat
+   * @param pointKejar posisi target
+   * @return True if makanan udah bisa dimakan
+   */
   public boolean chaseFood(double radMin,Point pointKejar){
     if (radMin <= getRadius()) {
       return true;
@@ -29,6 +38,11 @@ public class Piranha extends Fish {
     }
   }
 
+  /**
+   * makan guppy.
+   * @param aquarium ubah isi aquarium
+   * @param idx indeks guppy di list
+   */
   public void biteFish(Aquarium aquarium,int idx){
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
@@ -39,6 +53,10 @@ public class Piranha extends Fish {
     this.produce(aquarium);
   }
 
+  /**
+   * Makan makanan ikan.
+   * @param aquarium Aquarium ikan
+   */
   public void eat(Aquarium aquarium) {
     boolean existFood = false;
     boolean eatFood = false;
@@ -77,32 +95,60 @@ public class Piranha extends Fish {
     }
   }
 
+  /**
+   * produce koin.
+   * @param aquarium ubah isi aquarium
+   */
   public void produce(Aquarium aquarium) {
     Point posisiKoin = new Point(getPosisi().getAbsis(), getPosisi().getOrdinat());
     Koin koin = new Koin(getLast(), posisiKoin);
     aquarium.addObject(koin);
   }
 
+  /**
+   * getter kapasitas makanan ikan untuk tumbuh.
+   * @return foodCapacity kapasitas makan
+   */  
   public int getProduceTime() {
     return 1;
   }
 
+  /**
+   * getter kapasitas makanan ikan untuk tumbuh.
+   * @return produceTime untuk produksi koin
+   */
   public int getMaxProduceTime() {
     return 1;
   }
 
+  /**
+   * setter waktu produksi koin dari ikan.
+   * @param x producetime
+   */
   public void setProduceTime(int produceTime) {
     // do nothing
   }
 
+  /**
+   * getter last food yang dimakan sama piranha.
+   * @return latestFood untuk produksi koin
+   */
   public int getLast() {
     return latestFood;
   }
 
+  /**
+   * getter id piranha.
+   * @return id piranha
+   */
   public int getId() {
     return id;
   }
 
+  /**
+   * setter latestfood dari piranha
+   * @param latestFood ikan terakhir yang dimakan
+   */
   public void setLast(int latestFood) {
     this.latestFood = latestFood;
   }

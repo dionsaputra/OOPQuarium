@@ -14,7 +14,7 @@ public class Guppy extends Fish {
     maxStarvationPeriod = 200;
     maxMoveTime = 70;
     growthTimer = 6;
-    produceTimer = 260;
+    produceTimer = 250;
     id = counter++;
     speed = 1;
     harga = 50;
@@ -30,6 +30,12 @@ public class Guppy extends Fish {
     setProduceTime(getMaxProduceTime());
   }
 
+  /**
+   * Kejar makanan ikan.
+   * @param radMin radius makanan terdekat
+   * @param pointKejar posisi target
+   * @return True if makanan udah bisa dimakan
+   */
   public boolean chaseFood(double radMin,Point pointKejar){
     if (radMin <= getRadius()) {
       return true;
@@ -40,6 +46,11 @@ public class Guppy extends Fish {
     }
   }
 
+  /**
+   * makan makanan ikan.
+   * @param aquarium ubah isi aquarium
+   * @param idx indeks makanan ikan di list
+   */
   public void biteFood(Aquarium aquarium,int idx){
     foodCapacity = foodCapacity + 1;
     if (foodCapacity >= growthTimer) { //next growth
@@ -52,9 +63,9 @@ public class Guppy extends Fish {
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
     aquarium.removeObject(aquarium.getListObjekMati().get(idx));
-}
+  }
   /**
-   * Makan.
+   * Makan makanan ikan.
    * @param aquarium Aquarium ikan
    */
   public void eat(Aquarium aquarium) {
@@ -89,45 +100,76 @@ public class Guppy extends Fish {
     }
   }
 
+  /**
+   * produce koin.
+   * @param aquarium ubah isi aquarium
+   */
   public void produce(Aquarium aquarium) {
     Point posisiKoin = new Point(getPosisi().getAbsis(), getPosisi().getOrdinat());
     Koin koin = new Koin(50 * growthStep, posisiKoin);
     aquarium.addObject(koin);
   }
 
-  //Growing
+  /**
+   * setter growth ikan.
+   */
   public void nextGrowth() {
     growthStep = growthStep + 1;
   }
 
-  //Getter Setter
+  /**
+   * getter growth step ikan.
+   * @return growthStep ikan
+   */
   public int getGrowthStep() {
     return growthStep;
   }
 
+   /**
+   * getter kapasitas makanan ikan untuk tumbuh.
+   * @return foodCapacity kapasitas makan
+   */
   public int getFoodCapaty() {
     return foodCapacity;
   }
 
+  /**
+   * getter kapasitas makanan ikan untuk tumbuh.
+   * @return produceTime untuk produksi koin
+   */
   public int getProduceTime() {
     return produceTime;
   }
 
+  /**
+   * getter id ikan.
+   * @return id ikan
+   */
   public int getId() {
     return id;
   }
 
-
+  /**
+   * getter produceTimer ikan.
+   * @return produceTimer ikan
+   */
   public int getMaxProduceTime() {
     return produceTimer;
   }
 
+  /**
+   * setter kapasitas makan ikan.
+   * @param x kapasitas makan
+   */
   public void setFoodCapacity(int x) {
     foodCapacity = x;
   }
 
+  /**
+   * setter waktu produksi koin dari ikan.
+   * @param x producetime
+   */
   public void setProduceTime(int x) {
     produceTime = x;
   }
-
 }
