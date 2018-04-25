@@ -19,6 +19,26 @@ public class Piranha extends Fish {
     speed = 2;
   }
 
+  public boolean chaseFood(double radMin,Point pointKejar){
+    if (radMin <= getRadius()) {
+      return true;
+    } else {
+      swimto(pointKejar, getSpeed());
+      setStarving(getStarving() - 1);
+      return false;
+    }
+  }
+
+  public void biteFish(Aquarium aquarium,int idx){
+    setStarvationPeriod(maxStarvationPeriod);
+    setStarving(maxStarving);
+
+    Guppy temp = (Guppy) aquarium.getListIkan().get(idx);
+    setLast(temp.getHarga() * (temp.getGrowthStep() + 1)); //untuk makan
+    aquarium.removeObject(aquarium.getListIkan().get(idx));
+    this.produce(aquarium);
+  }
+
   public void eat(Aquarium aquarium) {
     boolean existFood = false;
     boolean eatFood = false;
@@ -45,24 +65,13 @@ public class Piranha extends Fish {
 
     // check walk to food or eat it
     if (existFood) {
-      if (radMin <= getRadius()) {
-        eatFood = true;
-      } else {
-        swimto(pointKejar, getSpeed());
-        setStarving(getStarving() - 1);
-      }
+      eatFood = chaseFood(radMin,pointKejar);
     }
 
-    // eat guppu
+    // eat guppy
     if (eatFood) {
-      //Update hungry time
-      setStarvationPeriod(maxStarvationPeriod);
-      setStarving(maxStarving);
-      //ilangin guppy
-      Guppy temp = (Guppy) aquarium.getListIkan().get(idx);
-      setLast(temp.getHarga() * (temp.getGrowthStep() + 1)); //untuk makan
-      aquarium.removeObject(aquarium.getListIkan().get(idx));
-      this.produce(aquarium);
+      System.out.println("SEE ME");
+      biteFish(aquarium, idx);
     } else {
       setStarving(getStarving() - 1);
     }

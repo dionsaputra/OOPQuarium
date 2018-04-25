@@ -22,7 +22,7 @@ public class Guppy extends Fish {
     foodCapacity = 0;
     rightDirect = false;
     degree = 180;
-    radius = 15;
+    radius = 20;
     jenis = "Guppy";
     setStarvationPeriod(maxStarvationPeriod);
     setStarving(maxStarving);
@@ -30,12 +30,14 @@ public class Guppy extends Fish {
     setProduceTime(getMaxProduceTime());
   }
 
-  public void chaseFood(boolean eatFood,double radMin,Point pointKejar){
+  public boolean chaseFood(double radMin,Point pointKejar){
     if (radMin <= getRadius()) {
-      eatFood = true;
+      System.out.println("REALLY HUNGRY :((");
+      return true;
     } else {
       swimto(pointKejar, getSpeed());
       setStarving(getStarving() - 1);
+      return false;
     }
   }
 
@@ -77,10 +79,11 @@ public class Guppy extends Fish {
     }
 
     if (existFood) {
-      chaseFood(eatFood,radMin,pointKejar);
+      eatFood = chaseFood(radMin,pointKejar);
     }
 
     if (eatFood) {
+      System.out.println("I'M HUNGRY :(");
       biteFood(aquarium,idx);
     } else {
       setStarving(getStarving() - 1);
