@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class MakananIkan extends ObjekMati{
+public class MakananIkan extends ObjekMati {
 
   private final int kecepatanMakananIkan = 1;
   private final int constHarga = 10;

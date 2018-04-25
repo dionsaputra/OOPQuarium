@@ -52,9 +52,6 @@ public class DrawFish extends JLabel {
       p.setAbsis(temp.getPosisi().getAbsis());
       p.setOrdinat(temp.getPosisi().getOrdinat());
       this.setLocation(p.getAbsis(),p.getOrdinat());
-
-
-
       if (temp.isFaceRight()) {
         if (temp.isStarving()) {
           this.setIcon(hungryRightI[temp.getGrowthStep() - 1]);
@@ -69,6 +66,12 @@ public class DrawFish extends JLabel {
         }
 
       }
+    } else {
+      System.out.println("ikan mati");
+      fish = null;
+      listIkan = null;
+      panel.remove(this);
+      panel = null;
     }
     super.paintComponent(g);
   }
