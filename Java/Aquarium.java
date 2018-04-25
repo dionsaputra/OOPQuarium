@@ -101,7 +101,7 @@ public class Aquarium {
   public int countGuppy(){
     int countguppy = 0;
     for (int j = 0; j < listIkan.totalElmt(); j++) {
-      if (listIkan.get(j).getJenis() == "Guppy") {
+      if (listIkan.get(j).getJenis().equals("Guppy")) {
         countguppy++;
       }
     }
@@ -114,7 +114,7 @@ public class Aquarium {
   public int countFood(){
     int countfood = 0; 
     for (int j = 0; j < listObjekMati.totalElmt(); j++) {
-      if (listObjekMati.get(j).getJenis() == "Makanan Ikan") {
+      if (listObjekMati.get(j).getJenis().equals("Makanan Ikan")) {
         countfood++;
       }
     }
@@ -131,7 +131,7 @@ public class Aquarium {
       if (tempoint.getStarving() <= 0) {
         removeObject(listIkan.get(i));
       } else {
-        if (tempoint.getJenis() == "Guppy") {
+        if (tempoint.getJenis().equals("Guppy")) {
           if (tempoint.getStarvationPeriod() > 0 || countFood()==0 ) {
             tempoint.trySwim();
           } else {

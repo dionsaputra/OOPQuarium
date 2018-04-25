@@ -31,9 +31,9 @@ public abstract class Fish implements Comparable, Entitas{
   public abstract void setProduceTime(int produceTime);
 
   /**
-   *
-   * @param x
-   * @param speed
+   * Berenang ke suatu titik.
+   * @param x posisi tujuan
+   * @param speed ikan
    */
   public void swimto(Point x, int speed) {
     Point temp = this.getPosisi();
@@ -43,6 +43,11 @@ public abstract class Fish implements Comparable, Entitas{
     swim(deg, speed);
   }
 
+  /**
+   * Berenang dengan derajat sebesar degree.
+   * @param degree renang ikan
+   * @param speed ikan
+   */
   public void swim(int degree, int speed) {
     double rad = (double) degree * pi / 180.0;
     Point temp = getPosisi();
@@ -74,6 +79,9 @@ public abstract class Fish implements Comparable, Entitas{
     setPosisi(temp);
   }
 
+  /**
+   * Mencoba Berenang.
+   */
   public void trySwim(){
     Random rand = new Random();
     int randomNumber = Math.abs(rand.nextInt()%360);
@@ -91,6 +99,10 @@ public abstract class Fish implements Comparable, Entitas{
     this.setStarving(this.getStarving() - 1);
   }
 
+  /**
+   * Mencoba memproduksi koin.
+   * @param aquarium aquarium
+   */
   public void tryProduce(Aquarium aquarium){
     if (this.getProduceTime() < 0) {
       this.produce(aquarium);
@@ -99,10 +111,17 @@ public abstract class Fish implements Comparable, Entitas{
     this.setProduceTime(this.getProduceTime() - 1);
   }
 
+  /**
+   * Ubah arah gerak.
+   */
   public void changeDirection() {
     rightDirect = !rightDirect;
   }
 
+  /**
+   * Membandingkan objek dengan id.
+   * @param object benda
+   */
   @Override
   public int compareTo(Object object) {
     Fish fish = (Fish) object;
@@ -115,90 +134,171 @@ public abstract class Fish implements Comparable, Entitas{
     }
   }
 
+  /**
+   * getter starving.
+   * @return starvationPeriod dari ikan
+   */
   public boolean isStarving() {
     return starvationPeriod <= 0;
   }
 
-  //Cek arah
+  /**
+   * getter arah.
+   * @return rightDirect arah ikan
+   */
   public boolean isFaceRight() {
     return rightDirect;
   }
 
-  //Setter Getter
+  /**
+   * getter movetime.
+   * @return moveTimer ikan
+   */
   public int getMoveTime() {
     return moveTimer;
   }
 
+  /**
+   * getter id.
+   * @return id ikan
+   */
   public int getId() {
     return id;
   }
 
+  /**
+   * getter posisi.
+   * @return posisi ikan
+   */
   public Point getPosisi() {
     return posisi;
   }
 
+  /**
+   * getter starvationperiod.
+   * @return starvation period 
+   */
   public int getStarvationPeriod() {
     return starvationPeriod;
   }
 
+  /**
+   * getter speed.
+   * @return speed ikan
+   */
   public int getSpeed() {
     return speed;
   }
 
+  /**
+   * getter harga.
+   * @return harga ikan 
+   */
   public int getHarga() {
     return harga;
   }
 
+  /**
+   * getter starving.
+   * @return starving waktu ikan mati
+   */
   public int getStarving() {
     return starving;
   }
 
+  /**
+   * getter sudut renang ikan.
+   * @return degree ikan
+   */
   public int getDegree() {
     return degree;
   }
 
+  /**
+   * getter maximum move.
+   * @return maxMoveTime ikan
+   */
   public int getMaxMove() {
     return maxMoveTime;
   }
 
+  /**
+   * getter radius makan.
+   * @return radius ikan
+   */
   public double getRadius() {
     return radius;
   }
 
+  /**
+   * getter jenis ikan.
+   * @return jenis ikan
+   */
   public String getJenis() {
     return jenis;
   }
 
+  /**
+   * setter sudut renang.
+   * @param degree ikan
+   */
   public void setDegree(int degree) {
     this.degree = degree;
   }
 
+  /**
+   * setter move time.
+   * @param moveTimer ikan
+   */
   public void setMoveTime(int moveTimer) {
     this.moveTimer = moveTimer;
   }
 
+  /**
+   * setter harga.
+   * @param harga ikan
+   */
   public void setHarga(int harga) {
     this.harga = harga;
   }
 
+  /**
+   * setter radius makan.
+   * @param radius radius ikan
+   */
   public void setRadius(int radius) {
     this.radius = radius;
   }
 
+  /**
+   * setter jenis ikan.
+   * @param jenis jenis ikan
+   */
   public void setJenis(String jenis) {
     this.jenis = jenis;
   }
 
+  /**
+   * setter posisi.
+   * @param posisi ikan
+   */
   public void setPosisi(Point posisi) {
     this.posisi = posisi;
   }
 
+  /**
+   * setter starvationperiod ikan.
+   * @param starvationPeriod ikan
+   */
   public void setStarvationPeriod(int starvationPeriod) {
     this.starvationPeriod = starvationPeriod;
   }
 
+  /**
+   * setter starving waktu mati ikan.
+   * @param starving
+   */
   public void setStarving(int starving) {
     this.starving = starving;
   }
-
 }
