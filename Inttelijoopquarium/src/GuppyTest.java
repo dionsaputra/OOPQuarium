@@ -54,7 +54,7 @@ class GuppyTest {
   @Test
   void getProduceTime() {
     Guppy g = new Guppy();
-    assertEquals(100, g.getProduceTime());
+    assertEquals(250, g.getProduceTime());
     System.out.println("getProduceTime success");
   }
 
@@ -62,7 +62,7 @@ class GuppyTest {
   @Test
   void getMaxProduceTime() {
     Guppy g = new Guppy();
-    assertEquals(100,g.getMaxProduceTime());
+    assertEquals(250,g.getMaxProduceTime());
     System.out.println("getMaxProduceTime success");
   }
 
