@@ -19,11 +19,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GuppyTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GuppyTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GuppyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+            <state relative-caret-position="363">
+              <caret line="56" column="42" lean-forward="true" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MachineDriverAquarium.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MachineDriverAquarium.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1789">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MachineDriverAquariumTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MachineDriverAquariumTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -33,18 +51,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="995">
               <caret line="82" column="7" selection-start-line="82" selection-start-column="7" selection-end-line="82" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MouseButtonPiranhaTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MouseButtonPiranhaTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="82" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -112,18 +118,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DrawCoin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DrawCoin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="24" column="96" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="96" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -174,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/MouseButtonCoinTest.java" />
         <option value="$PROJECT_DIR$/src/MouseButtonBackgroundTest.java" />
         <option value="$PROJECT_DIR$/src/GuppyTest.java" />
+        <option value="$PROJECT_DIR$/src/MachineDriverAquariumTest.java" />
       </list>
     </option>
   </component>
@@ -216,6 +211,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -237,7 +233,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Inttelijoopquarium">
+  <component name="RunManager" selected="JUnit.MachineDriverAquariumTest">
     <configuration name="All in Inttelijoopquarium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Inttelijoopquarium" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -246,6 +242,23 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="MachineDriverAquariumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Inttelijoopquarium" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MachineDriverAquariumTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -278,23 +291,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MouseButtonCoinTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="MouseButtonEggTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Inttelijoopquarium" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MouseButtonEggTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -339,19 +335,19 @@
       <method />
     </configuration>
     <list>
-      <item itemvalue="JUnit.MouseButtonEggTest" />
       <item itemvalue="JUnit.MouseButtonCoinTest" />
       <item itemvalue="JUnit.MouseButtonPiranhaTest" />
       <item itemvalue="JUnit.MouseButtonBackgroundTest" />
       <item itemvalue="JUnit.All in Inttelijoopquarium" />
+      <item itemvalue="JUnit.MachineDriverAquariumTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MachineDriverAquariumTest" />
         <item itemvalue="JUnit.All in Inttelijoopquarium" />
         <item itemvalue="JUnit.MouseButtonBackgroundTest" />
         <item itemvalue="JUnit.MouseButtonCoinTest" />
         <item itemvalue="JUnit.MouseButtonPiranhaTest" />
-        <item itemvalue="JUnit.MouseButtonEggTest" />
       </list>
     </recent_temporary>
   </component>
@@ -369,12 +365,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MouseButtonPiranhaTest_testCreateObject - 2018.04.25 at 20h 53m 24s.xml">
-      <configuration name="MouseButtonPiranhaTest.testCreateObject" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MouseButtonGuppyTest - 2018.04.25 at 20h 54m 32s.xml">
-      <configuration name="MouseButtonGuppyTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MouseButtonEggTest - 2018.04.25 at 20h 55m 37s.xml">
       <configuration name="MouseButtonEggTest" configurationId="JUnit" />
     </history-entry>
@@ -399,6 +389,12 @@
     <history-entry file="All_in_Inttelijoopquarium - 2018.04.25 at 21h 20m 12s.xml">
       <configuration name="All in Inttelijoopquarium" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_Inttelijoopquarium - 2018.04.25 at 21h 26m 55s.xml">
+      <configuration name="All in Inttelijoopquarium" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MachineDriverAquariumTest - 2018.04.25 at 21h 33m 19s.xml">
+      <configuration name="MachineDriverAquariumTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -420,6 +416,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2579666" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -432,7 +429,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3294893" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="0" />
@@ -467,14 +463,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LinkedListTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
@@ -588,13 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MachineDriverAquarium.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="433" column="18" lean-forward="true" selection-start-line="433" selection-start-column="18" selection-end-line="433" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -822,8 +809,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GuppyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        <state relative-caret-position="363">
+          <caret line="56" column="42" lean-forward="true" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MachineDriverAquarium.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1789">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MachineDriverAquariumTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
         </state>
       </provider>
     </entry>
