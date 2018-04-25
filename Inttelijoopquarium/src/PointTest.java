@@ -30,7 +30,5 @@ class PointTest {
   void compareTo() {
   }
 
-  @Test
-  void toString() {
-  }
+
 }
