@@ -1,7 +1,8 @@
 import java.util.Random;
+import model.Entity;
 import model.Point;
 
-public abstract class Fish implements Comparable, Entitas {
+public abstract class Fish implements Comparable, Entity {
 
   protected static int counter = 0;
   private final double pi = 3.14159265;
