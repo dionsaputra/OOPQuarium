@@ -123,7 +123,7 @@ public class Pet implements Comparable, Consumer {
    */
   public boolean existCoin(Aquarium aq) {
     boolean existCoin = false;
-    for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++) {
+    for (int i = 0; i < aq.getListObjekMati().size(); i++) {
       if (aq.getListObjekMati().get(i).getJenis().equals("Koin")) {
         existCoin = true; 
         break;
@@ -140,7 +140,7 @@ public class Pet implements Comparable, Consumer {
    */
   public boolean existCoinOnGround(Aquarium aq) {
     boolean existCoinOnGround = false;
-    for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++) {
+    for (int i = 0; i < aq.getListObjekMati().size(); i++) {
       boolean isKoin = aq.getListObjekMati().get(i).getJenis().equals("Koin");
       boolean isDasar = aq.getListObjekMati().get(i).isDasar(aq);
       if (isKoin && isDasar) {
@@ -160,7 +160,7 @@ public class Pet implements Comparable, Consumer {
   public int nearestHorizontalKoin(Aquarium aq) {
     double dist = 1000000;
     int idx = 0;
-    for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++) {
+    for (int i = 0; i < aq.getListObjekMati().size(); i++) {
       if (aq.getListObjekMati().get(i).getJenis().equals("Koin")) {
         int ordinatObjMati = aq.getListObjekMati().get(i).getPosisi().getOrdinat();
         int absisObjMati = aq.getListObjekMati().get(i).getPosisi().getAbsis();
@@ -184,7 +184,7 @@ public class Pet implements Comparable, Consumer {
   public int nearestVerticalKoin(Aquarium aq) {
     double dist = 1000000;
     int idx = 0;
-    for (int i = 0; i < aq.getListObjekMati().totalElmt(); i++) {
+    for (int i = 0; i < aq.getListObjekMati().size(); i++) {
       if (aq.getListObjekMati().get(i).getJenis().equals("Koin")) {
         int ordinatObjMati = aq.getListObjekMati().get(i).getPosisi().getOrdinat();
         if (Math.abs(ordinatObjMati - this.getPosisi().getOrdinat()) < dist) {

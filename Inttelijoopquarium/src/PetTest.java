@@ -206,7 +206,7 @@ class PetTest {
 
     pet.eat(aq,0);
     assertEquals(10,pet.getTotalMoney());
-    assertEquals(1,aq.getListObjekMati().totalElmt());
+    assertEquals(1,aq.getListObjekMati().size());
   }
 
   @Test

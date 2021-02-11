@@ -10,9 +10,9 @@ class GuppyTest {
     Guppy g = new Guppy();
     g.setPosisi(new Point(2,3));
     aq.addObject(new MakananIkan(new Point(5,4)));
-    int jumlahAwal = aq.getListObjekMati().totalElmt();
+    int jumlahAwal = aq.getListObjekMati().size();
     g.hunt(aq);
-    assertEquals(jumlahAwal-1, aq.getListObjekMati().totalElmt());
+    assertEquals(jumlahAwal-1, aq.getListObjekMati().size());
     System.out.println("eat success");
   }
 
@@ -20,10 +20,10 @@ class GuppyTest {
   void produce() {
     Aquarium aq = new Aquarium();
     Guppy g = new Guppy();
-    int nKoinAwal = aq.getListObjekMati().totalElmt();
+    int nKoinAwal = aq.getListObjekMati().size();
     g.setPosisi(new Point(3,2));
     g.produce(aq);
-    int nKoin = aq.getListObjekMati().totalElmt();
+    int nKoin = aq.getListObjekMati().size();
     assertEquals(nKoinAwal+1, nKoin);
     System.out.println("produce success");
   }

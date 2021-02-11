@@ -67,7 +67,7 @@ public class Piranha extends Fish implements Consumer {
     Point pointKejar = new Point();
 
     // check food exist
-    while (i < aquarium.getListIkan().totalElmt()) {
+    while (i < aquarium.getListIkan().size()) {
       if (aquarium.getListIkan().get(i).getJenis().equals("Guppy")) {
         existFood = true;
         Point pointMakanan = aquarium.getListIkan().get(i).getPosisi();

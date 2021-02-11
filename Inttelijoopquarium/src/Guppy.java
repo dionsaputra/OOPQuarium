@@ -77,7 +77,7 @@ public class Guppy extends Fish implements Consumer {
     int idx = 0;
     Point idxGuppy = getPosisi();
     Point pointKejar = new Point();
-    while (i < aquarium.getListObjekMati().totalElmt()) {
+    while (i < aquarium.getListObjekMati().size()) {
       if (aquarium.getListObjekMati().get(i).getJenis().equals("Makanan Ikan")) {
         existFood = true;
         Point pointMakanan = aquarium.getListObjekMati().get(i).getPosisi();

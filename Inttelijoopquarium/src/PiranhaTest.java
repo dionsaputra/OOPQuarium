@@ -21,9 +21,9 @@ class PiranhaTest {
     g.setPosisi(new Point(2,3));
     aq.addObject(gup);
 
-    int jumlahAwal = aq.getListIkan().totalElmt();
+    int jumlahAwal = aq.getListIkan().size();
     g.hunt(aq);
-    assertEquals(jumlahAwal-1, aq.getListIkan().totalElmt());
+    assertEquals(jumlahAwal-1, aq.getListIkan().size());
     System.out.println("eat success");
   }
 
@@ -31,10 +31,10 @@ class PiranhaTest {
   void produce() {
     Aquarium aq = new Aquarium();
     Piranha g = new Piranha();
-    int nKoinAwal = aq.getListObjekMati().totalElmt();
+    int nKoinAwal = aq.getListObjekMati().size();
     g.setPosisi(new Point(3,2));
     g.produce(aq);
-    int nKoin = aq.getListObjekMati().totalElmt();
+    int nKoin = aq.getListObjekMati().size();
     assertEquals(nKoinAwal+1, nKoin);
     System.out.println("produce piranha success");
   }

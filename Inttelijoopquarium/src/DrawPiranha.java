@@ -1,15 +1,13 @@
-import java.awt.BorderLayout;
 import java.awt.Graphics;
-import java.util.Scanner;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class DrawPiranha extends JLabel {
 
   private JPanel panel;
-  private LinkedList<Fish> list;
+  private ArrayList<Fish> list;
   private Fish fish;
   private int notFound = -1;
   private ImageIcon leftI;
@@ -19,6 +17,7 @@ public class DrawPiranha extends JLabel {
 
   /**
    * gambar piranha object.
+   *
    * @param tempP panel gambar
    * @param tempLi listnya
    * @param tempF ikannya
@@ -27,8 +26,8 @@ public class DrawPiranha extends JLabel {
    * @param hleft gambar lapar kiri
    * @param hright gambar lapar kanan
    */
-  public DrawPiranha(JPanel tempP,LinkedList<Fish> tempLi,Fish tempF,
-                     ImageIcon left,ImageIcon right,ImageIcon hleft,ImageIcon hright) {
+  public DrawPiranha(JPanel tempP, ArrayList<Fish> tempLi, Fish tempF,
+    ImageIcon left, ImageIcon right, ImageIcon hleft, ImageIcon hright) {
     panel = tempP;
     list = tempLi;
     fish = tempF;
@@ -40,17 +39,18 @@ public class DrawPiranha extends JLabel {
 
   /**
    * penggambar.
+   *
    * @param g tempat gambar
    */
   @Override
   public void paintComponent(Graphics g) {
-    int cari = list.find(fish);
+    int cari = list.indexOf(fish);
     if (cari != notFound) {
       Point p = new Point();
       Fish temp = list.get(cari);
       p.setAbsis(temp.getPosisi().getAbsis());
       p.setOrdinat(temp.getPosisi().getOrdinat());
-      this.setLocation(p.getAbsis(),p.getOrdinat());
+      this.setLocation(p.getAbsis(), p.getOrdinat());
       if (temp.isFaceRight()) {
         if (temp.isStarving()) {
           this.setIcon(hungryRightI);
