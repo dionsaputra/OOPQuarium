@@ -1,4 +1,4 @@
-import java.util.Random;
+import model.Point;
 
 public class MakananIkan extends ObjekMati {
 

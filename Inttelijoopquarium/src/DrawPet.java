@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import model.Point;
 
 public class DrawPet extends JLabel {
 
@@ -41,9 +42,9 @@ public class DrawPet extends JLabel {
     if (cari != notFound) {
       Point p = new Point();
       Pet temp = list.get(cari);
-      p.setAbsis(temp.getPosisi().getAbsis());
-      p.setOrdinat(temp.getPosisi().getOrdinat());
-      this.setLocation(p.getAbsis(), p.getOrdinat());
+      p.setX(temp.getPosisi().getX());
+      p.setY(temp.getPosisi().getY());
+      this.setLocation(p.getX(), p.getY());
       if (temp.getFaceRight()) {
         this.setIcon(rightSnail);
       } else {

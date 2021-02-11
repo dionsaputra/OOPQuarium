@@ -1,3 +1,5 @@
+import model.Point;
+
 public class Pet implements Comparable, Consumer {
 
   private static int counter = 0; // banyak objek Pet yang telah diciptakan
@@ -81,7 +83,7 @@ public class Pet implements Comparable, Consumer {
 
   /**
    * getter atribut posisi.
-   * @return posisi Point
+   * @return posisi model.Point
    */
   public Point getPosisi() {
     return posisi;
@@ -102,17 +104,17 @@ public class Pet implements Comparable, Consumer {
   public void walkTo(Point goal) {
     int dx = kecepatan;
 
-    if (goal.getAbsis() < posisi.getAbsis()) {
+    if (goal.getX() < posisi.getX()) {
       faceRight = false;
       dx = -1 * dx;
-    } else if (goal.getAbsis() == posisi.getAbsis()) {
+    } else if (goal.getX() == posisi.getX()) {
       dx = 0;
     } else {
       faceRight = true;
     }
 
     Point point = this.getPosisi();
-    point.setAbsis(point.getAbsis() + dx);
+    point.setX(point.getX() + dx);
     this.setPosisi(point);
   }
 
@@ -162,11 +164,11 @@ public class Pet implements Comparable, Consumer {
     int idx = 0;
     for (int i = 0; i < aq.getListObjekMati().size(); i++) {
       if (aq.getListObjekMati().get(i).getJenis().equals("Koin")) {
-        int ordinatObjMati = aq.getListObjekMati().get(i).getPosisi().getOrdinat();
-        int absisObjMati = aq.getListObjekMati().get(i).getPosisi().getAbsis();
-        if (ordinatObjMati == this.getPosisi().getOrdinat()) {
-          if (Math.abs(absisObjMati - this.getPosisi().getAbsis()) < dist) {
-            dist = Math.abs(absisObjMati - this.getPosisi().getAbsis());
+        int ordinatObjMati = aq.getListObjekMati().get(i).getPosisi().getY();
+        int absisObjMati = aq.getListObjekMati().get(i).getPosisi().getX();
+        if (ordinatObjMati == this.getPosisi().getY()) {
+          if (Math.abs(absisObjMati - this.getPosisi().getX()) < dist) {
+            dist = Math.abs(absisObjMati - this.getPosisi().getX());
             idx = i;
           }
         }
@@ -186,9 +188,9 @@ public class Pet implements Comparable, Consumer {
     int idx = 0;
     for (int i = 0; i < aq.getListObjekMati().size(); i++) {
       if (aq.getListObjekMati().get(i).getJenis().equals("Koin")) {
-        int ordinatObjMati = aq.getListObjekMati().get(i).getPosisi().getOrdinat();
-        if (Math.abs(ordinatObjMati - this.getPosisi().getOrdinat()) < dist) {
-          dist = Math.abs(ordinatObjMati - this.getPosisi().getOrdinat());
+        int ordinatObjMati = aq.getListObjekMati().get(i).getPosisi().getY();
+        if (Math.abs(ordinatObjMati - this.getPosisi().getY()) < dist) {
+          dist = Math.abs(ordinatObjMati - this.getPosisi().getY());
           idx = i;
         }  
       }
@@ -204,7 +206,7 @@ public class Pet implements Comparable, Consumer {
    */
   public boolean isInRadius(Aquarium aq, int idx) {
     Point posisiObjMati = aq.getListObjekMati().get(idx).getPosisi();
-    return this.getPosisi().hitungJarak(posisiObjMati) <= radius;
+    return this.getPosisi().distance(posisiObjMati) <= radius;
   }
 
   /**
@@ -214,8 +216,8 @@ public class Pet implements Comparable, Consumer {
    * @return true jika absi koin idx berada dalam radius pet
    */
   public boolean isAbsisInRadius(Aquarium aq, int idx) {
-    int absisObjMati = aq.getListObjekMati().get(idx).getPosisi().getAbsis();
-    return Math.abs(this.getPosisi().getAbsis() - absisObjMati) <= radius / 2;
+    int absisObjMati = aq.getListObjekMati().get(idx).getPosisi().getX();
+    return Math.abs(this.getPosisi().getX() - absisObjMati) <= radius / 2;
   }
 
   /**

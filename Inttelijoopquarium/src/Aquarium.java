@@ -1,8 +1,9 @@
 //CARA COMPILE
 //javac Aquarium.java Fish.java Guppy.java Piranha.java
-// ObjekMati.java Koin.java MakananIkan.java Pet.java Point.java
+// ObjekMati.java Koin.java MakananIkan.java Pet.java model.Point.java
 
 import java.util.ArrayList;
+import model.Point;
 
 public class Aquarium {
 
@@ -58,7 +59,7 @@ public class Aquarium {
    * @param fish ikan yang ingin dimasukkan ke dalam list ikan
    */
   public void addObject(Fish fish) {
-    System.out.println(fish.getPosisi().getAbsis());
+    System.out.println(fish.getPosisi().getX());
     listIkan.add(fish);
   }
 
@@ -191,18 +192,18 @@ public class Aquarium {
   /**
    * Mengecek apakah suatu titik merupakan ujung dari akuarium dalam radius tertentu.
    *
-   * @param point sebuah point yang ingin dicek
+   * @param pointJava sebuah pointJava yang ingin dicek
    * @param radius jarak ketelitian P terhadap edge
    * @return 0 BUKAN UJUNG 1 ATAS 2 KANAN 3 BAWAH 4 KIRI
    */
-  public int isEdge(Point point, double radius) {
-    if (Math.abs(point.getOrdinat() - width) < radius) {
+  public int isEdge(Point pointJava, double radius) {
+    if (Math.abs(pointJava.getY() - width) < radius) {
       return 2;
-    } else if (point.getOrdinat() < radius) {
+    } else if (pointJava.getY() < radius) {
       return 4;
-    } else if (Math.abs(point.getAbsis() - length) < radius) {
+    } else if (Math.abs(pointJava.getX() - length) < radius) {
       return 1;
-    } else if (point.getAbsis() < radius) {
+    } else if (pointJava.getX() < radius) {
       return 3;
     } else {
       return 0;

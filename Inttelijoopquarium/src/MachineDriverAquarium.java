@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import model.ConstantsKt;
+import model.Point;
 
 public class MachineDriverAquarium extends JFrame implements ImportanceConstantFileAndSize {
 
@@ -461,7 +462,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
           DrawCoin tempG = new DrawCoin(jp, aquarium.getListObjekMati(),
             tempObj, goldCoin, silverCoin);
           tempG.setIcon(goldCoin);
-          tempG.setBounds(tempObj.getPosisi().getAbsis(), tempObj.getPosisi().getOrdinat(),
+          tempG.setBounds(tempObj.getPosisi().getX(), tempObj.getPosisi().getY(),
             tempG.getPreferredSize().width, tempG.getPreferredSize().height);
           tempG.addMouseListener(new MouseButtonCoin(this, tempG));
           jp.add(tempG);

@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import model.Point;
 import org.junit.jupiter.api.Test;
 
 class DrawPetTest {

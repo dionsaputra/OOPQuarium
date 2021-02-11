@@ -2,6 +2,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import model.Point;
 
 public class DrawFishFood extends JLabel {
 
@@ -33,9 +34,9 @@ public class DrawFishFood extends JLabel {
     int cari = list.indexOf(objDead);
     if (cari != notFound) {
       Point p = new Point();
-      p.setAbsis(list.get(cari).getPosisi().getAbsis());
-      p.setOrdinat(list.get(cari).getPosisi().getOrdinat());
-      this.setLocation(p.getAbsis(), p.getOrdinat());
+      p.setX(list.get(cari).getPosisi().getX());
+      p.setY(list.get(cari).getPosisi().getY());
+      this.setLocation(p.getX(), p.getY());
     } else {
       objDead = null;
       list = null;

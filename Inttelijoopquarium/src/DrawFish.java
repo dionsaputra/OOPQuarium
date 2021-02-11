@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import model.Point;
 
 public class DrawFish extends JLabel {
 
@@ -49,9 +50,9 @@ public class DrawFish extends JLabel {
     if (cari != notFound) {
       Point p = new Point();
       Guppy temp = (Guppy) listIkan.get(cari);
-      p.setAbsis(temp.getPosisi().getAbsis());
-      p.setOrdinat(temp.getPosisi().getOrdinat());
-      this.setLocation(p.getAbsis(), p.getOrdinat());
+      p.setX(temp.getPosisi().getX());
+      p.setY(temp.getPosisi().getY());
+      this.setLocation(p.getX(), p.getY());
       if (temp.isFaceRight()) {
         if (temp.isStarving()) {
           this.setIcon(hungryRightI[temp.getGrowthStep() - 1]);
