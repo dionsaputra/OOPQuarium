@@ -6,9 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import model.ConstantsKt;
 
-public class MachineDriverAquarium extends JFrame implements ImportanceConstantFileAndSize,
-  PriceList {
+public class MachineDriverAquarium extends JFrame implements ImportanceConstantFileAndSize {
 
   private JPanel contentPane;
   private JLabel headerLabel = new JLabel();
@@ -278,27 +278,27 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
 
     JLabel labelGuppy = new JLabel();
     labelGuppy.setFont(new Font("Serif", Font.PLAIN, 20));
-    labelGuppy.setText(Integer.toString(guppyPrice));
+    labelGuppy.setText(Integer.toString(ConstantsKt.PRICE_GUPPY));
     labelGuppy.setSize(300, 50);
     labelGuppy.setLocation(backgroundImage.getIconWidth() + guppyLeft[0].getIconWidth(), 0);
 
     JLabel labelPiranha = new JLabel();
     labelPiranha.setFont(new Font("Serif", Font.PLAIN, 20));
-    labelPiranha.setText(Integer.toString(piranhaPrice));
+    labelPiranha.setText(Integer.toString(ConstantsKt.PRICE_PIRANHA));
     labelPiranha.setSize(300, 50);
     labelPiranha.setLocation(backgroundImage.getIconWidth() + piranhaLeft.getIconWidth(),
       guppyLeft[0].getIconHeight());
 
     JLabel labelFishFood = new JLabel();
     labelFishFood.setFont(new Font("Serif", Font.PLAIN, 20));
-    labelFishFood.setText(Integer.toString(foodPrice));
+    labelFishFood.setText(Integer.toString(ConstantsKt.PRICE_FOOD));
     labelFishFood.setSize(300, labelFishFood.getPreferredSize().height);
     labelFishFood.setLocation(backgroundImage.getIconWidth() + foodFish.getIconWidth(),
       guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight());
 
     JLabel labelEgg = new JLabel();
     labelEgg.setFont(new Font("Serif", Font.PLAIN, 20));
-    labelEgg.setText(Integer.toString(eggPrice));
+    labelEgg.setText(Integer.toString(ConstantsKt.PRICE_EGG));
     labelEgg.setSize(300, labelEgg.getPreferredSize().height);
     labelEgg.setLocation(backgroundImage.getIconWidth() + eggImage[0].getIconWidth(),
       guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight());
@@ -536,7 +536,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
             win = true;
           } else {
             buttonEgg.setIcon(eggImage[egg - 1]);
-            if (aquarium.getListIkan().size() == 0 && money < guppyPrice) {
+            if (aquarium.getListIkan().size() == 0 && money < ConstantsKt.PRICE_GUPPY) {
               gameStart = false;
               win = false;
             }
