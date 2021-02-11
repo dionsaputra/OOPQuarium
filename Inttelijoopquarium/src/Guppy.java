@@ -1,3 +1,5 @@
+import model.Point;
+
 public class Guppy extends Fish implements Consumer {
 
   private int growthStep;
@@ -36,7 +38,7 @@ public class Guppy extends Fish implements Consumer {
    * @param pointKejar posisi target
    * @return True if makanan udah bisa dimakan
    */
-  public boolean chaseFood(double radMin,Point pointKejar) {
+  public boolean chaseFood(double radMin, Point pointKejar) {
     if (radMin <= getRadius()) {
       return true;
     } else {
@@ -77,11 +79,11 @@ public class Guppy extends Fish implements Consumer {
     int idx = 0;
     Point idxGuppy = getPosisi();
     Point pointKejar = new Point();
-    while (i < aquarium.getListObjekMati().totalElmt()) {
+    while (i < aquarium.getListObjekMati().size()) {
       if (aquarium.getListObjekMati().get(i).getJenis().equals("Makanan Ikan")) {
         existFood = true;
         Point pointMakanan = aquarium.getListObjekMati().get(i).getPosisi();
-        double jarak = idxGuppy.hitungJarak(pointMakanan);
+        double jarak = idxGuppy.distance(pointMakanan);
         if (jarak < radMin) {
           radMin = jarak;
           idx = i;
@@ -92,7 +94,7 @@ public class Guppy extends Fish implements Consumer {
     }
 
     if (existFood) {
-      eatFood = chaseFood(radMin,pointKejar);
+      eatFood = chaseFood(radMin, pointKejar);
     }
 
     if (eatFood) {
@@ -108,7 +110,7 @@ public class Guppy extends Fish implements Consumer {
    * @param aquarium ubah isi aquarium
    */
   public void produce(Aquarium aquarium) {
-    Point posisiKoin = new Point(getPosisi().getAbsis(), getPosisi().getOrdinat());
+    Point posisiKoin = new Point(getPosisi().getX(), getPosisi().getY());
     Koin koin = new Koin(50 * growthStep, posisiKoin);
     aquarium.addObject(koin);
   }

@@ -1,3 +1,5 @@
+import model.Point;
+
 public class Koin extends ObjekMati {
 
   private final int kecepatanKoin = 1;

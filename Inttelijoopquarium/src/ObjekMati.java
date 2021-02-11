@@ -1,3 +1,5 @@
+import model.Point;
+
 public class ObjekMati implements Comparable {
 
   protected static int counter = 0;   // counter banyak objekMati yang telah diciptakan
@@ -79,7 +81,7 @@ public class ObjekMati implements Comparable {
    * @return true jika objekMati berada di dasar akuarium, sebaliknya false
    */
   public boolean isDasar(Aquarium aquarium) {
-    return this.getPosisi().getOrdinat() >= aquarium.getDasar();
+    return this.getPosisi().getY() >= aquarium.getDasar();
   }
 
   /**
@@ -88,9 +90,9 @@ public class ObjekMati implements Comparable {
    */
   public void turun(Aquarium aquarium) {
     if (!isDasar(aquarium)) {
-      Point point = this.getPosisi();
-      point.setOrdinat(this.getPosisi().getOrdinat() + this.getKecepatan());
-      this.setPosisi(point);
+      Point pointJava = this.getPosisi();
+      pointJava.setY(this.getPosisi().getY() + this.getKecepatan());
+      this.setPosisi(pointJava);
     }
   }
 

@@ -1,3 +1,5 @@
+import model.Point;
+
 public class Piranha extends Fish implements Consumer {
 
   private int latestFood;
@@ -28,7 +30,7 @@ public class Piranha extends Fish implements Consumer {
    * @param pointKejar posisi target
    * @return True if makanan udah bisa dimakan
    */
-  public boolean chaseFood(double radMin,Point pointKejar) {
+  public boolean chaseFood(double radMin, Point pointKejar) {
     if (radMin <= getRadius()) {
       return true;
     } else {
@@ -67,11 +69,11 @@ public class Piranha extends Fish implements Consumer {
     Point pointKejar = new Point();
 
     // check food exist
-    while (i < aquarium.getListIkan().totalElmt()) {
+    while (i < aquarium.getListIkan().size()) {
       if (aquarium.getListIkan().get(i).getJenis().equals("Guppy")) {
         existFood = true;
         Point pointMakanan = aquarium.getListIkan().get(i).getPosisi();
-        double jarak = idxPiranha.hitungJarak(pointMakanan);
+        double jarak = idxPiranha.distance(pointMakanan);
         if (jarak < radMin) {
           radMin = jarak;
           idx = i;
@@ -83,7 +85,7 @@ public class Piranha extends Fish implements Consumer {
 
     // check walk to food or eat it
     if (existFood) {
-      eatFood = chaseFood(radMin,pointKejar);
+      eatFood = chaseFood(radMin, pointKejar);
     }
 
     // eat guppy
@@ -100,7 +102,7 @@ public class Piranha extends Fish implements Consumer {
    * @param aquarium ubah isi aquarium
    */
   public void produce(Aquarium aquarium) {
-    Point posisiKoin = new Point(getPosisi().getAbsis(), getPosisi().getOrdinat());
+    Point posisiKoin = new Point(getPosisi().getX(), getPosisi().getY());
     Koin koin = new Koin(getLast(), posisiKoin);
     aquarium.addObject(koin);
   }

@@ -1,17 +1,19 @@
 //CARA COMPILE
 //javac Aquarium.java Fish.java Guppy.java Piranha.java
-// ObjekMati.java Koin.java MakananIkan.java Pet.java Point.java
-import java.lang.Math;
+// ObjekMati.java Koin.java MakananIkan.java Pet.java model.Point.java
+
+import java.util.ArrayList;
+import model.Point;
 
 public class Aquarium {
 
-  private LinkedList<ObjekMati> listObjekMati = new LinkedList<ObjekMati>();
-  private LinkedList<Fish> listIkan = new LinkedList<Fish>();
-  private LinkedList<Pet> listPet = new LinkedList<Pet>();
-  private int time;
-  private int dasar;
   private final int length;
   private final int width;
+  private ArrayList<ObjekMati> listObjekMati = new ArrayList<>();
+  private ArrayList<Fish> listIkan = new ArrayList<>();
+  private ArrayList<Pet> listPet = new ArrayList<>();
+  private int time;
+  private int dasar;
 
   /**
    * Constructor Aquarium, mengassign nilai length dan width menjadi 100.
@@ -23,6 +25,7 @@ public class Aquarium {
 
   /**
    * Constructor Aquarium, mengassign nilai length dan width sesuai masukan.
+   *
    * @param length ukuran length (ATAS-BAWAH) akuarium
    * @param width ukuran width (KIRI-KANAN) akuarium
    */
@@ -32,16 +35,17 @@ public class Aquarium {
   }
 
   /**
-   * Constructor Aquarium dengan mengassign nilai length,
-   * width, dan list benda-benda yang ada di aquarium.
+   * Constructor Aquarium dengan mengassign nilai length, width, dan list benda-benda yang ada di
+   * aquarium.
+   *
    * @param length ukuran length (ATAS-BAWAH) akuarium
    * @param width ukuran width (KIRI-KANAN) akuarium
    * @param listObjekMati list dari objek mati yang ingin dimasukkan ke akuarium
    * @param listIkan list dari ikan yang ingin dimasukkan ke akuarium
    * @param listPet list dair pet yang ingin dimasukkan ke akuarium
    */
-  public Aquarium(int length, int width, LinkedList<ObjekMati> listObjekMati,
-                  LinkedList<Fish> listIkan, LinkedList<Pet> listPet) {
+  public Aquarium(int length, int width, ArrayList<ObjekMati> listObjekMati,
+    ArrayList<Fish> listIkan, ArrayList<Pet> listPet) {
     this.length = length;
     this.width = width;
     this.listObjekMati = listObjekMati;
@@ -51,15 +55,17 @@ public class Aquarium {
 
   /**
    * Menambahkan sebuah objek bertipe Fish ke dalam listIkan.
+   *
    * @param fish ikan yang ingin dimasukkan ke dalam list ikan
    */
   public void addObject(Fish fish) {
-    System.out.println(fish.getPosisi().getAbsis());
+    System.out.println(fish.getPosisi().getX());
     listIkan.add(fish);
   }
 
   /**
    * Menambahkan sebuah objek bertipe objekMati ke dalam listObjekMati.
+   *
    * @param objekMati objek mati yang ingin dimasukkan ke dalam list  objek mati
    */
   public void addObject(ObjekMati objekMati) {
@@ -68,6 +74,7 @@ public class Aquarium {
 
   /**
    * Menambahkan sebuah objek bertipe Pet ke dalam listPet.
+   *
    * @param pet pet yang ingin dimasukkan ke dalam list pet
    */
   public void addObject(Pet pet) {
@@ -76,6 +83,7 @@ public class Aquarium {
 
   /**
    * Menghapus suatu ikan pada list ikan.
+   *
    * @param fish ikan yang ingin dihapus dari list ikan
    */
   public void removeObject(Fish fish) {
@@ -84,6 +92,7 @@ public class Aquarium {
 
   /**
    * Menghapus suatu objekMati pada liatObjekMati.
+   *
    * @param objekMati objek mati yang ingin dihapus list objek mati.
    */
   public void removeObject(ObjekMati objekMati) {
@@ -92,6 +101,7 @@ public class Aquarium {
 
   /**
    * Menghapus suatu pet dari listPet.
+   *
    * @param pet pet yang ingin dihapus dari list pet
    */
   public void removeObject(Pet pet) {
@@ -103,7 +113,7 @@ public class Aquarium {
    */
   public int countGuppy() {
     int countguppy = 0;
-    for (int j = 0; j < listIkan.totalElmt(); j++) {
+    for (int j = 0; j < listIkan.size(); j++) {
       if (listIkan.get(j).getJenis().equals("Guppy")) {
         countguppy++;
       }
@@ -115,8 +125,8 @@ public class Aquarium {
    * Menghitung Banyaknya Makanan ikan.
    */
   public int countFood() {
-    int countfood = 0; 
-    for (int j = 0; j < listObjekMati.totalElmt(); j++) {
+    int countfood = 0;
+    for (int j = 0; j < listObjekMati.size(); j++) {
       if (listObjekMati.get(j).getJenis().equals("Makanan Ikan")) {
         countfood++;
       }
@@ -128,7 +138,7 @@ public class Aquarium {
    * Mengendalikan kehidupan ikan.
    */
   public void controlFish() {
-    for (int i = 0; i < listIkan.totalElmt(); i++) {
+    for (int i = 0; i < listIkan.size(); i++) {
       Fish tempoint = listIkan.get(i);
       if (tempoint.getStarving() <= 0) {
         removeObject(listIkan.get(i));
@@ -156,7 +166,7 @@ public class Aquarium {
    * Mengendalikan kehidupan pet.
    */
   public void controlPet() {
-    for (int i = 0; i < listPet.totalElmt(); i++) {
+    for (int i = 0; i < listPet.size(); i++) {
       listPet.get(i).life(this);
     }
   }
@@ -165,7 +175,7 @@ public class Aquarium {
    * Mengendalikan kehidupan benda mati.
    */
   public void controlDeadObject() {
-    for (int i = 0; i < listObjekMati.totalElmt(); i++) {
+    for (int i = 0; i < listObjekMati.size(); i++) {
       listObjekMati.get(i).turun(this);
     }
   }
@@ -180,35 +190,35 @@ public class Aquarium {
   }
 
   /**
-   * Mengecek apakah suatu titik merupakan ujung dari akuarium
-   * dalam radius tertentu.
-   * @param point sebuah point yang ingin dicek
+   * Mengecek apakah suatu titik merupakan ujung dari akuarium dalam radius tertentu.
+   *
+   * @param pointJava sebuah pointJava yang ingin dicek
    * @param radius jarak ketelitian P terhadap edge
    * @return 0 BUKAN UJUNG 1 ATAS 2 KANAN 3 BAWAH 4 KIRI
    */
-  public int isEdge(Point point, double radius) {
-    if (Math.abs(point.getOrdinat() - width) < radius) {
+  public int isEdge(Point pointJava, double radius) {
+    if (Math.abs(pointJava.getY() - width) < radius) {
       return 2;
-    } else if (point.getOrdinat() < radius) {
+    } else if (pointJava.getY() < radius) {
       return 4;
-    } else if (Math.abs(point.getAbsis() - length) < radius) {
+    } else if (Math.abs(pointJava.getX() - length) < radius) {
       return 1;
-    } else if (point.getAbsis() < radius) {
+    } else if (pointJava.getX() < radius) {
       return 3;
     } else {
       return 0;
     }
   }
 
-  public LinkedList<ObjekMati> getListObjekMati() {
+  public ArrayList<ObjekMati> getListObjekMati() {
     return listObjekMati;
   }
 
-  public LinkedList<Fish> getListIkan() {
+  public ArrayList<Fish> getListIkan() {
     return listIkan;
   }
 
-  public LinkedList<Pet> getListPet() {
+  public ArrayList<Pet> getListPet() {
     return listPet;
   }
 

@@ -1,13 +1,13 @@
-import java.lang.Math;
 import java.util.Random;
+import model.Point;
 
 public abstract class Fish implements Comparable, Entitas {
 
+  protected static int counter = 0;
   private final double pi = 3.14159265;
   protected int maxStarving;
   protected int maxStarvationPeriod;
   protected int maxMoveTime;
-  protected static int counter = 0;
   protected int id;
   protected boolean rightDirect;
   protected int starvationPeriod;
@@ -26,25 +26,27 @@ public abstract class Fish implements Comparable, Entitas {
 
   public abstract int getProduceTime();
 
-  public abstract int getMaxProduceTime();
-
   public abstract void setProduceTime(int produceTime);
+
+  public abstract int getMaxProduceTime();
 
   /**
    * Berenang ke suatu titik.
+   *
    * @param x posisi tujuan
    * @param speed ikan
    */
   public void swimto(Point x, int speed) {
     Point temp = this.getPosisi();
-    double rad = Math.atan2((double)(x.getOrdinat() - temp.getOrdinat()),
-        (double)(x.getAbsis() - temp.getAbsis()));
+    double rad = Math.atan2((double) (x.getY() - temp.getY()),
+        (double) (x.getX() - temp.getX()));
     int deg = (int) ((rad * 180) / pi);
     swim(deg, speed);
   }
 
   /**
    * Berenang dengan derajat sebesar degree.
+   *
    * @param degree renang ikan
    * @param speed ikan
    */
@@ -52,10 +54,10 @@ public abstract class Fish implements Comparable, Entitas {
     double rad = (double) degree * pi / 180.0;
     Point temp = getPosisi();
     int absisNew =
-        temp.getAbsis() + (int)(speed * Math.cos(rad) * ((maxMoveTime) - getMoveTime()) / 15);
+        temp.getX() + (int) (speed * Math.cos(rad) * ((maxMoveTime) - getMoveTime()) / 15);
     int ordinatNew =
-        temp.getOrdinat() + (int)(speed * Math.sin(rad) * (maxMoveTime - getMoveTime()) / 15);
-    if (absisNew < temp.getAbsis()) {
+        temp.getY() + (int) (speed * Math.sin(rad) * (maxMoveTime - getMoveTime()) / 15);
+    if (absisNew < temp.getX()) {
       rightDirect = false;
     } else {
       rightDirect = true;
@@ -74,8 +76,8 @@ public abstract class Fish implements Comparable, Entitas {
     if (ordinat >= 600) {
       ordinat = 600;
     }
-    temp.setAbsis(absis);
-    temp.setOrdinat(ordinat);
+    temp.setX(absis);
+    temp.setY(ordinat);
     setPosisi(temp);
   }
 
@@ -101,6 +103,7 @@ public abstract class Fish implements Comparable, Entitas {
 
   /**
    * Mencoba memproduksi koin.
+   *
    * @param aquarium aquarium
    */
   public void tryProduce(Aquarium aquarium) {
@@ -121,6 +124,7 @@ public abstract class Fish implements Comparable, Entitas {
 
   /**
    * Membandingkan objek dengan id.
+   *
    * @param object benda
    */
   @Override
@@ -137,6 +141,7 @@ public abstract class Fish implements Comparable, Entitas {
 
   /**
    * getter starving.
+   *
    * @return starvationPeriod dari ikan
    */
   public boolean isStarving() {
@@ -145,6 +150,7 @@ public abstract class Fish implements Comparable, Entitas {
 
   /**
    * getter arah.
+   *
    * @return rightDirect arah ikan
    */
   public boolean isFaceRight() {
@@ -153,6 +159,7 @@ public abstract class Fish implements Comparable, Entitas {
 
   /**
    * getter movetime.
+   *
    * @return moveTimer ikan
    */
   public int getMoveTime() {
@@ -160,7 +167,17 @@ public abstract class Fish implements Comparable, Entitas {
   }
 
   /**
+   * setter move time.
+   *
+   * @param moveTimer ikan
+   */
+  public void setMoveTime(int moveTimer) {
+    this.moveTimer = moveTimer;
+  }
+
+  /**
    * getter id.
+   *
    * @return id ikan
    */
   public int getId() {
@@ -169,6 +186,7 @@ public abstract class Fish implements Comparable, Entitas {
 
   /**
    * getter posisi.
+   *
    * @return posisi ikan
    */
   public Point getPosisi() {
@@ -176,15 +194,35 @@ public abstract class Fish implements Comparable, Entitas {
   }
 
   /**
+   * setter posisi.
+   *
+   * @param posisi ikan
+   */
+  public void setPosisi(Point posisi) {
+    this.posisi = posisi;
+  }
+
+  /**
    * getter starvationperiod.
-   * @return starvation period 
+   *
+   * @return starvation period
    */
   public int getStarvationPeriod() {
     return starvationPeriod;
   }
 
   /**
+   * setter starvationperiod ikan.
+   *
+   * @param starvationPeriod ikan
+   */
+  public void setStarvationPeriod(int starvationPeriod) {
+    this.starvationPeriod = starvationPeriod;
+  }
+
+  /**
    * getter speed.
+   *
    * @return speed ikan
    */
   public int getSpeed() {
@@ -193,14 +231,25 @@ public abstract class Fish implements Comparable, Entitas {
 
   /**
    * getter harga.
-   * @return harga ikan 
+   *
+   * @return harga ikan
    */
   public int getHarga() {
     return harga;
   }
 
   /**
+   * setter harga.
+   *
+   * @param harga ikan
+   */
+  public void setHarga(int harga) {
+    this.harga = harga;
+  }
+
+  /**
    * getter starving.
+   *
    * @return starving waktu ikan mati
    */
   public int getStarving() {
@@ -208,7 +257,17 @@ public abstract class Fish implements Comparable, Entitas {
   }
 
   /**
+   * setter starving waktu mati ikan.
+   *
+   * @param starving atribut starving ikan
+   */
+  public void setStarving(int starving) {
+    this.starving = starving;
+  }
+
+  /**
    * getter sudut renang ikan.
+   *
    * @return degree ikan
    */
   public int getDegree() {
@@ -216,7 +275,17 @@ public abstract class Fish implements Comparable, Entitas {
   }
 
   /**
+   * setter sudut renang.
+   *
+   * @param degree ikan
+   */
+  public void setDegree(int degree) {
+    this.degree = degree;
+  }
+
+  /**
    * getter maximum move.
+   *
    * @return maxMoveTime ikan
    */
   public int getMaxMove() {
@@ -225,6 +294,7 @@ public abstract class Fish implements Comparable, Entitas {
 
   /**
    * getter radius makan.
+   *
    * @return radius ikan
    */
   public double getRadius() {
@@ -232,39 +302,8 @@ public abstract class Fish implements Comparable, Entitas {
   }
 
   /**
-   * getter jenis ikan.
-   * @return jenis ikan
-   */
-  public String getJenis() {
-    return jenis;
-  }
-
-  /**
-   * setter sudut renang.
-   * @param degree ikan
-   */
-  public void setDegree(int degree) {
-    this.degree = degree;
-  }
-
-  /**
-   * setter move time.
-   * @param moveTimer ikan
-   */
-  public void setMoveTime(int moveTimer) {
-    this.moveTimer = moveTimer;
-  }
-
-  /**
-   * setter harga.
-   * @param harga ikan
-   */
-  public void setHarga(int harga) {
-    this.harga = harga;
-  }
-
-  /**
    * setter radius makan.
+   *
    * @param radius radius ikan
    */
   public void setRadius(int radius) {
@@ -272,34 +311,20 @@ public abstract class Fish implements Comparable, Entitas {
   }
 
   /**
+   * getter jenis ikan.
+   *
+   * @return jenis ikan
+   */
+  public String getJenis() {
+    return jenis;
+  }
+
+  /**
    * setter jenis ikan.
+   *
    * @param jenis jenis ikan
    */
   public void setJenis(String jenis) {
     this.jenis = jenis;
-  }
-
-  /**
-   * setter posisi.
-   * @param posisi ikan
-   */
-  public void setPosisi(Point posisi) {
-    this.posisi = posisi;
-  }
-
-  /**
-   * setter starvationperiod ikan.
-   * @param starvationPeriod ikan
-   */
-  public void setStarvationPeriod(int starvationPeriod) {
-    this.starvationPeriod = starvationPeriod;
-  }
-
-  /**
-   * setter starving waktu mati ikan.
-   * @param starving atribut starving ikan
-   */
-  public void setStarving(int starving) {
-    this.starving = starving;
   }
 }

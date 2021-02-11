@@ -4,8 +4,9 @@ import java.awt.event.MouseListener;
 import java.util.Random;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import model.ConstantsKt;
 
-public class MouseButtonEgg implements MouseListener,PriceList {
+public class MouseButtonEgg implements MouseListener {
 
   private MachineDriverAquarium aq;
 
@@ -22,10 +23,10 @@ public class MouseButtonEgg implements MouseListener,PriceList {
    * @param e mouseevent
    */
   public void mouseClicked(MouseEvent e) {
-    if (aq.getMoney() >= eggPrice) {
+    if (aq.getMoney() >= ConstantsKt.PRICE_EGG) {
 
       aq.addEgg();
-      aq.addMoney(-eggPrice);
+      aq.addMoney(-ConstantsKt.PRICE_EGG);
     }
 
     System.out.println("Mouse Egg Clicked: (" + e.getX() + ", " + e.getY() + ")");
