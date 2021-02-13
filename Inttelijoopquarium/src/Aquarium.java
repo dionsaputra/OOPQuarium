@@ -3,114 +3,39 @@
 // ObjekMati.java Koin.java MakananIkan.java Pet.java model.Point.java
 
 import java.util.ArrayList;
-import model.Point;
 
 public class Aquarium {
 
   private final int length;
-  private final int width;
   private ArrayList<ObjekMati> listObjekMati = new ArrayList<>();
   private ArrayList<Fish> listIkan = new ArrayList<>();
   private ArrayList<Pet> listPet = new ArrayList<>();
-  private int time;
-  private int dasar;
 
-  /**
-   * Constructor Aquarium, mengassign nilai length dan width menjadi 100.
-   */
-  public Aquarium() {
-    length = 100;
-    width = 100;
-  }
-
-  /**
-   * Constructor Aquarium, mengassign nilai length dan width sesuai masukan.
-   *
-   * @param length ukuran length (ATAS-BAWAH) akuarium
-   * @param width ukuran width (KIRI-KANAN) akuarium
-   */
-  public Aquarium(int length, int width) {
+  public Aquarium(int length) {
     this.length = length;
-    this.width = width;
   }
 
-  /**
-   * Constructor Aquarium dengan mengassign nilai length, width, dan list benda-benda yang ada di
-   * aquarium.
-   *
-   * @param length ukuran length (ATAS-BAWAH) akuarium
-   * @param width ukuran width (KIRI-KANAN) akuarium
-   * @param listObjekMati list dari objek mati yang ingin dimasukkan ke akuarium
-   * @param listIkan list dari ikan yang ingin dimasukkan ke akuarium
-   * @param listPet list dair pet yang ingin dimasukkan ke akuarium
-   */
-  public Aquarium(int length, int width, ArrayList<ObjekMati> listObjekMati,
-    ArrayList<Fish> listIkan, ArrayList<Pet> listPet) {
-    this.length = length;
-    this.width = width;
-    this.listObjekMati = listObjekMati;
-    this.listIkan = listIkan;
-    this.listPet = listPet;
-  }
-
-  /**
-   * Menambahkan sebuah objek bertipe Fish ke dalam listIkan.
-   *
-   * @param fish ikan yang ingin dimasukkan ke dalam list ikan
-   */
   public void addObject(Fish fish) {
     System.out.println(fish.getPosisi().getX());
     listIkan.add(fish);
   }
 
-  /**
-   * Menambahkan sebuah objek bertipe objekMati ke dalam listObjekMati.
-   *
-   * @param objekMati objek mati yang ingin dimasukkan ke dalam list  objek mati
-   */
   public void addObject(ObjekMati objekMati) {
     listObjekMati.add(objekMati);
   }
 
-  /**
-   * Menambahkan sebuah objek bertipe Pet ke dalam listPet.
-   *
-   * @param pet pet yang ingin dimasukkan ke dalam list pet
-   */
   public void addObject(Pet pet) {
     listPet.add(pet);
   }
 
-  /**
-   * Menghapus suatu ikan pada list ikan.
-   *
-   * @param fish ikan yang ingin dihapus dari list ikan
-   */
   public void removeObject(Fish fish) {
     listIkan.remove(fish);
   }
 
-  /**
-   * Menghapus suatu objekMati pada liatObjekMati.
-   *
-   * @param objekMati objek mati yang ingin dihapus list objek mati.
-   */
   public void removeObject(ObjekMati objekMati) {
     listObjekMati.remove(objekMati);
   }
 
-  /**
-   * Menghapus suatu pet dari listPet.
-   *
-   * @param pet pet yang ingin dihapus dari list pet
-   */
-  public void removeObject(Pet pet) {
-    listPet.remove(pet);
-  }
-
-  /**
-   * Menghitung Banyaknya Guppy.
-   */
   public int countGuppy() {
     int countguppy = 0;
     for (int j = 0; j < listIkan.size(); j++) {
@@ -121,9 +46,6 @@ public class Aquarium {
     return countguppy;
   }
 
-  /**
-   * Menghitung Banyaknya Makanan ikan.
-   */
   public int countFood() {
     int countfood = 0;
     for (int j = 0; j < listObjekMati.size(); j++) {
@@ -134,9 +56,6 @@ public class Aquarium {
     return countfood;
   }
 
-  /**
-   * Mengendalikan kehidupan ikan.
-   */
   public void controlFish() {
     for (int i = 0; i < listIkan.size(); i++) {
       Fish tempoint = listIkan.get(i);
@@ -162,52 +81,23 @@ public class Aquarium {
     }
   }
 
-  /**
-   * Mengendalikan kehidupan pet.
-   */
   public void controlPet() {
     for (int i = 0; i < listPet.size(); i++) {
       listPet.get(i).life(this);
     }
   }
 
-  /**
-   * Mengendalikan kehidupan benda mati.
-   */
+
   public void controlDeadObject() {
     for (int i = 0; i < listObjekMati.size(); i++) {
       listObjekMati.get(i).turun(this);
     }
   }
 
-  /**
-   * Mengendalikan kehidupan dalam akuarium.
-   */
   public void action() {
     controlFish();
     controlPet();
     controlDeadObject();
-  }
-
-  /**
-   * Mengecek apakah suatu titik merupakan ujung dari akuarium dalam radius tertentu.
-   *
-   * @param pointJava sebuah pointJava yang ingin dicek
-   * @param radius jarak ketelitian P terhadap edge
-   * @return 0 BUKAN UJUNG 1 ATAS 2 KANAN 3 BAWAH 4 KIRI
-   */
-  public int isEdge(Point pointJava, double radius) {
-    if (Math.abs(pointJava.getY() - width) < radius) {
-      return 2;
-    } else if (pointJava.getY() < radius) {
-      return 4;
-    } else if (Math.abs(pointJava.getX() - length) < radius) {
-      return 1;
-    } else if (pointJava.getX() < radius) {
-      return 3;
-    } else {
-      return 0;
-    }
   }
 
   public ArrayList<ObjekMati> getListObjekMati() {
@@ -222,17 +112,6 @@ public class Aquarium {
     return listPet;
   }
 
-  public int getLength() {
-    return length;
-  }
-
-  public int getWidth() {
-    return width;
-  }
-
-  public int getTime() {
-    return time;
-  }
 
   public int getDasar() {
     return 6 * (length / 7);

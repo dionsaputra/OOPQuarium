@@ -1,6 +1,40 @@
+import static model.ResourcesKt.BACKGROUND;
+import static model.ResourcesKt.BTN_LOAD;
+import static model.ResourcesKt.BTN_SAVE;
+import static model.ResourcesKt.BTN_START;
+import static model.ResourcesKt.ICON_LOSE;
+import static model.ResourcesKt.ICON_WIN;
+import static model.ResourcesKt.IMG_COIN_GOLD;
+import static model.ResourcesKt.IMG_COIN_SILVER;
+import static model.ResourcesKt.IMG_EGG_1;
+import static model.ResourcesKt.IMG_EGG_2;
+import static model.ResourcesKt.IMG_EGG_3;
+import static model.ResourcesKt.IMG_FOOD;
+import static model.ResourcesKt.IMG_GUPPY_LEFT_1;
+import static model.ResourcesKt.IMG_GUPPY_LEFT_2;
+import static model.ResourcesKt.IMG_GUPPY_LEFT_3;
+import static model.ResourcesKt.IMG_GUPPY_LEFT_HUNGRY_1;
+import static model.ResourcesKt.IMG_GUPPY_LEFT_HUNGRY_2;
+import static model.ResourcesKt.IMG_GUPPY_LEFT_HUNGRY_3;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_1;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_2;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_3;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_HUNGRY_1;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_HUNGRY_2;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_HUNGRY_3;
+import static model.ResourcesKt.IMG_PIRANHA_LEFT;
+import static model.ResourcesKt.IMG_PIRANHA_LEFT_HUNGRY;
+import static model.ResourcesKt.IMG_PIRANHA_RIGHT;
+import static model.ResourcesKt.IMG_PIRANHA_RIGHT_HUNGRY;
+import static model.ResourcesKt.IMG_SNAIL_LEFT;
+import static model.ResourcesKt.IMG_SNAIL_RIGHT;
+
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -9,7 +43,7 @@ import javax.swing.JPanel;
 import model.ConstantsKt;
 import model.Point;
 
-public class MachineDriverAquarium extends JFrame implements ImportanceConstantFileAndSize {
+public class MachineDriverAquarium extends JFrame {
 
   private JPanel contentPane;
   private JLabel headerLabel = new JLabel();
@@ -53,17 +87,12 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   /**
    * Constructor for MachineDriverAquarium.
    */
-  public MachineDriverAquarium() {
+  public MachineDriverAquarium(Aquarium aquarium) {
     gameStart = false;
     money = 1000;
     egg = 1;
     initMediaAll();
-    aquarium = new Aquarium(backgroundImage.getIconHeight(), backgroundImage.getIconWidth());
-  }
-
-  public static void main(String[] args) {
-    MachineDriverAquarium temp = new MachineDriverAquarium();
-    temp.execute();
+    this.aquarium = aquarium;
   }
 
   /**
@@ -80,46 +109,46 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
    */
   public void initMediaAll() {
 
-    saveImage = new ImageIcon(this.getClass().getResource(saveImageFile));
-    loadImage = new ImageIcon(this.getClass().getResource(loadImageFile));
-    startImage = new ImageIcon(this.getClass().getResource(startImageFile));
-    winImage = new ImageIcon(this.getClass().getResource(winImageFile));
-    loseImage = new ImageIcon(this.getClass().getResource(loseImageFile));
+    saveImage = new ImageIcon(this.getClass().getResource(BTN_SAVE));
+    loadImage = new ImageIcon(this.getClass().getResource(BTN_LOAD));
+    startImage = new ImageIcon(this.getClass().getResource(BTN_START));
+    winImage = new ImageIcon(this.getClass().getResource(ICON_WIN));
+    loseImage = new ImageIcon(this.getClass().getResource(ICON_LOSE));
 
-    foodFish = new ImageIcon(this.getClass().getResource(fishFoodFile));
+    foodFish = new ImageIcon(this.getClass().getResource(IMG_FOOD));
 
-    guppyLeft[0] = new ImageIcon(this.getClass().getResource(guppyLv1LeftFile));
-    guppyLeft[1] = new ImageIcon(this.getClass().getResource(guppyLv2LeftFile));
-    guppyLeft[2] = new ImageIcon(this.getClass().getResource(guppyLv3LeftFile));
+    guppyLeft[0] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_LEFT_1));
+    guppyLeft[1] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_LEFT_2));
+    guppyLeft[2] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_LEFT_3));
 
-    guppyRight[0] = new ImageIcon(this.getClass().getResource(guppyLv1RightFile));
-    guppyRight[1] = new ImageIcon(this.getClass().getResource(guppyLv2RightFile));
-    guppyRight[2] = new ImageIcon(this.getClass().getResource(guppyLv3RightFile));
+    guppyRight[0] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_RIGHT_1));
+    guppyRight[1] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_RIGHT_2));
+    guppyRight[2] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_RIGHT_3));
 
-    hungryGuppyLeft[0] = new ImageIcon(this.getClass().getResource(hungryGuppyLv1LeftFile));
-    hungryGuppyLeft[1] = new ImageIcon(this.getClass().getResource(hungryGuppyLv2LeftFile));
-    hungryGuppyLeft[2] = new ImageIcon(this.getClass().getResource(hungryGuppyLv3LeftFile));
+    hungryGuppyLeft[0] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_LEFT_HUNGRY_1));
+    hungryGuppyLeft[1] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_LEFT_HUNGRY_2));
+    hungryGuppyLeft[2] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_LEFT_HUNGRY_3));
 
-    hungryGuppyRight[0] = new ImageIcon(this.getClass().getResource(hungryGuppyLv1RightFile));
-    hungryGuppyRight[1] = new ImageIcon(this.getClass().getResource(hungryGuppyLv2RightFile));
-    hungryGuppyRight[2] = new ImageIcon(this.getClass().getResource(hungryGuppyLv3RightFile));
+    hungryGuppyRight[0] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_RIGHT_HUNGRY_1));
+    hungryGuppyRight[1] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_RIGHT_HUNGRY_2));
+    hungryGuppyRight[2] = new ImageIcon(this.getClass().getResource(IMG_GUPPY_RIGHT_HUNGRY_3));
 
-    piranhaLeft = new ImageIcon(this.getClass().getResource(piranhaLeftFile));
-    piranhaRight = new ImageIcon(this.getClass().getResource(piranhaRightFile));
+    piranhaLeft = new ImageIcon(this.getClass().getResource(IMG_PIRANHA_LEFT));
+    piranhaRight = new ImageIcon(this.getClass().getResource(IMG_PIRANHA_RIGHT));
 
-    hungryPiranhaLeft = new ImageIcon(this.getClass().getResource(hungryPiranhaLeftFile));
-    hungryPiranhaRight = new ImageIcon(this.getClass().getResource(hungryPiranhaRightFile));
+    hungryPiranhaLeft = new ImageIcon(this.getClass().getResource(IMG_PIRANHA_LEFT_HUNGRY));
+    hungryPiranhaRight = new ImageIcon(this.getClass().getResource(IMG_PIRANHA_RIGHT_HUNGRY));
 
-    snailLeft = new ImageIcon(this.getClass().getResource(snailLeftFile));
-    snailRight = new ImageIcon(this.getClass().getResource(snailRightFile));
+    snailLeft = new ImageIcon(this.getClass().getResource(IMG_SNAIL_LEFT));
+    snailRight = new ImageIcon(this.getClass().getResource(IMG_SNAIL_RIGHT));
 
-    goldCoin = new ImageIcon(this.getClass().getResource(goldCoinFile));
-    silverCoin = new ImageIcon(this.getClass().getResource(silverCoinFile));
+    goldCoin = new ImageIcon(this.getClass().getResource(IMG_COIN_GOLD));
+    silverCoin = new ImageIcon(this.getClass().getResource(IMG_COIN_SILVER));
 
-    eggImage[0] = new ImageIcon(this.getClass().getResource(egg1File));
-    eggImage[1] = new ImageIcon(this.getClass().getResource(egg2File));
-    eggImage[2] = new ImageIcon(this.getClass().getResource(egg3File));
-    backgroundImage = new ImageIcon(this.getClass().getResource(backgroundImageFile));
+    eggImage[0] = new ImageIcon(this.getClass().getResource(IMG_EGG_1));
+    eggImage[1] = new ImageIcon(this.getClass().getResource(IMG_EGG_2));
+    eggImage[2] = new ImageIcon(this.getClass().getResource(IMG_EGG_3));
+    backgroundImage = new ImageIcon(this.getClass().getResource(BACKGROUND));
   }
 
   /**
@@ -273,9 +302,97 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     buttonFishFood.setIcon(foodFish);
 
     buttonEgg.setIcon(eggImage[egg - 1]);
-    buttonPiranha.addMouseListener(new MouseButtonPiranha(this));
-    buttonGuppy.addMouseListener(new MouseButtonGuppy(this));
-    buttonEgg.addMouseListener(new MouseButtonEgg(this));
+    buttonPiranha.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (getMoney() >= ConstantsKt.PRICE_PIRANHA) {
+          Random r = new Random(System.currentTimeMillis());
+          int randomX = r.nextInt(800) + 66;
+          addPiranha(randomX, 50, (JPanel) getContentPane());
+          addMoney(-ConstantsKt.PRICE_PIRANHA);
+        }
+      }
+
+      @Override
+      public void mousePressed(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseEntered(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+
+      }
+    });
+    buttonGuppy.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (getMoney() >= ConstantsKt.PRICE_GUPPY) {
+          Random r = new Random(System.currentTimeMillis());
+          int randomX = r.nextInt(800) + 66;
+          addGuppy(randomX, 50, (JPanel) getContentPane());
+          addMoney(-ConstantsKt.PRICE_GUPPY);
+        }
+      }
+
+      @Override
+      public void mousePressed(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseEntered(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+
+      }
+    });
+    buttonEgg.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (getMoney() >= ConstantsKt.PRICE_EGG) {
+          addEgg();
+          addMoney(-ConstantsKt.PRICE_EGG);
+        }
+      }
+
+      @Override
+      public void mousePressed(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseEntered(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+
+      }
+    });
 
     JLabel labelGuppy = new JLabel();
     labelGuppy.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -288,39 +405,39 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     labelPiranha.setText(Integer.toString(ConstantsKt.PRICE_PIRANHA));
     labelPiranha.setSize(300, 50);
     labelPiranha.setLocation(backgroundImage.getIconWidth() + piranhaLeft.getIconWidth(),
-      guppyLeft[0].getIconHeight());
+        guppyLeft[0].getIconHeight());
 
     JLabel labelFishFood = new JLabel();
     labelFishFood.setFont(new Font("Serif", Font.PLAIN, 20));
     labelFishFood.setText(Integer.toString(ConstantsKt.PRICE_FOOD));
     labelFishFood.setSize(300, labelFishFood.getPreferredSize().height);
     labelFishFood.setLocation(backgroundImage.getIconWidth() + foodFish.getIconWidth(),
-      guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight());
+        guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight());
 
     JLabel labelEgg = new JLabel();
     labelEgg.setFont(new Font("Serif", Font.PLAIN, 20));
     labelEgg.setText(Integer.toString(ConstantsKt.PRICE_EGG));
     labelEgg.setSize(300, labelEgg.getPreferredSize().height);
     labelEgg.setLocation(backgroundImage.getIconWidth() + eggImage[0].getIconWidth(),
-      guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight());
+        guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight());
 
     labelMoney.setFont(new Font("Serif", Font.PLAIN, 20));
     labelMoney.setText("Your money : " + Integer.toString(money));
     labelMoney.setSize(300, labelMoney.getPreferredSize().height);
     labelMoney.setLocation(backgroundImage.getIconWidth(),
-      guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight()
-        + eggImage[0].getIconHeight());
+        guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight()
+            + eggImage[0].getIconHeight());
 
     buttonGuppy.setBounds(backgroundImage.getIconWidth(), 0, buttonGuppy.getPreferredSize().width,
-      buttonGuppy.getPreferredSize().height);
+        buttonGuppy.getPreferredSize().height);
     buttonPiranha.setBounds(backgroundImage.getIconWidth(), guppyLeft[2].getIconHeight(),
-      buttonPiranha.getPreferredSize().width, buttonPiranha.getPreferredSize().height);
+        buttonPiranha.getPreferredSize().width, buttonPiranha.getPreferredSize().height);
     buttonFishFood.setBounds(backgroundImage.getIconWidth(),
-      guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight(),
-      buttonFishFood.getPreferredSize().width, buttonFishFood.getPreferredSize().height);
+        guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight(),
+        buttonFishFood.getPreferredSize().width, buttonFishFood.getPreferredSize().height);
     buttonEgg.setBounds(backgroundImage.getIconWidth(),
-      guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight(),
-      buttonEgg.getPreferredSize().width, buttonEgg.getPreferredSize().height);
+        guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight(),
+        buttonEgg.getPreferredSize().width, buttonEgg.getPreferredSize().height);
     panel.add(buttonPiranha);
     panel.add(buttonGuppy);
     panel.add(buttonFishFood);
@@ -338,7 +455,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
    */
   public void initWindowSetting() {
     setDefaultCloseOperation(EXIT_ON_CLOSE);
-    setSize(new Dimension(widthScreen, heightScreen));
+    setSize(new Dimension(ConstantsKt.SCREEN_WIDTH, ConstantsKt.SCREEN_HEIGHT));
     setTitle("ArkavQuarium");
     setLocationRelativeTo(null);
   }
@@ -351,9 +468,35 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
   public void startMenu(JPanel panel) {
     JLabel buttonStart = new JLabel();
     buttonStart.setIcon(startImage);
-    buttonStart.addMouseListener(new MouseButtonStart(this));
-    buttonStart.setBounds(widthScreen / 2, heightScreen / 2, buttonStart.getPreferredSize().width,
-      buttonStart.getPreferredSize().height);
+    buttonStart.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        setGameStart(true);
+      }
+
+      @Override
+      public void mousePressed(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseEntered(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+
+      }
+    });
+    buttonStart.setBounds(ConstantsKt.SCREEN_WIDTH / 2, ConstantsKt.SCREEN_HEIGHT / 2,
+        buttonStart.getPreferredSize().width,
+        buttonStart.getPreferredSize().height);
 
     panel.add(buttonStart);
 
@@ -383,7 +526,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     DrawFishFood tempG = new DrawFishFood(jp, aquarium.getListObjekMati(), temp);
     tempG.setIcon(foodFish);
     tempG.setBounds(x, y, tempG.getPreferredSize().width,
-      tempG.getPreferredSize().height);
+        tempG.getPreferredSize().height);
     jp.add(tempG);
   }
 
@@ -400,10 +543,10 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     aquarium.addObject(temp);
 
     DrawFish tempG = new DrawFish(jp, aquarium.getListIkan(), temp, guppyLeft, guppyRight,
-      hungryGuppyLeft, hungryGuppyRight);
+        hungryGuppyLeft, hungryGuppyRight);
     tempG.setIcon(guppyLeft[0]);
     tempG.setBounds(x, y, tempG.getPreferredSize().width,
-      tempG.getPreferredSize().height);
+        tempG.getPreferredSize().height);
     jp.add(tempG);
   }
 
@@ -419,10 +562,10 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     temp.setPosisi(p);
     aquarium.addObject(temp);
     DrawPiranha tempG = new DrawPiranha(jp, aquarium.getListIkan(), temp,
-      piranhaLeft, piranhaRight, hungryPiranhaLeft, hungryPiranhaRight);
+        piranhaLeft, piranhaRight, hungryPiranhaLeft, hungryPiranhaRight);
     tempG.setIcon(piranhaLeft);
     tempG.setBounds(x, y, tempG.getPreferredSize().width,
-      tempG.getPreferredSize().height);
+        tempG.getPreferredSize().height);
     jp.add(tempG);
   }
 
@@ -442,7 +585,7 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
     DrawPet tempG = new DrawPet(jp, aquarium.getListPet(), temp, snailLeft, snailRight);
     tempG.setIcon(piranhaLeft);
     tempG.setBounds(x, y, tempG.getPreferredSize().width,
-      tempG.getPreferredSize().height);
+        tempG.getPreferredSize().height);
     jp.add(tempG);
   }
 
@@ -460,11 +603,37 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
         if (hasilP == -1) {
           //Not found
           DrawCoin tempG = new DrawCoin(jp, aquarium.getListObjekMati(),
-            tempObj, goldCoin, silverCoin);
+              tempObj, goldCoin, silverCoin);
           tempG.setIcon(goldCoin);
           tempG.setBounds(tempObj.getPosisi().getX(), tempObj.getPosisi().getY(),
-            tempG.getPreferredSize().width, tempG.getPreferredSize().height);
-          tempG.addMouseListener(new MouseButtonCoin(this, tempG));
+              tempG.getPreferredSize().width, tempG.getPreferredSize().height);
+          tempG.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+              addMoney(tempG.getKoin().getNilaiKoin());
+              getAquarium().getListObjekMati().remove(tempG.getKoin());
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+          });
           jp.add(tempG);
           listObjekMatiCheck.add(tempObj);
         }
@@ -504,16 +673,45 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
       imageBg.setIcon(backgroundImage);
       panel.add(imageBg);
       imageBg.setBounds(0, 0, imageBg.getPreferredSize().width, imageBg.getPreferredSize().height);
-      imageBg.addMouseListener(new MouseButtonBackground(this));
+      imageBg.addMouseListener(new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+          if (getMoney() >= ConstantsKt.PRICE_FOOD) {
+            addFood(getLeftTopFoodX(e.getX()), getLeftTopFoodY(e.getY()),
+                (JPanel) getContentPane());
+            addMoney(-ConstantsKt.PRICE_FOOD);
+          }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+      });
       initButtonLabel(panel);
 
       // EntitasGambar contoh = new EntitasGambar();
 
       // panel.add(contoh);
       this.addGuppy(backgroundImage.getIconWidth() / 2,
-        backgroundImage.getIconHeight() / 2, panel);
+          backgroundImage.getIconHeight() / 2, panel);
       this.addPiranha(backgroundImage.getIconWidth() / 2,
-        backgroundImage.getIconHeight() / 2, panel);
+          backgroundImage.getIconHeight() / 2, panel);
       int ordinatDasarAquarium = aquarium.getDasar();
       this.addPet(300, ordinatDasarAquarium, panel);
       panel.repaint();
@@ -556,9 +754,9 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
         JLabel imageWin = new JLabel();
         imageWin.setIcon(winImage);
 
-        imageWin.setBounds(widthScreen / 2 - imageWin.getPreferredSize().width / 2,
-          heightScreen / 2 - imageWin.getPreferredSize().height / 2,
-          imageWin.getPreferredSize().width, imageWin.getPreferredSize().height);
+        imageWin.setBounds(ConstantsKt.SCREEN_WIDTH / 2 - imageWin.getPreferredSize().width / 2,
+            ConstantsKt.SCREEN_HEIGHT / 2 - imageWin.getPreferredSize().height / 2,
+            imageWin.getPreferredSize().width, imageWin.getPreferredSize().height);
         panel.add(imageWin);
 
         panel.setComponentZOrder(imageWin, 0);
@@ -575,9 +773,9 @@ public class MachineDriverAquarium extends JFrame implements ImportanceConstantF
         JLabel imageLose = new JLabel();
         imageLose.setIcon(loseImage);
 
-        imageLose.setBounds(widthScreen / 2 - imageLose.getPreferredSize().width / 2,
-          heightScreen / 2 - imageLose.getPreferredSize().height / 2,
-          imageLose.getPreferredSize().width, imageLose.getPreferredSize().height);
+        imageLose.setBounds(ConstantsKt.SCREEN_WIDTH / 2 - imageLose.getPreferredSize().width / 2,
+            ConstantsKt.SCREEN_HEIGHT / 2 - imageLose.getPreferredSize().height / 2,
+            imageLose.getPreferredSize().width, imageLose.getPreferredSize().height);
 
         panel.add(imageLose);
         panel.setComponentZOrder(imageLose, 0);
