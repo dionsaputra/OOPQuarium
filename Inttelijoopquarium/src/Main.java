@@ -1,7 +1,14 @@
+import static model.ResourcesKt.BACKGROUND;
+
+import javax.swing.ImageIcon;
+
 public class Main {
 
   public static void main(String[] args) {
-    MachineDriverAquarium temp = new MachineDriverAquarium();
-    temp.execute();
+    ImageIcon backgroundImage = new ImageIcon(Main.class.getResource(BACKGROUND));
+    Aquarium aquarium = new Aquarium(backgroundImage.getIconHeight(),
+        backgroundImage.getIconWidth());
+    MachineDriverAquarium driverAquarium = new MachineDriverAquarium(aquarium);
+    driverAquarium.execute();
   }
 }

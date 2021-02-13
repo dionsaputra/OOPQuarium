@@ -1,33 +1,33 @@
 import static model.ResourcesKt.BACKGROUND;
+import static model.ResourcesKt.BTN_LOAD;
+import static model.ResourcesKt.BTN_SAVE;
+import static model.ResourcesKt.BTN_START;
+import static model.ResourcesKt.ICON_LOSE;
+import static model.ResourcesKt.ICON_WIN;
+import static model.ResourcesKt.IMG_COIN_GOLD;
+import static model.ResourcesKt.IMG_COIN_SILVER;
 import static model.ResourcesKt.IMG_EGG_1;
 import static model.ResourcesKt.IMG_EGG_2;
 import static model.ResourcesKt.IMG_EGG_3;
 import static model.ResourcesKt.IMG_FOOD;
-import static model.ResourcesKt.IMG_COIN_GOLD;
 import static model.ResourcesKt.IMG_GUPPY_LEFT_1;
-import static model.ResourcesKt.IMG_GUPPY_RIGHT_1;
 import static model.ResourcesKt.IMG_GUPPY_LEFT_2;
-import static model.ResourcesKt.IMG_GUPPY_RIGHT_2;
 import static model.ResourcesKt.IMG_GUPPY_LEFT_3;
-import static model.ResourcesKt.IMG_GUPPY_RIGHT_3;
 import static model.ResourcesKt.IMG_GUPPY_LEFT_HUNGRY_1;
-import static model.ResourcesKt.IMG_GUPPY_RIGHT_HUNGRY_1;
 import static model.ResourcesKt.IMG_GUPPY_LEFT_HUNGRY_2;
-import static model.ResourcesKt.IMG_GUPPY_RIGHT_HUNGRY_2;
 import static model.ResourcesKt.IMG_GUPPY_LEFT_HUNGRY_3;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_1;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_2;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_3;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_HUNGRY_1;
+import static model.ResourcesKt.IMG_GUPPY_RIGHT_HUNGRY_2;
 import static model.ResourcesKt.IMG_GUPPY_RIGHT_HUNGRY_3;
-import static model.ResourcesKt.IMG_PIRANHA_LEFT_HUNGRY;
-import static model.ResourcesKt.IMG_PIRANHA_RIGHT_HUNGRY;
-import static model.ResourcesKt.BTN_LOAD;
-import static model.ResourcesKt.ICON_LOSE;
 import static model.ResourcesKt.IMG_PIRANHA_LEFT;
+import static model.ResourcesKt.IMG_PIRANHA_LEFT_HUNGRY;
 import static model.ResourcesKt.IMG_PIRANHA_RIGHT;
-import static model.ResourcesKt.BTN_SAVE;
-import static model.ResourcesKt.IMG_COIN_SILVER;
+import static model.ResourcesKt.IMG_PIRANHA_RIGHT_HUNGRY;
 import static model.ResourcesKt.IMG_SNAIL_LEFT;
 import static model.ResourcesKt.IMG_SNAIL_RIGHT;
-import static model.ResourcesKt.BTN_START;
-import static model.ResourcesKt.ICON_WIN;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -84,17 +84,12 @@ public class MachineDriverAquarium extends JFrame {
   /**
    * Constructor for MachineDriverAquarium.
    */
-  public MachineDriverAquarium() {
+  public MachineDriverAquarium(Aquarium aquarium) {
     gameStart = false;
     money = 1000;
     egg = 1;
     initMediaAll();
-    aquarium = new Aquarium(backgroundImage.getIconHeight(), backgroundImage.getIconWidth());
-  }
-
-  public static void main(String[] args) {
-    MachineDriverAquarium temp = new MachineDriverAquarium();
-    temp.execute();
+    this.aquarium = aquarium;
   }
 
   /**
@@ -319,39 +314,39 @@ public class MachineDriverAquarium extends JFrame {
     labelPiranha.setText(Integer.toString(ConstantsKt.PRICE_PIRANHA));
     labelPiranha.setSize(300, 50);
     labelPiranha.setLocation(backgroundImage.getIconWidth() + piranhaLeft.getIconWidth(),
-      guppyLeft[0].getIconHeight());
+        guppyLeft[0].getIconHeight());
 
     JLabel labelFishFood = new JLabel();
     labelFishFood.setFont(new Font("Serif", Font.PLAIN, 20));
     labelFishFood.setText(Integer.toString(ConstantsKt.PRICE_FOOD));
     labelFishFood.setSize(300, labelFishFood.getPreferredSize().height);
     labelFishFood.setLocation(backgroundImage.getIconWidth() + foodFish.getIconWidth(),
-      guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight());
+        guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight());
 
     JLabel labelEgg = new JLabel();
     labelEgg.setFont(new Font("Serif", Font.PLAIN, 20));
     labelEgg.setText(Integer.toString(ConstantsKt.PRICE_EGG));
     labelEgg.setSize(300, labelEgg.getPreferredSize().height);
     labelEgg.setLocation(backgroundImage.getIconWidth() + eggImage[0].getIconWidth(),
-      guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight());
+        guppyLeft[0].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight());
 
     labelMoney.setFont(new Font("Serif", Font.PLAIN, 20));
     labelMoney.setText("Your money : " + Integer.toString(money));
     labelMoney.setSize(300, labelMoney.getPreferredSize().height);
     labelMoney.setLocation(backgroundImage.getIconWidth(),
-      guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight()
-        + eggImage[0].getIconHeight());
+        guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight()
+            + eggImage[0].getIconHeight());
 
     buttonGuppy.setBounds(backgroundImage.getIconWidth(), 0, buttonGuppy.getPreferredSize().width,
-      buttonGuppy.getPreferredSize().height);
+        buttonGuppy.getPreferredSize().height);
     buttonPiranha.setBounds(backgroundImage.getIconWidth(), guppyLeft[2].getIconHeight(),
-      buttonPiranha.getPreferredSize().width, buttonPiranha.getPreferredSize().height);
+        buttonPiranha.getPreferredSize().width, buttonPiranha.getPreferredSize().height);
     buttonFishFood.setBounds(backgroundImage.getIconWidth(),
-      guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight(),
-      buttonFishFood.getPreferredSize().width, buttonFishFood.getPreferredSize().height);
+        guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight(),
+        buttonFishFood.getPreferredSize().width, buttonFishFood.getPreferredSize().height);
     buttonEgg.setBounds(backgroundImage.getIconWidth(),
-      guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight(),
-      buttonEgg.getPreferredSize().width, buttonEgg.getPreferredSize().height);
+        guppyLeft[2].getIconHeight() + piranhaLeft.getIconHeight() + foodFish.getIconHeight(),
+        buttonEgg.getPreferredSize().width, buttonEgg.getPreferredSize().height);
     panel.add(buttonPiranha);
     panel.add(buttonGuppy);
     panel.add(buttonFishFood);
@@ -384,8 +379,8 @@ public class MachineDriverAquarium extends JFrame {
     buttonStart.setIcon(startImage);
     buttonStart.addMouseListener(new MouseButtonStart(this));
     buttonStart.setBounds(ConstantsKt.SCREEN_WIDTH / 2, ConstantsKt.SCREEN_HEIGHT / 2,
-      buttonStart.getPreferredSize().width,
-      buttonStart.getPreferredSize().height);
+        buttonStart.getPreferredSize().width,
+        buttonStart.getPreferredSize().height);
 
     panel.add(buttonStart);
 
@@ -415,7 +410,7 @@ public class MachineDriverAquarium extends JFrame {
     DrawFishFood tempG = new DrawFishFood(jp, aquarium.getListObjekMati(), temp);
     tempG.setIcon(foodFish);
     tempG.setBounds(x, y, tempG.getPreferredSize().width,
-      tempG.getPreferredSize().height);
+        tempG.getPreferredSize().height);
     jp.add(tempG);
   }
 
@@ -432,10 +427,10 @@ public class MachineDriverAquarium extends JFrame {
     aquarium.addObject(temp);
 
     DrawFish tempG = new DrawFish(jp, aquarium.getListIkan(), temp, guppyLeft, guppyRight,
-      hungryGuppyLeft, hungryGuppyRight);
+        hungryGuppyLeft, hungryGuppyRight);
     tempG.setIcon(guppyLeft[0]);
     tempG.setBounds(x, y, tempG.getPreferredSize().width,
-      tempG.getPreferredSize().height);
+        tempG.getPreferredSize().height);
     jp.add(tempG);
   }
 
@@ -451,10 +446,10 @@ public class MachineDriverAquarium extends JFrame {
     temp.setPosisi(p);
     aquarium.addObject(temp);
     DrawPiranha tempG = new DrawPiranha(jp, aquarium.getListIkan(), temp,
-      piranhaLeft, piranhaRight, hungryPiranhaLeft, hungryPiranhaRight);
+        piranhaLeft, piranhaRight, hungryPiranhaLeft, hungryPiranhaRight);
     tempG.setIcon(piranhaLeft);
     tempG.setBounds(x, y, tempG.getPreferredSize().width,
-      tempG.getPreferredSize().height);
+        tempG.getPreferredSize().height);
     jp.add(tempG);
   }
 
@@ -474,7 +469,7 @@ public class MachineDriverAquarium extends JFrame {
     DrawPet tempG = new DrawPet(jp, aquarium.getListPet(), temp, snailLeft, snailRight);
     tempG.setIcon(piranhaLeft);
     tempG.setBounds(x, y, tempG.getPreferredSize().width,
-      tempG.getPreferredSize().height);
+        tempG.getPreferredSize().height);
     jp.add(tempG);
   }
 
@@ -492,10 +487,10 @@ public class MachineDriverAquarium extends JFrame {
         if (hasilP == -1) {
           //Not found
           DrawCoin tempG = new DrawCoin(jp, aquarium.getListObjekMati(),
-            tempObj, goldCoin, silverCoin);
+              tempObj, goldCoin, silverCoin);
           tempG.setIcon(goldCoin);
           tempG.setBounds(tempObj.getPosisi().getX(), tempObj.getPosisi().getY(),
-            tempG.getPreferredSize().width, tempG.getPreferredSize().height);
+              tempG.getPreferredSize().width, tempG.getPreferredSize().height);
           tempG.addMouseListener(new MouseButtonCoin(this, tempG));
           jp.add(tempG);
           listObjekMatiCheck.add(tempObj);
@@ -543,9 +538,9 @@ public class MachineDriverAquarium extends JFrame {
 
       // panel.add(contoh);
       this.addGuppy(backgroundImage.getIconWidth() / 2,
-        backgroundImage.getIconHeight() / 2, panel);
+          backgroundImage.getIconHeight() / 2, panel);
       this.addPiranha(backgroundImage.getIconWidth() / 2,
-        backgroundImage.getIconHeight() / 2, panel);
+          backgroundImage.getIconHeight() / 2, panel);
       int ordinatDasarAquarium = aquarium.getDasar();
       this.addPet(300, ordinatDasarAquarium, panel);
       panel.repaint();
@@ -589,8 +584,8 @@ public class MachineDriverAquarium extends JFrame {
         imageWin.setIcon(winImage);
 
         imageWin.setBounds(ConstantsKt.SCREEN_WIDTH / 2 - imageWin.getPreferredSize().width / 2,
-          ConstantsKt.SCREEN_HEIGHT / 2 - imageWin.getPreferredSize().height / 2,
-          imageWin.getPreferredSize().width, imageWin.getPreferredSize().height);
+            ConstantsKt.SCREEN_HEIGHT / 2 - imageWin.getPreferredSize().height / 2,
+            imageWin.getPreferredSize().width, imageWin.getPreferredSize().height);
         panel.add(imageWin);
 
         panel.setComponentZOrder(imageWin, 0);
@@ -608,8 +603,8 @@ public class MachineDriverAquarium extends JFrame {
         imageLose.setIcon(loseImage);
 
         imageLose.setBounds(ConstantsKt.SCREEN_WIDTH / 2 - imageLose.getPreferredSize().width / 2,
-          ConstantsKt.SCREEN_HEIGHT / 2 - imageLose.getPreferredSize().height / 2,
-          imageLose.getPreferredSize().width, imageLose.getPreferredSize().height);
+            ConstantsKt.SCREEN_HEIGHT / 2 - imageLose.getPreferredSize().height / 2,
+            imageLose.getPreferredSize().width, imageLose.getPreferredSize().height);
 
         panel.add(imageLose);
         panel.setComponentZOrder(imageLose, 0);
