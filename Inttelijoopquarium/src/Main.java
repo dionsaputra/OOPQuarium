@@ -6,8 +6,7 @@ public class Main {
 
   public static void main(String[] args) {
     ImageIcon backgroundImage = new ImageIcon(Main.class.getResource(BACKGROUND));
-    Aquarium aquarium = new Aquarium(backgroundImage.getIconHeight(),
-        backgroundImage.getIconWidth());
+    Aquarium aquarium = new Aquarium(backgroundImage.getIconHeight());
     MachineDriverAquarium driverAquarium = new MachineDriverAquarium(aquarium);
     driverAquarium.execute();
   }

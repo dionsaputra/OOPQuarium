@@ -31,7 +31,10 @@ import static model.ResourcesKt.IMG_SNAIL_RIGHT;
 
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -299,9 +302,97 @@ public class MachineDriverAquarium extends JFrame {
     buttonFishFood.setIcon(foodFish);
 
     buttonEgg.setIcon(eggImage[egg - 1]);
-    buttonPiranha.addMouseListener(new MouseButtonPiranha(this));
-    buttonGuppy.addMouseListener(new MouseButtonGuppy(this));
-    buttonEgg.addMouseListener(new MouseButtonEgg(this));
+    buttonPiranha.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (getMoney() >= ConstantsKt.PRICE_PIRANHA) {
+          Random r = new Random(System.currentTimeMillis());
+          int randomX = r.nextInt(800) + 66;
+          addPiranha(randomX, 50, (JPanel) getContentPane());
+          addMoney(-ConstantsKt.PRICE_PIRANHA);
+        }
+      }
+
+      @Override
+      public void mousePressed(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseEntered(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+
+      }
+    });
+    buttonGuppy.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (getMoney() >= ConstantsKt.PRICE_GUPPY) {
+          Random r = new Random(System.currentTimeMillis());
+          int randomX = r.nextInt(800) + 66;
+          addGuppy(randomX, 50, (JPanel) getContentPane());
+          addMoney(-ConstantsKt.PRICE_GUPPY);
+        }
+      }
+
+      @Override
+      public void mousePressed(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseEntered(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+
+      }
+    });
+    buttonEgg.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (getMoney() >= ConstantsKt.PRICE_EGG) {
+          addEgg();
+          addMoney(-ConstantsKt.PRICE_EGG);
+        }
+      }
+
+      @Override
+      public void mousePressed(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseEntered(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+
+      }
+    });
 
     JLabel labelGuppy = new JLabel();
     labelGuppy.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -377,7 +468,32 @@ public class MachineDriverAquarium extends JFrame {
   public void startMenu(JPanel panel) {
     JLabel buttonStart = new JLabel();
     buttonStart.setIcon(startImage);
-    buttonStart.addMouseListener(new MouseButtonStart(this));
+    buttonStart.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        setGameStart(true);
+      }
+
+      @Override
+      public void mousePressed(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseEntered(MouseEvent e) {
+
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+
+      }
+    });
     buttonStart.setBounds(ConstantsKt.SCREEN_WIDTH / 2, ConstantsKt.SCREEN_HEIGHT / 2,
         buttonStart.getPreferredSize().width,
         buttonStart.getPreferredSize().height);
@@ -491,7 +607,33 @@ public class MachineDriverAquarium extends JFrame {
           tempG.setIcon(goldCoin);
           tempG.setBounds(tempObj.getPosisi().getX(), tempObj.getPosisi().getY(),
               tempG.getPreferredSize().width, tempG.getPreferredSize().height);
-          tempG.addMouseListener(new MouseButtonCoin(this, tempG));
+          tempG.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+              addMoney(tempG.getKoin().getNilaiKoin());
+              getAquarium().getListObjekMati().remove(tempG.getKoin());
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+          });
           jp.add(tempG);
           listObjekMatiCheck.add(tempObj);
         }
@@ -531,7 +673,36 @@ public class MachineDriverAquarium extends JFrame {
       imageBg.setIcon(backgroundImage);
       panel.add(imageBg);
       imageBg.setBounds(0, 0, imageBg.getPreferredSize().width, imageBg.getPreferredSize().height);
-      imageBg.addMouseListener(new MouseButtonBackground(this));
+      imageBg.addMouseListener(new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+          if (getMoney() >= ConstantsKt.PRICE_FOOD) {
+            addFood(getLeftTopFoodX(e.getX()), getLeftTopFoodY(e.getY()),
+                (JPanel) getContentPane());
+            addMoney(-ConstantsKt.PRICE_FOOD);
+          }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+      });
       initButtonLabel(panel);
 
       // EntitasGambar contoh = new EntitasGambar();
